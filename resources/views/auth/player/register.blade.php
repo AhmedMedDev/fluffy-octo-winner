@@ -98,6 +98,12 @@ License: For each use you must have a valid license purchased only from above li
 							</div>
 							<!--end::Input group-->
 							<!--begin::Input group-->
+							<div class="fv-row mb-7">
+								<label class="form-label fw-bolder text-dark fs-6">Date of birth</label>
+								<input class="form-control form-control-lg form-control-solid" type="date" placeholder="" name="email" autocomplete="off" />
+							</div>
+							<!--end::Input group-->
+							<!--begin::Input group-->
 							<div class="mb-10 fv-row" data-kt-password-meter="true">
 								<!--begin::Wrapper-->
 								<div class="mb-1">
