@@ -7,6 +7,17 @@
 - - Login 
 - - Register 
 
+
+- - Player Data
+
+- - - name
+- - - dob
+- - - nationality
+- - - mobile
+- - - email
+- - - password
+
+
 - - - - - - - - - - - - - - - 17
 - Institution Authentication 
 - - Login
