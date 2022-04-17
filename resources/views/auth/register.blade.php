@@ -94,7 +94,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Step 2-->
 								<!--begin::Step 3-->
-								<div class="stepper-item" data-kt-stepper-element="nav">
+								<div class="stepper-item hide-if-player" data-kt-stepper-element="nav" id="notPlayer">
 									<!--begin::Line-->
 									<div class="stepper-line w-40px"></div>
 									<!--end::Line-->
@@ -112,25 +112,6 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Label-->
 								</div>
 								<!--end::Step 3-->
-								<!--begin::Step 4-->
-								<div class="stepper-item" data-kt-stepper-element="nav">
-									<!--begin::Line-->
-									<div class="stepper-line w-40px"></div>
-									<!--end::Line-->
-									<!--begin::Icon-->
-									<div class="stepper-icon w-40px h-40px">
-										<i class="stepper-check fas fa-check"></i>
-										<span class="stepper-number">4</span>
-									</div>
-									<!--end::Icon-->
-									<!--begin::Label-->
-									<div class="stepper-label">
-										<h3 class="stepper-title">Billing Details</h3>
-										<div class="stepper-desc fw-bold">Set Your Payment Methods</div>
-									</div>
-									<!--end::Label-->
-								</div>
-								<!--end::Step 4-->
 								<!--begin::Step 5-->
 								<div class="stepper-item" data-kt-stepper-element="nav">
 									<!--begin::Line-->
@@ -166,7 +147,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Content-->
 					<div class="d-flex flex-center flex-column flex-column-fluid">
 						<!--begin::Wrapper-->
-						<div class="w-lg-700px p-10 p-lg-15 mx-auto">
+						<div class="w-lg-900px p-10 p-lg-15 mx-auto">
 							<!--begin::Form-->
 							<form class="my-auto pb-5" novalidate="novalidate" id="kt_create_account_form">
 								<!--begin::Step 1-->
@@ -190,9 +171,55 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Row-->
 											<div class="row">
 												<!--begin::Col-->
-												<div class="col-lg-6">
+												<div class="col-lg-4 col-md-6">
 													<!--begin::Option-->
-													<input type="radio" class="btn-check" name="account_type" value="personal" checked="checked" id="kt_create_account_form_account_type_personal" />
+													<input type="radio" onclick="$('#notPlayer').slideDown(400)" class="btn-check" name="account_type" value="corporate" checked="checked" id="kt_create_account_form_account_type_corporate" />
+													<label class="btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center" for="kt_create_account_form_account_type_corporate">
+														<!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
+														<span class="svg-icon svg-icon-3x me-5">
+															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
+																<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
+															</svg>
+														</span>
+														<!--end::Svg Icon-->
+														<!--begin::Info-->
+														<span class="d-block fw-bold text-start">
+															<span class="text-dark fw-bolder d-block fs-4 mb-2">Institution Account</span>
+															<span class="text-muted fw-bold fs-6">unlimited features</span>
+														</span>
+														<!--end::Info-->
+													</label>
+													<!--end::Option-->
+												</div>
+												<!--end::Col-->
+												<!--begin::Col-->
+												<div class="col-lg-4 col-md-6">
+													<!--begin::Option-->
+													<input type="radio" onclick="$('#notPlayer').slideDown(400)" class="btn-check" name="account_type" value="Group" id="kt_create_account_form_account_type_group" />
+													<label class="btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center" for="kt_create_account_form_account_type_group">
+														<!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
+														<span class="svg-icon svg-icon-3x me-5">
+															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																<path opacity="0.3" d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z" fill="currentColor" />
+																<path d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z" fill="currentColor" />
+															</svg>
+														</span>
+														<!--end::Svg Icon-->
+														<!--begin::Info-->
+														<span class="d-block fw-bold text-start">
+															<span class="text-dark fw-bolder d-block fs-4 mb-2">Group Account</span>
+															<span class="text-muted fw-bold fs-6">Institution with feature less</span>
+														</span>
+														<!--end::Info-->
+													</label>
+													<!--end::Option-->
+												</div>
+												<!--end::Col-->
+												<!--begin::Col-->
+												<div class="col-lg-4 col-md-6" >
+													<!--begin::Option-->
+													<input type="radio" onclick="$('#notPlayer').slideUp(400)" class="btn-check" name="account_type" value="personal"  id="kt_create_account_form_account_type_personal" />
 													<label class="btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center mb-10" for="kt_create_account_form_account_type_personal">
 														<!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
 														<span class="svg-icon svg-icon-3x me-5">
@@ -204,31 +231,8 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Svg Icon-->
 														<!--begin::Info-->
 														<span class="d-block fw-bold text-start">
-															<span class="text-dark fw-bolder d-block fs-4 mb-2">Personal Account</span>
+															<span class="text-dark fw-bolder d-block fs-4 mb-2">Player Account</span>
 															<span class="text-muted fw-bold fs-6">If you need more info, please check it out</span>
-														</span>
-														<!--end::Info-->
-													</label>
-													<!--end::Option-->
-												</div>
-												<!--end::Col-->
-												<!--begin::Col-->
-												<div class="col-lg-6">
-													<!--begin::Option-->
-													<input type="radio" class="btn-check" name="account_type" value="corporate" id="kt_create_account_form_account_type_corporate" />
-													<label class="btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center" for="kt_create_account_form_account_type_corporate">
-														<!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
-														<span class="svg-icon svg-icon-3x me-5">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																<path opacity="0.3" d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z" fill="currentColor" />
-																<path d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z" fill="currentColor" />
-															</svg>
-														</span>
-														<!--end::Svg Icon-->
-														<!--begin::Info-->
-														<span class="d-block fw-bold text-start">
-															<span class="text-dark fw-bolder d-block fs-4 mb-2">Corporate Account</span>
-															<span class="text-muted fw-bold fs-6">Create corporate account to mane users</span>
 														</span>
 														<!--end::Info-->
 													</label>
@@ -522,154 +526,6 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Wrapper-->
 								</div>
 								<!--end::Step 3-->
-								<!--begin::Step 4-->
-								<div class="" data-kt-stepper-element="content">
-									<!--begin::Wrapper-->
-									<div class="w-100">
-										<!--begin::Heading-->
-										<div class="pb-10 pb-lg-15">
-											<!--begin::Title-->
-											<h2 class="fw-bolder text-dark">Billing Details</h2>
-											<!--end::Title-->
-											<!--begin::Notice-->
-											<div class="text-muted fw-bold fs-6">If you need more info, please check out
-											<a href="#" class="text-primary fw-bolder">Help Page</a>.</div>
-											<!--end::Notice-->
-										</div>
-										<!--end::Heading-->
-										<!--begin::Input group-->
-										<div class="d-flex flex-column mb-7 fv-row">
-											<!--begin::Label-->
-											<label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-												<span class="required">Name On Card</span>
-												<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a card holder's name"></i>
-											</label>
-											<!--end::Label-->
-											<input type="text" class="form-control form-control-solid" placeholder="" name="card_name" value="Max Doe" />
-										</div>
-										<!--end::Input group-->
-										<!--begin::Input group-->
-										<div class="d-flex flex-column mb-7 fv-row">
-											<!--begin::Label-->
-											<label class="required fs-6 fw-bold form-label mb-2">Card Number</label>
-											<!--end::Label-->
-											<!--begin::Input wrapper-->
-											<div class="position-relative">
-												<!--begin::Input-->
-												<input type="text" class="form-control form-control-solid" placeholder="Enter card number" name="card_number" value="4111 1111 1111 1111" />
-												<!--end::Input-->
-												<!--begin::Card logos-->
-												<div class="position-absolute translate-middle-y top-50 end-0 me-5">
-													<img src="./assets/media/svg/card-logos/visa.svg" alt="" class="h-25px" />
-													<img src="./assets/media/svg/card-logos/mastercard.svg" alt="" class="h-25px" />
-													<img src="./assets/media/svg/card-logos/american-express.svg" alt="" class="h-25px" />
-												</div>
-												<!--end::Card logos-->
-											</div>
-											<!--end::Input wrapper-->
-										</div>
-										<!--end::Input group-->
-										<!--begin::Input group-->
-										<div class="row mb-10">
-											<!--begin::Col-->
-											<div class="col-md-8 fv-row">
-												<!--begin::Label-->
-												<label class="required fs-6 fw-bold form-label mb-2">Expiration Date</label>
-												<!--end::Label-->
-												<!--begin::Row-->
-												<div class="row fv-row">
-													<!--begin::Col-->
-													<div class="col-6">
-														<select name="card_expiry_month" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Month">
-															<option></option>
-															<option value="1">1</option>
-															<option value="2">2</option>
-															<option value="3">3</option>
-															<option value="4">4</option>
-															<option value="5">5</option>
-															<option value="6">6</option>
-															<option value="7">7</option>
-															<option value="8">8</option>
-															<option value="9">9</option>
-															<option value="10">10</option>
-															<option value="11">11</option>
-															<option value="12">12</option>
-														</select>
-													</div>
-													<!--end::Col-->
-													<!--begin::Col-->
-													<div class="col-6">
-														<select name="card_expiry_year" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Year">
-															<option></option>
-															<option value="2022">2022</option>
-															<option value="2023">2023</option>
-															<option value="2024">2024</option>
-															<option value="2025">2025</option>
-															<option value="2026">2026</option>
-															<option value="2027">2027</option>
-															<option value="2028">2028</option>
-															<option value="2029">2029</option>
-															<option value="2030">2030</option>
-															<option value="2031">2031</option>
-															<option value="2032">2032</option>
-														</select>
-													</div>
-													<!--end::Col-->
-												</div>
-												<!--end::Row-->
-											</div>
-											<!--end::Col-->
-											<!--begin::Col-->
-											<div class="col-md-4 fv-row">
-												<!--begin::Label-->
-												<label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-													<span class="required">CVV</span>
-													<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Enter a card CVV code"></i>
-												</label>
-												<!--end::Label-->
-												<!--begin::Input wrapper-->
-												<div class="position-relative">
-													<!--begin::Input-->
-													<input type="text" class="form-control form-control-solid" minlength="3" maxlength="4" placeholder="CVV" name="card_cvv" />
-													<!--end::Input-->
-													<!--begin::CVV icon-->
-													<div class="position-absolute translate-middle-y top-50 end-0 me-3">
-														<!--begin::Svg Icon | path: icons/duotune/finance/fin002.svg-->
-														<span class="svg-icon svg-icon-2hx">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																<path d="M22 7H2V11H22V7Z" fill="currentColor" />
-																<path opacity="0.3" d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19ZM14 14C14 13.4 13.6 13 13 13H5C4.4 13 4 13.4 4 14C4 14.6 4.4 15 5 15H13C13.6 15 14 14.6 14 14ZM16 15.5C16 16.3 16.7 17 17.5 17H18.5C19.3 17 20 16.3 20 15.5C20 14.7 19.3 14 18.5 14H17.5C16.7 14 16 14.7 16 15.5Z" fill="currentColor" />
-															</svg>
-														</span>
-														<!--end::Svg Icon-->
-													</div>
-													<!--end::CVV icon-->
-												</div>
-												<!--end::Input wrapper-->
-											</div>
-											<!--end::Col-->
-										</div>
-										<!--end::Input group-->
-										<!--begin::Input group-->
-										<div class="d-flex flex-stack">
-											<!--begin::Label-->
-											<div class="me-5">
-												<label class="fs-6 fw-bold form-label">Save Card for further billing?</label>
-												<div class="fs-7 fw-bold text-muted">If you need more info, please check budget planning</div>
-											</div>
-											<!--end::Label-->
-											<!--begin::Switch-->
-											<label class="form-check form-switch form-check-custom form-check-solid">
-												<input class="form-check-input" type="checkbox" value="1" checked="checked" />
-												<span class="form-check-label fw-bold text-muted">Save Card</span>
-											</label>
-											<!--end::Switch-->
-										</div>
-										<!--end::Input group-->
-									</div>
-									<!--end::Wrapper-->
-								</div>
-								<!--end::Step 4-->
 								<!--begin::Step 5-->
 								<div class="" data-kt-stepper-element="content">
 									<!--begin::Wrapper-->

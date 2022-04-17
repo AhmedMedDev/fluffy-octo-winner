@@ -19,6 +19,22 @@
 
 
 - - - - - - - - - - - - - - - 17
+
+- - - Institution Data
+- - institution type (select box)
+- - name
+- - mobile
+- - email
+- - institution credential
+
+- - - step 1
+- - name, mobile, 
+- - - step 2
+- - institution credential, institution type
+- - - step 3
+- - email , password , confirm password
+
+
 - Institution Authentication 
 - - Login
 - - Register
