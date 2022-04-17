@@ -219,7 +219,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin::Col-->
 												<div class="col-lg-4 col-md-6" >
 													<!--begin::Option-->
-													<input type="radio" onclick="$('#notPlayer').slideUp(400)" class="btn-check" name="account_type" value="personal"  id="kt_create_account_form_account_type_personal" />
+													<input type="radio" onclick="player_mode()" class="btn-check" name="account_type" value="personal"  id="kt_create_account_form_account_type_personal" />
 													<label class="btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center mb-10" for="kt_create_account_form_account_type_personal">
 														<!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
 														<span class="svg-icon svg-icon-3x me-5">
@@ -444,7 +444,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Step 2-->
 								<!--begin::Step 3-->
-								<div class="" data-kt-stepper-element="content">
+								<div class="hide-if-player" data-kt-stepper-element="content">
 									<!--begin::Wrapper-->
 									<div class="w-100">
 										<!--begin::Heading-->
@@ -527,7 +527,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Step 3-->
 								<!--begin::Step 5-->
-								<div class="" data-kt-stepper-element="content">
+								<div class="last-step" data-kt-stepper-element="content">
 									<!--begin::Wrapper-->
 									<div class="w-100">
 										<!--begin::Heading-->
@@ -583,7 +583,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Actions-->
 								<div class="d-flex flex-stack pt-15">
 									<div class="mr-2">
-										<button type="button" class="btn btn-lg btn-light-primary me-3" data-kt-stepper-action="previous">
+										<button type="button" class="btn btn-lg btn-light-primary me-3 stepper-previous" data-kt-stepper-action="previous">
 										<!--begin::Svg Icon | path: icons/duotune/arrows/arr063.svg-->
 										<span class="svg-icon svg-icon-4 me-1">
 											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -594,7 +594,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--end::Svg Icon-->Previous</button>
 									</div>
 									<div>
-										<button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="submit">
+										<button type="button" class="btn btn-lg btn-primary stepper-submit" data-kt-stepper-action="submit">
 											<span class="indicator-label">Submit
 											<!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
 											<span class="svg-icon svg-icon-4 ms-2">
@@ -607,7 +607,7 @@ License: For each use you must have a valid license purchased only from above li
 											<span class="indicator-progress">Please wait...
 											<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 										</button>
-										<button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="next">Continue
+										<button type="button" class="btn btn-lg btn-primary stepper-next" data-kt-stepper-action="next">Continue
 										<!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
 										<span class="svg-icon svg-icon-4 ms-1">
 											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -653,6 +653,26 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="./assets/js/custom/utilities/modals/create-account.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
+
+		<script>
+			$('.stepper-previous').click(function () {
+				if (!$('.stepper-submit').hasClass('d-none')){
+					$('.stepper-submit').hide()
+					$('.stepper-next').show()
+				}
+			})
+			$('.stepper-next').click(function () {
+				if ($('.last-step').prev().hasClass('current')){
+					$('.stepper-submit').show()
+					$('.stepper-next').hide()
+				}
+			})
+			const player_mode = () => {
+				$('.hide-if-player').slideUp(400, function () {
+					$(this).remove()
+				})
+			}
+		</script>
 	</body>
 	<!--end::Body-->
 </html>
