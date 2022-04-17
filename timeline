@@ -17,6 +17,16 @@
 - - - email
 - - - password
 
+- - Profile Data
+- name
+
+- dob
+- nationality
+- mobile
+- email
+
+- institutions
+
 
 - - - - - - - - - - - - - - - 17
 
