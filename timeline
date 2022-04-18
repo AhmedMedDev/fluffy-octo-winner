@@ -20,8 +20,9 @@
 ->> Player Dashboard
 - - - - - - - - - - - 
 
------>> Profile
------>> Requests Managment
+----->> Profile //
+----->> Requests Managment 
+        --> Institution , Status ->> card with pagination
 ----->> Hint :: add Exit from institution btn to institution card
 
 - - - - - - 
