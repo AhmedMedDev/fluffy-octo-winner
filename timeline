@@ -4,26 +4,29 @@
 - - - - - - >>> System Design Architecture 
 - - - - - - - - - - - - - - - - - - - - - - 
 
+- - - - - - - - - - - 
+->> Player Dashboard
+- - - - - - - - - - - 
+
+----->> Profile //
+----->> Requests Managment  //
+        --> Institution , Status ->> card with pagination
+----->> Hint :: add Exit from institution btn to institution card //
+
+
 - - - - - - - - - - - - - - 
 ->> Institution Dashboard
 - - - - - - - - - - - - - - 
 
 ----->> Profile
         ----->> Profile
+                -->> institution data (name, logo, address)
+                -->> institution player  
         ----->> Settings
 
 ----->> Player Managment
         ----->> Players (CRUD Table)
         ----->> Requests
-
-- - - - - - - - - - - 
-->> Player Dashboard
-- - - - - - - - - - - 
-
------>> Profile //
------>> Requests Managment 
-        --> Institution , Status ->> card with pagination
------>> Hint :: add Exit from institution btn to institution card
 
 - - - - - - 
 ->> Common
