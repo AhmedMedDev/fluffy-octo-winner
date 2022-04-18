@@ -19,10 +19,10 @@
 - - - - - - - - - - - - - - 
 
 ----->> Profile
-        ----->> Profile
+        ----->> Profile //
                 -->> institution data (name, logo, address)
                 -->> institution player  (datatable . img, name, email)
-        ----->> Settings
+        ----->> Settings //
 
 ----->> Player Managment
         ----->> Players (CRUD Table)
