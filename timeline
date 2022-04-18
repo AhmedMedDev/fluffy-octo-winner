@@ -32,17 +32,17 @@
 ->> Common
 - - - - - - 
 
------>> Players
------>> institutions
+----->> Players //
+----->> institutions //
 
 
 - - - - - - - - - - - - 
 ->> General System Admin
 - - - - - - - - - - - - 
 
------>> Registertion approval
------>> Player Managment
------>> Institution Managment
+----->> Registertion approval (approve , cancel) //
+----->> Player Managment //
+----->> Institution Managment //
 
 
 
