@@ -21,7 +21,7 @@
 ----->> Profile
         ----->> Profile
                 -->> institution data (name, logo, address)
-                -->> institution player  
+                -->> institution player  (datatable . img, name, email)
         ----->> Settings
 
 ----->> Player Managment
