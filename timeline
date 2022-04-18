@@ -1,11 +1,54 @@
 
-- - - - - - - - - - - - - - - 16
-- Integrate Temp
-- Build layout
 
-- Player Authentication with all types
-- - Login 
-- - Register 
+
+- - - - - - >>> System Design Architecture 
+- - - - - - - - - - - - - - - - - - - - - - 
+
+- - - - - - - - - - - 
+->> Player Dashboard
+- - - - - - - - - - - 
+
+----->> Profile //
+----->> Requests Managment  //
+        --> Institution , Status ->> card with pagination
+----->> Hint :: add Exit from institution btn to institution card //
+
+
+- - - - - - - - - - - - - - 
+->> Institution Dashboard
+- - - - - - - - - - - - - - 
+
+----->> Profile
+        ----->> Profile //
+                -->> institution data (name, logo, address)
+                -->> institution player  (datatable . img, name, email)
+        ----->> Settings //
+
+----->> Player Managment
+        ----->> Players (CRUD Table) //
+        ----->> Requests //
+
+- - - - - - 
+->> Common
+- - - - - - 
+
+----->> Players
+----->> institutions
+
+
+- - - - - - - - - - - - 
+->> General System Admin
+- - - - - - - - - - - - 
+
+----->> Registertion approval
+----->> Player Managment
+----->> Institution Managment
+
+
+
+
+
+
 
 
 - - Player Data
@@ -17,32 +60,10 @@
 - - - email
 - - - password
 
-
-- - - - - - - - - - - - - - - 17
-
 - - - Institution Data
+
 - - institution type (select box)
 - - name
 - - mobile
 - - email
 - - institution credential
-
-- - - step 1
-- - name, mobile, 
-- - - step 2
-- - institution credential, institution type
-- - - step 3
-- - email , password , confirm password
-
-
-- Institution Authentication 
-- - Login
-- - Register
-
-- Institution profile 
-- - build structure with simple wirframs
-
-- - - - - - - - - - - - - - - 18
-- Complete institution profile
-
-- Q : profile style is equal dash profile ??
