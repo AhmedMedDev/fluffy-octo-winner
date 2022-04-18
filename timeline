@@ -1,11 +1,50 @@
 
-- - - - - - - - - - - - - - - 16
-- Integrate Temp
-- Build layout
 
-- Player Authentication with all types
-- - Login 
-- - Register 
+
+- - - - - - >>> System Design Architecture 
+- - - - - - - - - - - - - - - - - - - - - - 
+
+- - - - - - - - - - - - - - 
+->> Institution Dashboard
+- - - - - - - - - - - - - - 
+
+----->> Profile
+        ----->> Profile
+        ----->> Settings
+
+----->> Player Managment
+        ----->> Players (CRUD Table)
+        ----->> Requests
+
+- - - - - - - - - - - 
+->> Player Dashboard
+- - - - - - - - - - - 
+
+----->> Profile
+----->> Requests Managment
+----->> Hint :: add Exit from institution btn to institution card
+
+- - - - - - 
+->> Common
+- - - - - - 
+
+----->> Players
+----->> institutions
+
+
+- - - - - - - - - - - - 
+->> General System Admin
+- - - - - - - - - - - - 
+
+----->> Registertion approval
+----->> Player Managment
+----->> Institution Managment
+
+
+
+
+
+
 
 
 - - Player Data
@@ -17,42 +56,10 @@
 - - - email
 - - - password
 
-- - Profile Data
-- name
-
-- dob
-- nationality
-- mobile
-- email
-
-- institutions
-
-
-- - - - - - - - - - - - - - - 17
-
 - - - Institution Data
+
 - - institution type (select box)
 - - name
 - - mobile
 - - email
 - - institution credential
-
-- - - step 1
-- - name, mobile, 
-- - - step 2
-- - institution credential, institution type
-- - - step 3
-- - email , password , confirm password
-
-
-- Institution Authentication 
-- - Login
-- - Register
-
-- Institution profile 
-- - build structure with simple wirframs
-
-- - - - - - - - - - - - - - - 18
-- Complete institution profile
-
-- Q : profile style is equal dash profile ??
