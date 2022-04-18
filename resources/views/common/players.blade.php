@@ -4477,1474 +4477,939 @@ License: For each use you must have a valid license purchased only from above li
 								<!--end::Controls-->
 							</div>
 							<!--end::Toolbar-->
-							<!--begin::Tab Content-->
-							<div class="tab-content">
-								<!--begin::Tab pane-->
-								<div id="kt_project_users_card_pane" class="tab-pane fade show active">
-									<!--begin::Row-->
-									<div class="row g-6 g-xl-9">
-										<!--begin::Col-->
-										<div class="col-md-6 col-xxl-4">
-											<!--begin::Card-->
-											<div class="card">
-												<!--begin::Card body-->
-												<div class="card-body d-flex flex-center flex-column pt-12 p-9">
-													<!--begin::Avatar-->
-													<div class="symbol symbol-65px symbol-circle mb-5">
-														<img src="assets/media//avatars/300-2.jpg" alt="image" />
-														<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n3 mt-n3"></div>
-													</div>
-													<!--end::Avatar-->
-													<!--begin::Name-->
-													<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Karina Clark</a>
-													<!--end::Name-->
-													<!--begin::Position-->
-													<div class="fw-bold text-gray-400 mb-6">Art Director at Novica Co.</div>
-													<!--end::Position-->
-													<!--begin::Info-->
-													<div class="d-flex flex-center flex-wrap">
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
-															<div class="fw-bold text-gray-400">Earnings</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">23</div>
-															<div class="fw-bold text-gray-400">Tasks</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
-															<div class="fw-bold text-gray-400">Sales</div>
-														</div>
-														<!--end::Stats-->
-													</div>
-													<!--end::Info-->
-												</div>
-												<!--end::Card body-->
-											</div>
-											<!--end::Card-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-md-6 col-xxl-4">
-											<!--begin::Card-->
-											<div class="card">
-												<!--begin::Card body-->
-												<div class="card-body d-flex flex-center flex-column pt-12 p-9">
-													<!--begin::Avatar-->
-													<div class="symbol symbol-65px symbol-circle mb-5">
-														<span class="symbol-label fs-2x fw-bold text-primary bg-light-primary">S</span>
-														<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n3 mt-n3"></div>
-													</div>
-													<!--end::Avatar-->
-													<!--begin::Name-->
-													<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Sean Bean</a>
-													<!--end::Name-->
-													<!--begin::Position-->
-													<div class="fw-bold text-gray-400 mb-6">Developer at Loop Inc</div>
-													<!--end::Position-->
-													<!--begin::Info-->
-													<div class="d-flex flex-center flex-wrap">
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
-															<div class="fw-bold text-gray-400">Earnings</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">23</div>
-															<div class="fw-bold text-gray-400">Tasks</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
-															<div class="fw-bold text-gray-400">Sales</div>
-														</div>
-														<!--end::Stats-->
-													</div>
-													<!--end::Info-->
-												</div>
-												<!--end::Card body-->
-											</div>
-											<!--end::Card-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-md-6 col-xxl-4">
-											<!--begin::Card-->
-											<div class="card">
-												<!--begin::Card body-->
-												<div class="card-body d-flex flex-center flex-column pt-12 p-9">
-													<!--begin::Avatar-->
-													<div class="symbol symbol-65px symbol-circle mb-5">
-														<img src="assets/media//avatars/300-1.jpg" alt="image" />
-													</div>
-													<!--end::Avatar-->
-													<!--begin::Name-->
-													<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Alan Johnson</a>
-													<!--end::Name-->
-													<!--begin::Position-->
-													<div class="fw-bold text-gray-400 mb-6">Web Designer at Nextop Ltd.</div>
-													<!--end::Position-->
-													<!--begin::Info-->
-													<div class="d-flex flex-center flex-wrap">
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
-															<div class="fw-bold text-gray-400">Earnings</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">23</div>
-															<div class="fw-bold text-gray-400">Tasks</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
-															<div class="fw-bold text-gray-400">Sales</div>
-														</div>
-														<!--end::Stats-->
-													</div>
-													<!--end::Info-->
-												</div>
-												<!--end::Card body-->
-											</div>
-											<!--end::Card-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-md-6 col-xxl-4">
-											<!--begin::Card-->
-											<div class="card">
-												<!--begin::Card body-->
-												<div class="card-body d-flex flex-center flex-column pt-12 p-9">
-													<!--begin::Avatar-->
-													<div class="symbol symbol-65px symbol-circle mb-5">
-														<img src="assets/media//avatars/300-14.jpg" alt="image" />
-													</div>
-													<!--end::Avatar-->
-													<!--begin::Name-->
-													<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Robert Doe</a>
-													<!--end::Name-->
-													<!--begin::Position-->
-													<div class="fw-bold text-gray-400 mb-6">Marketing Analytic at Avito Ltd.</div>
-													<!--end::Position-->
-													<!--begin::Info-->
-													<div class="d-flex flex-center flex-wrap">
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
-															<div class="fw-bold text-gray-400">Earnings</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">23</div>
-															<div class="fw-bold text-gray-400">Tasks</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
-															<div class="fw-bold text-gray-400">Sales</div>
-														</div>
-														<!--end::Stats-->
-													</div>
-													<!--end::Info-->
-												</div>
-												<!--end::Card body-->
-											</div>
-											<!--end::Card-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-md-6 col-xxl-4">
-											<!--begin::Card-->
-											<div class="card">
-												<!--begin::Card body-->
-												<div class="card-body d-flex flex-center flex-column pt-12 p-9">
-													<!--begin::Avatar-->
-													<div class="symbol symbol-65px symbol-circle mb-5">
-														<img src="assets/media//avatars/300-6.jpg" alt="image" />
-													</div>
-													<!--end::Avatar-->
-													<!--begin::Name-->
-													<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Olivia Wild</a>
-													<!--end::Name-->
-													<!--begin::Position-->
-													<div class="fw-bold text-gray-400 mb-6">Art Director at Seal Inc.</div>
-													<!--end::Position-->
-													<!--begin::Info-->
-													<div class="d-flex flex-center flex-wrap">
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
-															<div class="fw-bold text-gray-400">Earnings</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">23</div>
-															<div class="fw-bold text-gray-400">Tasks</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
-															<div class="fw-bold text-gray-400">Sales</div>
-														</div>
-														<!--end::Stats-->
-													</div>
-													<!--end::Info-->
-												</div>
-												<!--end::Card body-->
-											</div>
-											<!--end::Card-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-md-6 col-xxl-4">
-											<!--begin::Card-->
-											<div class="card">
-												<!--begin::Card body-->
-												<div class="card-body d-flex flex-center flex-column pt-12 p-9">
-													<!--begin::Avatar-->
-													<div class="symbol symbol-65px symbol-circle mb-5">
-														<span class="symbol-label fs-2x fw-bold text-warning bg-light-warning">A</span>
-														<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n3 mt-n3"></div>
-													</div>
-													<!--end::Avatar-->
-													<!--begin::Name-->
-													<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Adam Williams</a>
-													<!--end::Name-->
-													<!--begin::Position-->
-													<div class="fw-bold text-gray-400 mb-6">System Arcitect at Wolto Co.</div>
-													<!--end::Position-->
-													<!--begin::Info-->
-													<div class="d-flex flex-center flex-wrap">
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
-															<div class="fw-bold text-gray-400">Earnings</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">23</div>
-															<div class="fw-bold text-gray-400">Tasks</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
-															<div class="fw-bold text-gray-400">Sales</div>
-														</div>
-														<!--end::Stats-->
-													</div>
-													<!--end::Info-->
-												</div>
-												<!--end::Card body-->
-											</div>
-											<!--end::Card-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-md-6 col-xxl-4">
-											<!--begin::Card-->
-											<div class="card">
-												<!--begin::Card body-->
-												<div class="card-body d-flex flex-center flex-column pt-12 p-9">
-													<!--begin::Avatar-->
-													<div class="symbol symbol-65px symbol-circle mb-5">
-														<span class="symbol-label fs-2x fw-bold text-info bg-light-info">P</span>
-														<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n3 mt-n3"></div>
-													</div>
-													<!--end::Avatar-->
-													<!--begin::Name-->
-													<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Peter Marcus</a>
-													<!--end::Name-->
-													<!--begin::Position-->
-													<div class="fw-bold text-gray-400 mb-6">Art Director at Novica Co.</div>
-													<!--end::Position-->
-													<!--begin::Info-->
-													<div class="d-flex flex-center flex-wrap">
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
-															<div class="fw-bold text-gray-400">Earnings</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">23</div>
-															<div class="fw-bold text-gray-400">Tasks</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
-															<div class="fw-bold text-gray-400">Sales</div>
-														</div>
-														<!--end::Stats-->
-													</div>
-													<!--end::Info-->
-												</div>
-												<!--end::Card body-->
-											</div>
-											<!--end::Card-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-md-6 col-xxl-4">
-											<!--begin::Card-->
-											<div class="card">
-												<!--begin::Card body-->
-												<div class="card-body d-flex flex-center flex-column pt-12 p-9">
-													<!--begin::Avatar-->
-													<div class="symbol symbol-65px symbol-circle mb-5">
-														<span class="symbol-label fs-2x fw-bold text-success bg-light-success">N</span>
-													</div>
-													<!--end::Avatar-->
-													<!--begin::Name-->
-													<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Neil Owen</a>
-													<!--end::Name-->
-													<!--begin::Position-->
-													<div class="fw-bold text-gray-400 mb-6">Accountant at Numbers Co.</div>
-													<!--end::Position-->
-													<!--begin::Info-->
-													<div class="d-flex flex-center flex-wrap">
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
-															<div class="fw-bold text-gray-400">Earnings</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">23</div>
-															<div class="fw-bold text-gray-400">Tasks</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
-															<div class="fw-bold text-gray-400">Sales</div>
-														</div>
-														<!--end::Stats-->
-													</div>
-													<!--end::Info-->
-												</div>
-												<!--end::Card body-->
-											</div>
-											<!--end::Card-->
-										</div>
-										<!--end::Col-->
-										<!--begin::Col-->
-										<div class="col-md-6 col-xxl-4">
-											<!--begin::Card-->
-											<div class="card">
-												<!--begin::Card body-->
-												<div class="card-body d-flex flex-center flex-column pt-12 p-9">
-													<!--begin::Avatar-->
-													<div class="symbol symbol-65px symbol-circle mb-5">
-														<img src="assets/media//avatars/300-12.jpg" alt="image" />
-													</div>
-													<!--end::Avatar-->
-													<!--begin::Name-->
-													<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Benjamin Jacob</a>
-													<!--end::Name-->
-													<!--begin::Position-->
-													<div class="fw-bold text-gray-400 mb-6">Art Director at Novica Co.</div>
-													<!--end::Position-->
-													<!--begin::Info-->
-													<div class="d-flex flex-center flex-wrap">
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
-															<div class="fw-bold text-gray-400">Earnings</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">23</div>
-															<div class="fw-bold text-gray-400">Tasks</div>
-														</div>
-														<!--end::Stats-->
-														<!--begin::Stats-->
-														<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
-															<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
-															<div class="fw-bold text-gray-400">Sales</div>
-														</div>
-														<!--end::Stats-->
-													</div>
-													<!--end::Info-->
-												</div>
-												<!--end::Card body-->
-											</div>
-											<!--end::Card-->
-										</div>
-										<!--end::Col-->
-									</div>
-									<!--end::Row-->
-									<!--begin::Pagination-->
-									<div class="d-flex flex-stack flex-wrap pt-10">
-										<div class="fs-6 fw-bold text-gray-700">Showing 1 to 10 of 50 entries</div>
-										<!--begin::Pages-->
-										<ul class="pagination">
-											<li class="page-item previous">
-												<a href="#" class="page-link">
-													<i class="previous"></i>
-												</a>
-											</li>
-											<li class="page-item active">
-												<a href="#" class="page-link">1</a>
-											</li>
-											<li class="page-item">
-												<a href="#" class="page-link">2</a>
-											</li>
-											<li class="page-item">
-												<a href="#" class="page-link">3</a>
-											</li>
-											<li class="page-item">
-												<a href="#" class="page-link">4</a>
-											</li>
-											<li class="page-item">
-												<a href="#" class="page-link">5</a>
-											</li>
-											<li class="page-item">
-												<a href="#" class="page-link">6</a>
-											</li>
-											<li class="page-item next">
-												<a href="#" class="page-link">
-													<i class="next"></i>
-												</a>
-											</li>
-										</ul>
-										<!--end::Pages-->
-									</div>
-									<!--end::Pagination-->
-								</div>
-								<!--end::Tab pane-->
-								<!--begin::Tab pane-->
-								<div id="kt_project_users_table_pane" class="tab-pane fade">
+							<!--begin::Row-->
+							<div class="row g-6 mb-6 g-xl-9 mb-xl-9">
+								<!--begin::Followers-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
 									<!--begin::Card-->
-									<div class="card card-flush">
+									<div class="card">
 										<!--begin::Card body-->
-										<div class="card-body pt-0">
-											<!--begin::Table container-->
-											<div class="table-responsive">
-												<!--begin::Table-->
-												<table id="kt_project_users_table" class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bolder">
-													<!--begin::Head-->
-													<thead class="fs-7 text-gray-400 text-uppercase">
-														<tr>
-															<th class="min-w-250px">Manager</th>
-															<th class="min-w-150px">Date</th>
-															<th class="min-w-90px">Amount</th>
-															<th class="min-w-90px">Status</th>
-															<th class="min-w-50px text-end">Details</th>
-														</tr>
-													</thead>
-													<!--end::Head-->
-													<!--begin::Body-->
-													<tbody class="fs-6">
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-6.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Emma Smith</a>
-																		<div class="fw-bold fs-6 text-gray-400">smith@kpmg.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Nov 10, 2022</td>
-															<td>$576.00</td>
-															<td>
-																<span class="badge badge-light-danger fw-bolder px-4 py-3">Rejected</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-danger text-danger fw-bold">M</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Melody Macy</a>
-																		<div class="fw-bold fs-6 text-gray-400">melody@altbox.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Apr 15, 2022</td>
-															<td>$430.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Max Smith</a>
-																		<div class="fw-bold fs-6 text-gray-400">max@kt.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Feb 21, 2022</td>
-															<td>$597.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-5.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Sean Bean</a>
-																		<div class="fw-bold fs-6 text-gray-400">sean@dellito.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Sep 22, 2022</td>
-															<td>$962.00</td>
-															<td>
-																<span class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Brian Cox</a>
-																		<div class="fw-bold fs-6 text-gray-400">brian@exchange.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Jul 25, 2022</td>
-															<td>$507.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-warning text-warning fw-bold">C</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Mikaela Collins</a>
-																		<div class="fw-bold fs-6 text-gray-400">mik@pex.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Mar 10, 2022</td>
-															<td>$535.00</td>
-															<td>
-																<span class="badge badge-light-danger fw-bolder px-4 py-3">Rejected</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-9.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Francis Mitcham</a>
-																		<div class="fw-bold fs-6 text-gray-400">f.mit@kpmg.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Aug 19, 2022</td>
-															<td>$514.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-danger text-danger fw-bold">O</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Olivia Wild</a>
-																		<div class="fw-bold fs-6 text-gray-400">olivia@corpmail.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Mar 10, 2022</td>
-															<td>$976.00</td>
-															<td>
-																<span class="badge badge-light-warning fw-bolder px-4 py-3">Pending</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-primary text-primary fw-bold">N</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Neil Owen</a>
-																		<div class="fw-bold fs-6 text-gray-400">owen.neil@gmail.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Jun 24, 2022</td>
-															<td>$607.00</td>
-															<td>
-																<span class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-23.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Dan Wilson</a>
-																		<div class="fw-bold fs-6 text-gray-400">dam@consilting.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Oct 25, 2022</td>
-															<td>$705.00</td>
-															<td>
-																<span class="badge badge-light-danger fw-bolder px-4 py-3">Rejected</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-danger text-danger fw-bold">E</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Emma Bold</a>
-																		<div class="fw-bold fs-6 text-gray-400">emma@intenso.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Oct 25, 2022</td>
-															<td>$418.00</td>
-															<td>
-																<span class="badge badge-light-warning fw-bolder px-4 py-3">Pending</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-12.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Ana Crown</a>
-																		<div class="fw-bold fs-6 text-gray-400">ana.cf@limtel.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Jun 24, 2022</td>
-															<td>$958.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-info text-info fw-bold">A</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Robert Doe</a>
-																		<div class="fw-bold fs-6 text-gray-400">robert@benko.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Apr 15, 2022</td>
-															<td>$664.00</td>
-															<td>
-																<span class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-13.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">John Miller</a>
-																		<div class="fw-bold fs-6 text-gray-400">miller@mapple.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Jul 25, 2022</td>
-															<td>$966.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-success text-success fw-bold">L</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Lucy Kunic</a>
-																		<div class="fw-bold fs-6 text-gray-400">lucy.m@fentech.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Jun 20, 2022</td>
-															<td>$679.00</td>
-															<td>
-																<span class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-21.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Ethan Wilder</a>
-																		<div class="fw-bold fs-6 text-gray-400">ethan@loop.com.au</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>May 05, 2022</td>
-															<td>$919.00</td>
-															<td>
-																<span class="badge badge-light-warning fw-bolder px-4 py-3">Pending</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-13.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">John Miller</a>
-																		<div class="fw-bold fs-6 text-gray-400">miller@mapple.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Jul 25, 2022</td>
-															<td>$442.00</td>
-															<td>
-																<span class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Max Smith</a>
-																		<div class="fw-bold fs-6 text-gray-400">max@kt.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>May 05, 2022</td>
-															<td>$980.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-danger text-danger fw-bold">E</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Emma Bold</a>
-																		<div class="fw-bold fs-6 text-gray-400">emma@intenso.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Jul 25, 2022</td>
-															<td>$984.00</td>
-															<td>
-																<span class="badge badge-light-danger fw-bolder px-4 py-3">Rejected</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-21.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Ethan Wilder</a>
-																		<div class="fw-bold fs-6 text-gray-400">ethan@loop.com.au</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Nov 10, 2022</td>
-															<td>$872.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-6.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Emma Smith</a>
-																		<div class="fw-bold fs-6 text-gray-400">smith@kpmg.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Feb 21, 2022</td>
-															<td>$772.00</td>
-															<td>
-																<span class="badge badge-light-warning fw-bolder px-4 py-3">Pending</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-9.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Francis Mitcham</a>
-																		<div class="fw-bold fs-6 text-gray-400">f.mit@kpmg.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Jun 20, 2022</td>
-															<td>$609.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Max Smith</a>
-																		<div class="fw-bold fs-6 text-gray-400">max@kt.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>May 05, 2022</td>
-															<td>$822.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-21.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Ethan Wilder</a>
-																		<div class="fw-bold fs-6 text-gray-400">ethan@loop.com.au</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Mar 10, 2022</td>
-															<td>$666.00</td>
-															<td>
-																<span class="badge badge-light-danger fw-bolder px-4 py-3">Rejected</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-danger text-danger fw-bold">M</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Melody Macy</a>
-																		<div class="fw-bold fs-6 text-gray-400">melody@altbox.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Jun 24, 2022</td>
-															<td>$476.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-danger text-danger fw-bold">E</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Emma Bold</a>
-																		<div class="fw-bold fs-6 text-gray-400">emma@intenso.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Jun 24, 2022</td>
-															<td>$934.00</td>
-															<td>
-																<span class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Brian Cox</a>
-																		<div class="fw-bold fs-6 text-gray-400">brian@exchange.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Nov 10, 2022</td>
-															<td>$511.00</td>
-															<td>
-																<span class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-info text-info fw-bold">A</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Robert Doe</a>
-																		<div class="fw-bold fs-6 text-gray-400">robert@benko.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>May 05, 2022</td>
-															<td>$509.00</td>
-															<td>
-																<span class="badge badge-light-info fw-bolder px-4 py-3">In progress</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/300-6.jpg" />
-																		</div>
-																		<!--end::Avatar-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Emma Smith</a>
-																		<div class="fw-bold fs-6 text-gray-400">smith@kpmg.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Feb 21, 2022</td>
-															<td>$474.00</td>
-															<td>
-																<span class="badge badge-light-warning fw-bolder px-4 py-3">Pending</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<!--begin::User-->
-																<div class="d-flex align-items-center">
-																	<!--begin::Wrapper-->
-																	<div class="me-5 position-relative">
-																		<!--begin::Avatar-->
-																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-primary text-primary fw-bold">N</span>
-																		</div>
-																		<!--end::Avatar-->
-																		<!--begin::Online-->
-																		<div class="bg-success position-absolute border border-4 border-white h-15px w-15px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1"></div>
-																		<!--end::Online-->
-																	</div>
-																	<!--end::Wrapper-->
-																	<!--begin::Info-->
-																	<div class="d-flex flex-column justify-content-center">
-																		<a href="" class="mb-1 text-gray-800 text-hover-primary">Neil Owen</a>
-																		<div class="fw-bold fs-6 text-gray-400">owen.neil@gmail.com</div>
-																	</div>
-																	<!--end::Info-->
-																</div>
-																<!--end::User-->
-															</td>
-															<td>Feb 21, 2022</td>
-															<td>$948.00</td>
-															<td>
-																<span class="badge badge-light-danger fw-bolder px-4 py-3">Rejected</span>
-															</td>
-															<td class="text-end">
-																<a href="#" class="btn btn-light btn-sm">View</a>
-															</td>
-														</tr>
-													</tbody>
-													<!--end::Body-->
-												</table>
-												<!--end::Table-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<img src="assets/media//avatars/300-11.jpg" alt="image" />
+												<div class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3"></div>
 											</div>
-											<!--end::Table container-->
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Patric Watson</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Art Director at Novica Co.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light-primary">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+													<path d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Following</a>
+											<!--end::Follow-->
 										</div>
-										<!--end::Card body-->
+										<!--begin::Card body-->
 									</div>
-									<!--end::Card-->
+									<!--begin::Card-->
 								</div>
-								<!--end::Tab pane-->
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<img src="assets/media//avatars/300-6.jpg" alt="image" />
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Olivia Larson</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Art Director at Seal Inc.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
+													<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Follow</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<span class="symbol-label fs-2x fw-bold text-warning bg-light-warning">A</span>
+												<div class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3"></div>
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Adam Williams</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">System Arcitect at Wolto Co.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light-primary">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+													<path d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Following</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<span class="symbol-label fs-2x fw-bold text-info bg-light-info">P</span>
+												<div class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3"></div>
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Paul Marcus</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Art Director at Novica Co.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light-primary">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+													<path d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Following</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<span class="symbol-label fs-2x fw-bold text-success bg-light-success">N</span>
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Neil Owen</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Accountant at Numbers Co.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
+													<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Follow</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<span class="symbol-label fs-2x fw-bold text-primary bg-light-primary">S</span>
+												<div class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3"></div>
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Sean Paul</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Developer at Loop Inc</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
+													<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Follow</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<img src="assets/media//avatars/300-1.jpg" alt="image" />
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Kitona Johnson</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Web Designer at Nextop Ltd.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light-primary">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+													<path d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Following</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<img src="assets/media//avatars/300-14.jpg" alt="image" />
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Robert Doe</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Marketing Analytic at Avito Ltd.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
+													<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Follow</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<img src="assets/media//avatars/300-12.jpg" alt="image" />
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Soul Jacob</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Art Director at Novica Co.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
+													<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Follow</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<img src="assets/media//avatars/300-7.jpg" alt="image" />
+												<div class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3"></div>
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Nina Strong</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">CTO at Kilp Ltd.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light-primary">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+													<path d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Following</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<img src="assets/media//avatars/300-11.jpg" alt="image" />
+												<div class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3"></div>
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Patric Watson</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Art Director at Novica Co.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light-primary">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+													<path d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Following</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<img src="assets/media//avatars/300-6.jpg" alt="image" />
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Olivia Larson</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Art Director at Seal Inc.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
+													<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Follow</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--end::Followers-->
 							</div>
-							<!--end::Tab Content-->
+							<!--end::Row-->
+							<!--begin::Row(for show more)-->
+							<div class="row g-6 mb-6 g-xl-9 mb-xl-9 d-none" id="kt_followers_show_more_cards">
+								<!--begin::Followers-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<img src="assets/media//avatars/300-11.jpg" alt="image" />
+												<div class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3"></div>
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Patric Watson</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Art Director at Novica Co.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light-primary">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+													<path d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Following</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<img src="assets/media//avatars/300-6.jpg" alt="image" />
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Olivia Larson</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Art Director at Seal Inc.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
+													<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Follow</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<span class="symbol-label fs-2x fw-bold text-warning bg-light-warning">A</span>
+												<div class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3"></div>
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Adam Williams</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">System Arcitect at Wolto Co.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light-primary">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+													<path d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Following</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<span class="symbol-label fs-2x fw-bold text-info bg-light-info">P</span>
+												<div class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3"></div>
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Paul Marcus</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Art Director at Novica Co.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light-primary">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+													<path d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Following</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<span class="symbol-label fs-2x fw-bold text-success bg-light-success">N</span>
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Neil Owen</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Accountant at Numbers Co.</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
+													<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Follow</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 col-xxl-4">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card body-->
+										<div class="card-body d-flex flex-center flex-column p-9">
+											<!--begin::Avatar-->
+											<div class="symbol symbol-65px symbol-circle mb-5">
+												<span class="symbol-label fs-2x fw-bold text-primary bg-light-primary">S</span>
+												<div class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3"></div>
+											</div>
+											<!--end::Avatar-->
+											<!--begin::Name-->
+											<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Sean Paul</a>
+											<!--end::Name-->
+											<!--begin::Position-->
+											<div class="fw-bold text-gray-400 mb-6">Developer at Loop Inc</div>
+											<!--end::Position-->
+											<!--begin::Info-->
+											<div class="d-flex flex-center flex-wrap mb-5">
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+													<div class="fw-bold text-gray-400">Avg. Earnings</div>
+												</div>
+												<!--end::Stats-->
+												<!--begin::Stats-->
+												<div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+													<div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+													<div class="fw-bold text-gray-400">Total Sales</div>
+												</div>
+												<!--end::Stats-->
+											</div>
+											<!--end::Info-->
+											<!--begin::Follow-->
+											<a href="#" class="btn btn-sm btn-light">
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+											<span class="svg-icon svg-icon-3">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
+													<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->Follow</a>
+											<!--end::Follow-->
+										</div>
+										<!--begin::Card body-->
+									</div>
+									<!--begin::Card-->
+								</div>
+								<!--end::Col-->
+								<!--end::Followers-->
+							</div>
+							<!--end::Row-->
+							<!--begin::Show more-->
+							<div class="d-flex flex-center">
+								<button class="btn btn-primary" id="kt_followers_show_more_button">
+									<!--begin::Indicator-->
+									<span class="indicator-label">Show more</span>
+									<span class="indicator-progress">Please wait...
+									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+									<!--end::Indicator-->
+								</button>
+							</div>
+							<!--end::Show more-->
 						</div>
 						<!--end::Post-->
 					</div>
@@ -12364,7 +11829,516 @@ License: For each use you must have a valid license purchased only from above li
 			<!--end::Modal dialog-->
 		</div>
 		<!--end::Modal - Invite Friend-->
-		<!--end::Modals-->
+		{{-- Main model --}}
+		<!--begin::Modal - View Users-->
+		<div class="modal fade" id="kt_modal_view_users" tabindex="-1" aria-hidden="true">
+			<!--begin::Modal dialog-->
+			<div class="modal-dialog mw-650px">
+				<!--begin::Modal content-->
+				<div class="modal-content">
+					<!--begin::Modal header-->
+					<div class="modal-header pb-0 border-0 justify-content-end">
+						<!--begin::Close-->
+						<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+							<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+							<span class="svg-icon svg-icon-1">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+									<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+								</svg>
+							</span>
+							<!--end::Svg Icon-->
+						</div>
+						<!--end::Close-->
+					</div>
+					<!--begin::Modal header-->
+					<!--begin::Modal body-->
+					<div class="modal-body scroll-y mx-5 mx-xl-18 pt-0 pb-15">
+						<!--begin::Heading-->
+						<div class="text-center mb-13">
+							<!--begin::Title-->
+							<h1 class="mb-3">Browse Users</h1>
+							<!--end::Title-->
+							<!--begin::Description-->
+							<div class="text-muted fw-bold fs-5">If you need more info, please check out our
+							<a href="#" class="link-primary fw-bolder">Users Directory</a>.</div>
+							<!--end::Description-->
+						</div>
+						<!--end::Heading-->
+						<!--begin::Users-->
+						<div class="mb-15">
+							<!--begin::List-->
+							<div class="mh-375px scroll-y me-n7 pe-7">
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<img alt="Pic" src="assets/media/avatars/300-6.jpg" />
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Emma Smith
+											<span class="badge badge-light fs-8 fw-bold ms-2">Art Director</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">smith@kpmg.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$23,000</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<span class="symbol-label bg-light-danger text-danger fw-bold">M</span>
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Melody Macy
+											<span class="badge badge-light fs-8 fw-bold ms-2">Marketing Analytic</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">melody@altbox.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$50,500</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Max Smith
+											<span class="badge badge-light fs-8 fw-bold ms-2">Software Enginer</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">max@kt.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$75,900</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<img alt="Pic" src="assets/media/avatars/300-5.jpg" />
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Sean Bean
+											<span class="badge badge-light fs-8 fw-bold ms-2">Web Developer</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">sean@dellito.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$10,500</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Brian Cox
+											<span class="badge badge-light fs-8 fw-bold ms-2">UI/UX Designer</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">brian@exchange.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$20,000</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<span class="symbol-label bg-light-warning text-warning fw-bold">C</span>
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Mikaela Collins
+											<span class="badge badge-light fs-8 fw-bold ms-2">Head Of Marketing</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">mik@pex.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$9,300</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<img alt="Pic" src="assets/media/avatars/300-9.jpg" />
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Francis Mitcham
+											<span class="badge badge-light fs-8 fw-bold ms-2">Software Arcitect</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">f.mit@kpmg.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$15,000</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<span class="symbol-label bg-light-danger text-danger fw-bold">O</span>
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Olivia Wild
+											<span class="badge badge-light fs-8 fw-bold ms-2">System Admin</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">olivia@corpmail.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$23,000</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<span class="symbol-label bg-light-primary text-primary fw-bold">N</span>
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Neil Owen
+											<span class="badge badge-light fs-8 fw-bold ms-2">Account Manager</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">owen.neil@gmail.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$45,800</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<img alt="Pic" src="assets/media/avatars/300-23.jpg" />
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Dan Wilson
+											<span class="badge badge-light fs-8 fw-bold ms-2">Web Desinger</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">dam@consilting.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$90,500</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<span class="symbol-label bg-light-danger text-danger fw-bold">E</span>
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Emma Bold
+											<span class="badge badge-light fs-8 fw-bold ms-2">Corporate Finance</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">emma@intenso.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$5,000</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5 border-bottom border-gray-300 border-bottom-dashed">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<img alt="Pic" src="assets/media/avatars/300-12.jpg" />
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Ana Crown
+											<span class="badge badge-light fs-8 fw-bold ms-2">Customer Relationship</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">ana.cf@limtel.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$70,000</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+								<!--begin::User-->
+								<div class="d-flex flex-stack py-5">
+									<!--begin::Details-->
+									<div class="d-flex align-items-center">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<span class="symbol-label bg-light-info text-info fw-bold">A</span>
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-6">
+											<!--begin::Name-->
+											<a href="#" class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">Robert Doe
+											<span class="badge badge-light fs-8 fw-bold ms-2">Marketing Executive</span></a>
+											<!--end::Name-->
+											<!--begin::Email-->
+											<div class="fw-bold text-muted">robert@benko.com</div>
+											<!--end::Email-->
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::Details-->
+									<!--begin::Stats-->
+									<div class="d-flex">
+										<!--begin::Sales-->
+										<div class="text-end">
+											<div class="fs-5 fw-bolder text-dark">$45,500</div>
+											<div class="fs-7 text-muted">Sales</div>
+										</div>
+										<!--end::Sales-->
+									</div>
+									<!--end::Stats-->
+								</div>
+								<!--end::User-->
+							</div>
+							<!--end::List-->
+						</div>
+						<!--end::Users-->
+						<!--begin::Notice-->
+						<div class="d-flex justify-content-between">
+							<!--begin::Label-->
+							<div class="fw-bold">
+								<label class="fs-6">Adding Users by Team Members</label>
+								<div class="fs-7 text-muted">If you need more info, please check budget planning</div>
+							</div>
+							<!--end::Label-->
+							<!--begin::Switch-->
+							<label class="form-check form-switch form-check-custom form-check-solid">
+								<input class="form-check-input" type="checkbox" value="" checked="checked" />
+								<span class="form-check-label fw-bold text-muted">Allowed</span>
+							</label>
+							<!--end::Switch-->
+						</div>
+						<!--end::Notice-->
+					</div>
+					<!--end::Modal body-->
+				</div>
+				<!--end::Modal content-->
+			</div>
+			<!--end::Modal dialog-->
+		</div>
+		<!--end::Modal - View Users-->
 		<!--begin::Javascript-->
 		<script>var hostUrl = "assets/";</script>
 		<!--begin::Global Javascript Bundle(used by all pages)-->
