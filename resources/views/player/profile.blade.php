@@ -2864,7 +2864,7 @@
 															<span class="menu-bullet">
 																<span class="bullet bullet-dot"></span>
 															</span>
-															<span class="menu-title">Create Invoice</span>
+															<span class="menu-title">Exit</span>
 														</a>
 													</div>
 												</div>
@@ -4288,7 +4288,7 @@
 															<!--end::Heading-->
 															<!--begin::Menu item-->
 															<div class="menu-item px-3">
-																<a href="#" class="menu-link px-3">Create Invoice</a>
+																<a href="#" class="menu-link px-3">Exit</a>
 															</div>
 															<!--end::Menu item-->
 															<!--begin::Menu item-->
@@ -4421,7 +4421,7 @@
 													<!--end::Heading-->
 													<!--begin::Menu item-->
 													<div class="menu-item px-3 my-1">
-														<a href="#" class="menu-link px-3">Create Invoice</a>
+														<a href="#" class="menu-link px-3">Exit</a>
 													</div>
 													<!--end::Menu item-->
 												</div>
@@ -4504,7 +4504,7 @@
 													<!--end::Heading-->
 													<!--begin::Menu item-->
 													<div class="menu-item px-3 my-1">
-														<a href="#" class="menu-link px-3">Create Invoice</a>
+														<a href="#" class="menu-link px-3">Exit</a>
 													</div>
 													<!--end::Menu item-->
 												</div>
@@ -4586,7 +4586,7 @@
 													<!--end::Heading-->
 													<!--begin::Menu item-->
 													<div class="menu-item px-3 my-1">
-														<a href="#" class="menu-link px-3">Create Invoice</a>
+														<a href="#" class="menu-link px-3">Exit</a>
 													</div>
 													<!--end::Menu item-->
 												</div>
@@ -4669,7 +4669,7 @@
 													<!--end::Heading-->
 													<!--begin::Menu item-->
 													<div class="menu-item px-3 my-1">
-														<a href="#" class="menu-link px-3">Create Invoice</a>
+														<a href="#" class="menu-link px-3">Exit</a>
 													</div>
 													<!--end::Menu item-->
 												</div>
@@ -4751,7 +4751,7 @@
 													<!--end::Heading-->
 													<!--begin::Menu item-->
 													<div class="menu-item px-3 my-1">
-														<a href="#" class="menu-link px-3">Create Invoice</a>
+														<a href="#" class="menu-link px-3">Exit</a>
 													</div>
 													<!--end::Menu item-->
 												</div>
@@ -4833,7 +4833,7 @@
 													<!--end::Heading-->
 													<!--begin::Menu item-->
 													<div class="menu-item px-3 my-1">
-														<a href="#" class="menu-link px-3">Create Invoice</a>
+														<a href="#" class="menu-link px-3">Exit</a>
 													</div>
 													<!--end::Menu item-->
 												</div>
