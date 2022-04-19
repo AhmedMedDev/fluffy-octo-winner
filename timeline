@@ -61,10 +61,11 @@
 
 - - Player Data
 
-- - - name
 - - - email
 - - - password
+- - - password confirm
 
+- - - name
 - - - mobile
 - - - dob
 - - - nationality
@@ -73,19 +74,16 @@
 
 - - institution type (select box)
 
-- - name
 - - email
 - - password
+- - password confirm
 
+- - name
 - - mobile
-- - - dob
-- - - nationality
+- - logo
+- - address
+- - institution type
 - - institution credential
 
-المؤسسات
-- اتحاد
-- جمعية
-- لجنة 
+Federation, Committee, Association, Club,, Group
 
-- نادى
-- مجموعة
