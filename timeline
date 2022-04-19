@@ -62,16 +62,30 @@
 - - Player Data
 
 - - - name
-- - - dob
-- - - nationality
-- - - mobile
 - - - email
 - - - password
+
+- - - mobile
+- - - dob
+- - - nationality
 
 - - - Institution Data
 
 - - institution type (select box)
+
 - - name
-- - mobile
 - - email
+- - password
+
+- - mobile
+- - - dob
+- - - nationality
 - - institution credential
+
+المؤسسات
+- اتحاد
+- جمعية
+- لجنة 
+
+- نادى
+- مجموعة

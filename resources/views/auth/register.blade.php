@@ -94,7 +94,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Step 2-->
 								<!--begin::Step 3-->
-								<div class="stepper-item hide-if-player" data-kt-stepper-element="nav" id="notPlayer">
+								<div class="stepper-item hide-if-player" data-kt-stepper-element="nav" >
 									<!--begin::Line-->
 									<div class="stepper-line w-40px"></div>
 									<!--end::Line-->
@@ -147,7 +147,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Content-->
 					<div class="d-flex flex-center flex-column flex-column-fluid">
 						<!--begin::Wrapper-->
-						<div class="w-lg-900px p-10 p-lg-15 mx-auto">
+						<div class="w-lg-700px p-10 p-lg-15 mx-auto">
 							<!--begin::Form-->
 							<form class="my-auto pb-5" novalidate="novalidate" id="kt_create_account_form">
 								<!--begin::Step 1-->
@@ -171,55 +171,9 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Row-->
 											<div class="row">
 												<!--begin::Col-->
-												<div class="col-lg-4 col-md-6">
+												<div class="col-lg-6">
 													<!--begin::Option-->
-													<input type="radio" onclick="$('#notPlayer').slideDown(400)" class="btn-check" name="account_type" value="corporate" checked="checked" id="kt_create_account_form_account_type_corporate" />
-													<label class="btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center" for="kt_create_account_form_account_type_corporate">
-														<!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
-														<span class="svg-icon svg-icon-3x me-5">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
-																<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
-															</svg>
-														</span>
-														<!--end::Svg Icon-->
-														<!--begin::Info-->
-														<span class="d-block fw-bold text-start">
-															<span class="text-dark fw-bolder d-block fs-4 mb-2">Institution Account</span>
-															<span class="text-muted fw-bold fs-6">unlimited features</span>
-														</span>
-														<!--end::Info-->
-													</label>
-													<!--end::Option-->
-												</div>
-												<!--end::Col-->
-												<!--begin::Col-->
-												<div class="col-lg-4 col-md-6">
-													<!--begin::Option-->
-													<input type="radio" onclick="$('#notPlayer').slideDown(400)" class="btn-check" name="account_type" value="Group" id="kt_create_account_form_account_type_group" />
-													<label class="btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center" for="kt_create_account_form_account_type_group">
-														<!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
-														<span class="svg-icon svg-icon-3x me-5">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																<path opacity="0.3" d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z" fill="currentColor" />
-																<path d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z" fill="currentColor" />
-															</svg>
-														</span>
-														<!--end::Svg Icon-->
-														<!--begin::Info-->
-														<span class="d-block fw-bold text-start">
-															<span class="text-dark fw-bolder d-block fs-4 mb-2">Group Account</span>
-															<span class="text-muted fw-bold fs-6">Institution with feature less</span>
-														</span>
-														<!--end::Info-->
-													</label>
-													<!--end::Option-->
-												</div>
-												<!--end::Col-->
-												<!--begin::Col-->
-												<div class="col-lg-4 col-md-6" >
-													<!--begin::Option-->
-													<input type="radio" onclick="player_mode()" class="btn-check" name="account_type" value="personal"  id="kt_create_account_form_account_type_personal" />
+													<input type="radio" class="btn-check" name="account_type" value="personal" checked="checked" id="kt_create_account_form_account_type_personal" />
 													<label class="btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center mb-10" for="kt_create_account_form_account_type_personal">
 														<!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
 														<span class="svg-icon svg-icon-3x me-5">
@@ -231,8 +185,31 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Svg Icon-->
 														<!--begin::Info-->
 														<span class="d-block fw-bold text-start">
-															<span class="text-dark fw-bolder d-block fs-4 mb-2">Player Account</span>
+															<span class="text-dark fw-bolder d-block fs-4 mb-2">Personal Account</span>
 															<span class="text-muted fw-bold fs-6">If you need more info, please check it out</span>
+														</span>
+														<!--end::Info-->
+													</label>
+													<!--end::Option-->
+												</div>
+												<!--end::Col-->
+												<!--begin::Col-->
+												<div class="col-lg-6">
+													<!--begin::Option-->
+													<input type="radio" class="btn-check" name="account_type" value="corporate" id="kt_create_account_form_account_type_corporate" />
+													<label class="btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center" for="kt_create_account_form_account_type_corporate">
+														<!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
+														<span class="svg-icon svg-icon-3x me-5">
+															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																<path opacity="0.3" d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z" fill="currentColor" />
+																<path d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z" fill="currentColor" />
+															</svg>
+														</span>
+														<!--end::Svg Icon-->
+														<!--begin::Info-->
+														<span class="d-block fw-bold text-start">
+															<span class="text-dark fw-bolder d-block fs-4 mb-2">Corporate Account</span>
+															<span class="text-muted fw-bold fs-6">Create corporate account to mane users</span>
 														</span>
 														<!--end::Info-->
 													</label>
@@ -262,61 +239,6 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Notice-->
 										</div>
 										<!--end::Heading-->
-										<!--begin::Input group-->
-										<div class="mb-10 fv-row">
-											<!--begin::Label-->
-											<label class="d-flex align-items-center form-label mb-3">Specify Team Size
-											<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Provide your team size to help us setup your billing"></i></label>
-											<!--end::Label-->
-											<!--begin::Row-->
-											<div class="row mb-2" data-kt-buttons="true">
-												<!--begin::Col-->
-												<div class="col">
-													<!--begin::Option-->
-													<label class="btn btn-outline btn-outline-dashed btn-outline-default w-100 p-4">
-														<input type="radio" class="btn-check" name="account_team_size" value="1-1" />
-														<span class="fw-bolder fs-3">1-1</span>
-													</label>
-													<!--end::Option-->
-												</div>
-												<!--end::Col-->
-												<!--begin::Col-->
-												<div class="col">
-													<!--begin::Option-->
-													<label class="btn btn-outline btn-outline-dashed btn-outline-default w-100 p-4 active">
-														<input type="radio" class="btn-check" name="account_team_size" checked="checked" value="2-10" />
-														<span class="fw-bolder fs-3">2-10</span>
-													</label>
-													<!--end::Option-->
-												</div>
-												<!--end::Col-->
-												<!--begin::Col-->
-												<div class="col">
-													<!--begin::Option-->
-													<label class="btn btn-outline btn-outline-dashed btn-outline-default w-100 p-4">
-														<input type="radio" class="btn-check" name="account_team_size" value="10-50" />
-														<span class="fw-bolder fs-3">10-50</span>
-													</label>
-													<!--end::Option-->
-												</div>
-												<!--end::Col-->
-												<!--begin::Col-->
-												<div class="col">
-													<!--begin::Option-->
-													<label class="btn btn-outline btn-outline-dashed btn-outline-default w-100 p-4">
-														<input type="radio" class="btn-check" name="account_team_size" value="50+" />
-														<span class="fw-bolder fs-3">50+</span>
-													</label>
-													<!--end::Option-->
-												</div>
-												<!--end::Col-->
-											</div>
-											<!--end::Row-->
-											<!--begin::Hint-->
-											<div class="form-text">Customers will see this shortened version of your statement descriptor</div>
-											<!--end::Hint-->
-										</div>
-										<!--end::Input group-->
 										<!--begin::Input group-->
 										<div class="mb-10 fv-row">
 											<!--begin::Label-->
@@ -654,25 +576,6 @@ License: For each use you must have a valid license purchased only from above li
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 
-		<script>
-			$('.stepper-previous').click(function () {
-				if (!$('.stepper-submit').hasClass('d-none')){
-					$('.stepper-submit').hide()
-					$('.stepper-next').show()
-				}
-			})
-			$('.stepper-next').click(function () {
-				if ($('.last-step').prev().hasClass('current')){
-					$('.stepper-submit').show()
-					$('.stepper-next').hide()
-				}
-			})
-			const player_mode = () => {
-				$('.hide-if-player').slideUp(400, function () {
-					$(this).remove()
-				})
-			}
-		</script>
 	</body>
 	<!--end::Body-->
 </html>
