@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-md-6">
                     <!--begin::Label-->
-                    <label class="form-label mb-3 required">Federation Credential</label>
+                    <label class="form-label mb-3 required" id="federation_credential">Federation Credential</label>
                     <!--end::Label-->
                     <!--begin::Input-->
                     <input type="file" class="form-control form-control-lg form-control-solid" name="account_name"
@@ -67,14 +67,14 @@
             <!--begin::Input group-->
             <div class="mb-0 fv-row">
                 <!--begin::Label-->
-                <label class="d-flex align-items-center form-label mb-5">Select Account Plan
+                <label class="d-flex align-items-center form-label mb-5">Select Federation Plan
                     <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
                         title="Monthly billing will be based on your account plan"></i></label>
                 <!--end::Label-->
                 <!--begin::Options-->
                 <div class="mb-0">
                     <!--begin:Option-->
-                    <label class="d-flex flex-stack mb-5 cursor-pointer">
+                    <label class="federation_plan d-flex flex-stack mb-5 cursor-pointer" data-type="federation">
                         <!--begin:Label-->
                         <span class="d-flex align-items-center me-2">
                             <!--begin::Icon-->
@@ -104,7 +104,7 @@
                     </label>
                     <!--end::Option-->
                     <!--begin:Option-->
-                    <label class="d-flex flex-stack mb-5 cursor-pointer">
+                    <label class="federation_plan d-flex flex-stack mb-5 cursor-pointer" data-type="committee">
                         <!--begin:Label-->
                         <span class="d-flex align-items-center me-2">
                             <!--begin::Icon-->
@@ -135,7 +135,7 @@
                     </label>
                     <!--end::Option-->
                     <!--begin:Option-->
-                    <label class="d-flex flex-stack mb-5 cursor-pointer">
+                    <label class="federation_plan d-flex flex-stack mb-5 cursor-pointer" data-type="association">
                         <!--begin:Label-->
                         <span class="d-flex align-items-center me-2">
                             <!--begin::Icon-->
@@ -165,7 +165,7 @@
                     </label>
                     <!--end::Option-->
                     <!--begin:Option-->
-                    <label class="d-flex flex-stack mb-5 cursor-pointer">
+                    <label class="federation_plan d-flex flex-stack mb-5 cursor-pointer" data-type="club">
                         <!--begin:Label-->
                         <span class="d-flex align-items-center me-2">
                             <!--begin::Icon-->
@@ -195,7 +195,7 @@
                     </label>
                     <!--end::Option-->
                     <!--begin:Option-->
-                    <label class="d-flex flex-stack mb-0 cursor-pointer">
+                    <label class="federation_plan d-flex flex-stack mb-0 cursor-pointer" data-type="group">
                         <!--begin:Label-->
                         <span class="d-flex align-items-center me-2">
                             <!--begin::Icon-->

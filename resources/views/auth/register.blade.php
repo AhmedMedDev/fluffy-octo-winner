@@ -237,6 +237,16 @@ License: For each use you must have a valid license purchased only from above li
 		<!--end::Javascript-->
 
 		<script>
+			$('.federation_plan').on('click', function () {
+				$type = $(this).attr('data-type');
+
+				if ($type == "committee" || $type == "federation" ) {
+					if (!$('#federation_credential').hasClass('required')) 
+							$('#federation_credential').addClass('required')
+				} else {
+					$('#federation_credential').removeClass('required')
+				}
+			})
 			$('.account_type').on('click', function () {
 				$(`#${$(this).children('input').val()}-content`).show(200, function (){
 					$(this).siblings().hide()
@@ -244,6 +254,7 @@ License: For each use you must have a valid license purchased only from above li
 			})
 
 			$('.resendcode').slideUp();
+			$('#player-content').hide();
 			// Element to indecate
 			var button = document.querySelector("#kt_button_1");
 
