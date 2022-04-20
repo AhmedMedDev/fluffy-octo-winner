@@ -5,12 +5,21 @@
 - - - - - - - - - - - - - - - - - - - - - - 
 
 - - - - - - - - - - - 
+->> Authentication
+- - - - - - - - - - - 
+
+- - - Semi Final Structure
+- - - Cleanup
+- - - Final Structure
+
+- - - - - - - - - - - 
 ->> Player Dashboard
 - - - - - - - - - - - 
 
 ----->> Profile //
 ----->> Requests Managment  //
         --> Institution , Status ->> card with pagination
+        ----->> Requests //
 ----->> Hint :: add Exit from institution btn to institution card //
 
 
@@ -35,7 +44,6 @@
 ----->> Players //
 ----->> institutions //
 
-
 - - - - - - - - - - - - 
 ->> General System Admin
 - - - - - - - - - - - - 
@@ -53,17 +61,29 @@
 
 - - Player Data
 
-- - - name
-- - - dob
-- - - nationality
-- - - mobile
 - - - email
 - - - password
+- - - password confirm
+
+- - - name
+- - - mobile
+- - - dob
+- - - nationality
 
 - - - Institution Data
 
 - - institution type (select box)
+
+- - email
+- - password
+- - password confirm
+
 - - name
 - - mobile
-- - email
+- - logo
+- - address
+- - institution type
 - - institution credential
+
+Federation, Committee, Association, Club,, Group
+
