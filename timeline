@@ -9,8 +9,12 @@
 - - - - - - - - - - - 
 
 - - - Semi Final Structure
+        -> change content of step 2 if account type is palyer
+        -> if institution type is institution make institution credential required
 - - - Cleanup
 - - - Final Structure
+        -> Front validation
+        -> file input
 
 - - - - - - - - - - - 
 ->> Player Dashboard
