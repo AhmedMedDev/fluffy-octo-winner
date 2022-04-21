@@ -5111,8 +5111,9 @@
 									<div class="d-flex">
 										<!--begin::Sales-->
 										<div class="text-end">
-											<div class="fs-5 fw-bolder text-dark">$23,000</div>
-											<div class="fs-7 text-muted">Sales</div>
+											<div class="fs-5 fw-bolder text-dark">
+												<button type="button" class="btn btn-light-success">Accept</button>
+											</div>
 										</div>
 										<!--end::Sales-->
 									</div>
@@ -5145,8 +5146,9 @@
 									<div class="d-flex">
 										<!--begin::Sales-->
 										<div class="text-end">
-											<div class="fs-5 fw-bolder text-dark">$50,500</div>
-											<div class="fs-7 text-muted">Sales</div>
+											<div class="fs-5 fw-bolder text-dark">
+												<button type="button" class="btn btn-light-success">Accept</button>
+											</div>
 										</div>
 										<!--end::Sales-->
 									</div>
@@ -5179,8 +5181,9 @@
 									<div class="d-flex">
 										<!--begin::Sales-->
 										<div class="text-end">
-											<div class="fs-5 fw-bolder text-dark">$45,500</div>
-											<div class="fs-7 text-muted">Sales</div>
+											<div class="fs-5 fw-bolder text-dark">
+												<button type="button" class="btn btn-light-success">Accept</button>
+											</div>
 										</div>
 										<!--end::Sales-->
 									</div>
