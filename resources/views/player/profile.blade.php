@@ -966,11 +966,11 @@
                     <!--begin::Heading-->
                     <div class="text-center mb-13">
                         <!--begin::Title-->
-                        <h1 class="mb-3">Browse Users</h1>
+                        <h1 class="mb-3">Federations Requests</h1>
                         <!--end::Title-->
                         <!--begin::Description-->
                         <div class="text-muted fw-bold fs-5">If you need more info, please check out our
-                            <a href="#" class="link-primary fw-bolder">Users Directory</a>.
+                            <a href="#" class="link-primary fw-bolder">Requests Directory</a>.
                         </div>
                         <!--end::Description-->
                     </div>
@@ -1099,8 +1099,8 @@
                     <div class="d-flex justify-content-between">
                         <!--begin::Label-->
                         <div class="fw-bold">
-                            <label class="fs-6">Adding Users by Team Members</label>
-                            <div class="fs-7 text-muted">If you need more info, please check budget planning</div>
+                            <label class="fs-6">Available To Hire</label>
+                            <div class="fs-7 text-muted">If you need more info, please check FAQ Page</div>
                         </div>
                         <!--end::Label-->
                         <!--begin::Switch-->
