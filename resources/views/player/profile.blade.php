@@ -328,7 +328,7 @@
                                     style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                     <!--begin::Preview existing avatar-->
                                     <div class="image-input-wrapper w-125px h-125px"
-                                        style="background-image: url(assets/media/avatars/300-1.jpg)"></div>
+                                        style="background-image: url(assets/media/avatars/player.jpg)"></div>
                                     <!--end::Preview existing avatar-->
                                     <!--begin::Label-->
                                     <label
@@ -396,12 +396,12 @@
                         <!--begin::Input group-->
                         <div class="row mb-6">
                             <!--begin::Label-->
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Company</label>
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8 fv-row">
                                 <input type="text" name="company" class="form-control form-control-lg form-control-solid"
-                                    placeholder="Company name" value="Keenthemes" />
+                                    placeholder="Company name" value="max_med@gmail.com" />
                             </div>
                             <!--end::Col-->
                         </div>
@@ -410,15 +410,14 @@
                         <div class="row mb-6">
                             <!--begin::Label-->
                             <label class="col-lg-4 col-form-label fw-bold fs-6">
-                                <span class="required">Contact Phone</span>
+                                <span class="required">Date of birth</span>
                                 <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
                                     title="Phone number must be active"></i>
                             </label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8 fv-row">
-                                <input type="tel" name="phone" class="form-control form-control-lg form-control-solid"
-                                    placeholder="Phone number" value="044 3276 454 935" />
+                                    <input class="form-control form-control-lg form-control-solid" type="date" placeholder="" name="email" autocomplete="off" />
                             </div>
                             <!--end::Col-->
                         </div>
@@ -426,12 +425,12 @@
                         <!--begin::Input group-->
                         <div class="row mb-6">
                             <!--begin::Label-->
-                            <label class="col-lg-4 col-form-label fw-bold fs-6">Company Site</label>
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Mobile</label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="website" class="form-control form-control-lg form-control-solid"
-                                    placeholder="Company website" value="keenthemes.com" />
+                                <input type="tel" name="phone" class="form-control form-control-lg form-control-solid"
+                                    placeholder="Phone number" value="044 3276 454 935" />
                             </div>
                             <!--end::Col-->
                         </div>
