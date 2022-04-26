@@ -302,7 +302,7 @@
 					<!--begin::Card body-->
 					<div class="card-body d-flex flex-center flex-column p-9">
 						<!--begin::Avatar-->
-						<div class="symbol symbol-65px symbol-circle mb-5">
+						<div class="symbol symbol-65px  mb-5">
 							<img src="assets/media/avatars/fed.jpg" alt="image" />
 						</div>
 						<!--end::Avatar-->
