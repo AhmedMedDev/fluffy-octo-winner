@@ -10,7 +10,7 @@
                     <!--begin: Pic-->
                     <div class="me-7 mb-4">
                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                            <img src="https://www.katocontractors.com/sites/default/files/default_images/male-placeholder-image_0.jpg" alt="image" />
+                            <img src="assets/media/avatars/player.jpg" alt="image" />
                             <div
                                 class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px">
                             </div>
@@ -228,7 +228,7 @@
         <!--begin::Toolbar-->
         <div class="d-flex flex-wrap flex-stack mb-6">
             <!--begin::Title-->
-            <h3 class="text-gray-400 my-2 ">Max Institutions</h3>
+            <h3 class="text-gray-400 my-2 ">Max Federations</h3>
             <!--end::Title-->
         </div>
         <!--end::Toolbar-->
@@ -244,7 +244,7 @@
                         <div class="card-body d-flex flex-center flex-column p-9">
                             <!--begin::Avatar-->
                             <div class="symbol symbol-65px symbol-circle mb-5">
-                                <img src="https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg" alt="image" />
+                                <img src="assets/media/avatars/fed.jpg" alt="image" />
                             </div>
                             <!--end::Avatar-->
                             <!--begin::Name-->
