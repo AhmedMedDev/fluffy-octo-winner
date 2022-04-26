@@ -10,7 +10,7 @@
                     <!--begin: Pic-->
                     <div class="me-7 mb-4">
                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                            <img src="assets/media/avatars/300-1.jpg" alt="image" />
+                            <img src="assets/media/avatars/player.jpg" alt="image" />
                             <div
                                 class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px">
                             </div>
@@ -228,548 +228,58 @@
         <!--begin::Toolbar-->
         <div class="d-flex flex-wrap flex-stack mb-6">
             <!--begin::Title-->
-            <h3 class="text-gray-400 my-2 ">Max Institutions</h3>
+            <h3 class="text-gray-400 my-2 ">Max Federations</h3>
             <!--end::Title-->
         </div>
         <!--end::Toolbar-->
         <!--begin::Row-->
         <div class="row g-6 g-xl-9">
-            <!--begin::Col-->
-            <div class="col-sm-6 col-xl-4">
-                <!--begin::Card-->
-                <div class="card h-100">
-                    <!--begin::Card header-->
-                    <div class="card-header flex-nowrap border-0 pt-9">
-                        <!--begin::Card title-->
-                        <div class="card-title m-0">
-                            <!--begin::Icon-->
-                            <div class="symbol symbol-45px w-45px bg-light me-5">
-                                <img src="assets/media/svg/brand-logos/spotify.svg" alt="image" class="p-3" />
+            {{-- Fed Box --}}
+            @for ($i = 0; $i < 3; $i++)
+                <!--begin::Col-->
+                <div class="col-sm-6 col-xl-4">
+                    <!--begin::Card-->
+                    <div class="card">
+                        <!--begin::Card body-->
+                        <div class="card-body d-flex flex-center flex-column p-9">
+                            <!--begin::Avatar-->
+                            <div class="symbol symbol-65px symbol-circle mb-5">
+                                <img src="assets/media/avatars/fed.jpg" alt="image" />
                             </div>
-                            <!--end::Icon-->
-                            <!--begin::Title-->
-                            <a href="#" class="fs-4 fw-bold text-hover-primary text-gray-600 m-0">Spotify Listeners</a>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Card title-->
-                        <!--begin::Card toolbar-->
-                        <div class="card-toolbar m-0">
-                            <!--begin::Menu-->
-                            <button type="button"
-                                class="btn btn-clean btn-sm btn-icon btn-icon-primary btn-active-light-primary me-n3"
-                                data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-                                <span class="svg-icon svg-icon-3 svg-icon-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor" />
-                                            <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                        </g>
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                            </button>
-                            <!--begin::Menu 3-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
-                                data-kt-menu="true">
-                                <!--begin::Heading-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Settings</div>
+                            <!--end::Avatar-->
+                            <!--begin::Name-->
+                            <a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">Lorem ipsum dolor sit</a>
+                            <!--end::Name-->
+                            <!--begin::Position-->
+                            <div class="fw-bold text-gray-400 mb-6">Art Director at Seal Inc.</div>
+                            <!--end::Position-->
+                            <!--begin::Info-->
+                            <div class="d-flex flex-center flex-wrap mb-5">
+                                <!--begin::Stats-->
+                                <div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+                                    <div class="fs-6 fw-bolder text-gray-700">$14,560</div>
+                                    <div class="fw-bold text-gray-400">Avg. Earnings</div>
                                 </div>
-                                <!--end::Heading-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3 my-1">
-                                    <a href="#" class="menu-link px-3">Exit</a>
+                                <!--end::Stats-->
+                                <!--begin::Stats-->
+                                <div class="border border-dashed rounded min-w-125px py-3 px-4 mx-3 mb-3">
+                                    <div class="fs-6 fw-bolder text-gray-700">$236,400</div>
+                                    <div class="fw-bold text-gray-400">Total Sales</div>
                                 </div>
-                                <!--end::Menu item-->
+                                <!--end::Stats-->
                             </div>
-                            <!--end::Menu 3-->
-                            <!--end::Menu-->
+                            <!--end::Info-->
+                            <!--begin::Follow-->
+                            <button type="button" class="btn btn-light-dark">Profile</button>
+                            <!--end::Follow-->
                         </div>
-                        <!--end::Card toolbar-->
+                        <!--begin::Card body-->
                     </div>
-                    <!--end::Card header-->
-                    <!--begin::Card body-->
-                    <div class="card-body d-flex flex-column px-9 pt-6 pb-8">
-                        <!--begin::Heading-->
-                        <div class="fs-2tx fw-bolder mb-3">1,073</div>
-                        <!--end::Heading-->
-                        <!--begin::Stats-->
-                        <div class="d-flex align-items-center flex-wrap mb-5 mt-auto fs-6">
-                            <!--SVG file not found: icons/duotune/arrows/arr005.svg.svg-->
-                            <!--begin::Number-->
-                            <div class="fw-bolder text-danger me-2">+10.45%</div>
-                            <!--end::Number-->
-                            <!--begin::Label-->
-                            <div class="fw-bold text-gray-400">Less comments than usual</div>
-                            <!--end::Label-->
-                        </div>
-                        <!--end::Stats-->
-                        <!--begin::Indicator-->
-                        <div class="d-flex align-items-center fw-bold">
-                            <span class="badge bg-light text-gray-700 px-3 py-2 me-2">40%</span>
-                            <span class="text-gray-400 fs-7">Impressions</span>
-                            <i class="fas fa-exclamation-circle fs-7 ms-2" data-bs-toggle="tooltip"
-                                title="This is the total number of new non-trial"></i>
-                        </div>
-                        <!--end::Indicator-->
-                    </div>
-                    <!--end::Card body-->
+                    <!--begin::Card-->
                 </div>
-                <!--end::Card-->
-            </div>
-            <!--end::Col-->
-            <!--begin::Col-->
-            <div class="col-sm-6 col-xl-4">
-                <!--begin::Card-->
-                <div class="card h-100">
-                    <!--begin::Card header-->
-                    <div class="card-header flex-nowrap border-0 pt-9">
-                        <!--begin::Card title-->
-                        <div class="card-title m-0">
-                            <!--begin::Icon-->
-                            <div class="symbol symbol-45px w-45px bg-light me-5">
-                                <img src="assets/media/svg/brand-logos/pinterest-p.svg" alt="image"
-                                    class="p-3" />
-                            </div>
-                            <!--end::Icon-->
-                            <!--begin::Title-->
-                            <a href="#" class="fs-4 fw-bold text-hover-primary text-gray-600 m-0">Pinterest Posts</a>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Card title-->
-                        <!--begin::Card toolbar-->
-                        <div class="card-toolbar m-0">
-                            <!--begin::Menu-->
-                            <button type="button"
-                                class="btn btn-clean btn-sm btn-icon btn-icon-primary btn-active-light-primary me-n3"
-                                data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-                                <span class="svg-icon svg-icon-3 svg-icon-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor" />
-                                            <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                        </g>
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                            </button>
-                            <!--begin::Menu 3-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
-                                data-kt-menu="true">
-                                <!--begin::Heading-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Settings</div>
-                                </div>
-                                <!--end::Heading-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3 my-1">
-                                    <a href="#" class="menu-link px-3">Exit</a>
-                                </div>
-                                <!--end::Menu item-->
-                            </div>
-                            <!--end::Menu 3-->
-                            <!--end::Menu-->
-                        </div>
-                        <!--end::Card toolbar-->
-                    </div>
-                    <!--end::Card header-->
-                    <!--begin::Card body-->
-                    <div class="card-body d-flex flex-column px-9 pt-6 pb-8">
-                        <!--begin::Heading-->
-                        <div class="fs-2tx fw-bolder mb-3">97</div>
-                        <!--end::Heading-->
-                        <!--begin::Stats-->
-                        <div class="d-flex align-items-center flex-wrap mb-5 mt-auto fs-6">
-                            <!--SVG file not found: icons/duotune/arrows/arr007.svg.svg-->
-                            <!--begin::Number-->
-                            <div class="fw-bolder text-success me-2">+26.1%</div>
-                            <!--end::Number-->
-                            <!--begin::Label-->
-                            <div class="fw-bold text-gray-400">More posts</div>
-                            <!--end::Label-->
-                        </div>
-                        <!--end::Stats-->
-                        <!--begin::Indicator-->
-                        <div class="d-flex align-items-center fw-bold">
-                            <span class="badge bg-light text-gray-700 px-3 py-2 me-2">10%</span>
-                            <span class="text-gray-400 fs-7">Spend</span>
-                        </div>
-                        <!--end::Indicator-->
-                    </div>
-                    <!--end::Card body-->
-                </div>
-                <!--end::Card-->
-            </div>
-            <!--end::Col-->
-            <!--begin::Col-->
-            <div class="col-sm-6 col-xl-4">
-                <!--begin::Card-->
-                <div class="card h-100">
-                    <!--begin::Card header-->
-                    <div class="card-header flex-nowrap border-0 pt-9">
-                        <!--begin::Card title-->
-                        <div class="card-title m-0">
-                            <!--begin::Icon-->
-                            <div class="symbol symbol-45px w-45px bg-light me-5">
-                                <img src="assets/media/svg/brand-logos/github.svg" alt="image" class="p-3" />
-                            </div>
-                            <!--end::Icon-->
-                            <!--begin::Title-->
-                            <a href="#" class="fs-4 fw-bold text-hover-primary text-gray-600 m-0">Github Contributes</a>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Card title-->
-                        <!--begin::Card toolbar-->
-                        <div class="card-toolbar m-0">
-                            <!--begin::Menu-->
-                            <button type="button"
-                                class="btn btn-clean btn-sm btn-icon btn-icon-primary btn-active-light-primary me-n3"
-                                data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-                                <span class="svg-icon svg-icon-3 svg-icon-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor" />
-                                            <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                        </g>
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                            </button>
-                            <!--begin::Menu 3-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
-                                data-kt-menu="true">
-                                <!--begin::Heading-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Settings</div>
-                                </div>
-                                <!--end::Heading-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3 my-1">
-                                    <a href="#" class="menu-link px-3">Exit</a>
-                                </div>
-                                <!--end::Menu item-->
-                            </div>
-                            <!--end::Menu 3-->
-                            <!--end::Menu-->
-                        </div>
-                        <!--end::Card toolbar-->
-                    </div>
-                    <!--end::Card header-->
-                    <!--begin::Card body-->
-                    <div class="card-body d-flex flex-column px-9 pt-6 pb-8">
-                        <!--begin::Heading-->
-                        <div class="fs-2tx fw-bolder mb-3">4,109</div>
-                        <!--end::Heading-->
-                        <!--begin::Stats-->
-                        <div class="d-flex align-items-center flex-wrap mb-5 mt-auto fs-6">
-                            <!--SVG file not found: icons/duotune/arrows/arr005.svg.svg-->
-                            <!--begin::Number-->
-                            <div class="fw-bolder text-danger me-2">+32.8%</div>
-                            <!--end::Number-->
-                            <!--begin::Label-->
-                            <div class="fw-bold text-gray-400">Less contributions</div>
-                            <!--end::Label-->
-                        </div>
-                        <!--end::Stats-->
-                        <!--begin::Indicator-->
-                        <div class="d-flex align-items-center fw-bold">
-                            <span class="badge bg-light text-gray-700 px-3 py-2 me-2">40%</span>
-                            <span class="text-gray-400 fs-7">Dispute</span>
-                            <i class="fas fa-exclamation-circle fs-7 ms-2" data-bs-toggle="tooltip"
-                                title="This is the total number of new non-trial"></i>
-                        </div>
-                        <!--end::Indicator-->
-                    </div>
-                    <!--end::Card body-->
-                </div>
-                <!--end::Card-->
-            </div>
-            <!--end::Col-->
-            <!--begin::Col-->
-            <div class="col-sm-6 col-xl-4">
-                <!--begin::Card-->
-                <div class="card h-100">
-                    <!--begin::Card header-->
-                    <div class="card-header flex-nowrap border-0 pt-9">
-                        <!--begin::Card title-->
-                        <div class="card-title m-0">
-                            <!--begin::Icon-->
-                            <div class="symbol symbol-45px w-45px bg-light me-5">
-                                <img src="assets/media/svg/brand-logos/youtube-play.svg" alt="image"
-                                    class="p-3" />
-                            </div>
-                            <!--end::Icon-->
-                            <!--begin::Title-->
-                            <a href="#" class="fs-4 fw-bold text-hover-primary text-gray-600 m-0">Youtube Subscribers</a>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Card title-->
-                        <!--begin::Card toolbar-->
-                        <div class="card-toolbar m-0">
-                            <!--begin::Menu-->
-                            <button type="button"
-                                class="btn btn-clean btn-sm btn-icon btn-icon-primary btn-active-light-primary me-n3"
-                                data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-                                <span class="svg-icon svg-icon-3 svg-icon-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor" />
-                                            <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                        </g>
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                            </button>
-                            <!--begin::Menu 3-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
-                                data-kt-menu="true">
-                                <!--begin::Heading-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Settings</div>
-                                </div>
-                                <!--end::Heading-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3 my-1">
-                                    <a href="#" class="menu-link px-3">Exit</a>
-                                </div>
-                                <!--end::Menu item-->
-                            </div>
-                            <!--end::Menu 3-->
-                            <!--end::Menu-->
-                        </div>
-                        <!--end::Card toolbar-->
-                    </div>
-                    <!--end::Card header-->
-                    <!--begin::Card body-->
-                    <div class="card-body d-flex flex-column px-9 pt-6 pb-8">
-                        <!--begin::Heading-->
-                        <div class="fs-2tx fw-bolder mb-3">354</div>
-                        <!--end::Heading-->
-                        <!--begin::Stats-->
-                        <div class="d-flex align-items-center flex-wrap mb-5 mt-auto fs-6">
-                            <!--SVG file not found: icons/duotune/arrows/arr007.svg.svg-->
-                            <!--begin::Number-->
-                            <div class="fw-bolder text-success me-2">+29.45%</div>
-                            <!--end::Number-->
-                            <!--begin::Label-->
-                            <div class="fw-bold text-gray-400">Subscribers growth</div>
-                            <!--end::Label-->
-                        </div>
-                        <!--end::Stats-->
-                        <!--begin::Indicator-->
-                        <div class="d-flex align-items-center fw-bold">
-                            <span class="badge bg-light text-gray-700 px-3 py-2 me-2">40%</span>
-                            <span class="text-gray-400 fs-7">Subscribers</span>
-                        </div>
-                        <!--end::Indicator-->
-                    </div>
-                    <!--end::Card body-->
-                </div>
-                <!--end::Card-->
-            </div>
-            <!--end::Col-->
-            <!--begin::Col-->
-            <div class="col-sm-6 col-xl-4">
-                <!--begin::Card-->
-                <div class="card h-100">
-                    <!--begin::Card header-->
-                    <div class="card-header flex-nowrap border-0 pt-9">
-                        <!--begin::Card title-->
-                        <div class="card-title m-0">
-                            <!--begin::Icon-->
-                            <div class="symbol symbol-45px w-45px bg-light me-5">
-                                <img src="assets/media/svg/brand-logos/telegram.svg" alt="image" class="p-3" />
-                            </div>
-                            <!--end::Icon-->
-                            <!--begin::Title-->
-                            <a href="#" class="fs-4 fw-bold text-hover-primary text-gray-600 m-0">Telegram Posts</a>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Card title-->
-                        <!--begin::Card toolbar-->
-                        <div class="card-toolbar m-0">
-                            <!--begin::Menu-->
-                            <button type="button"
-                                class="btn btn-clean btn-sm btn-icon btn-icon-primary btn-active-light-primary me-n3"
-                                data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-                                <span class="svg-icon svg-icon-3 svg-icon-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor" />
-                                            <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                        </g>
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                            </button>
-                            <!--begin::Menu 3-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
-                                data-kt-menu="true">
-                                <!--begin::Heading-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Settings</div>
-                                </div>
-                                <!--end::Heading-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3 my-1">
-                                    <a href="#" class="menu-link px-3">Exit</a>
-                                </div>
-                                <!--end::Menu item-->
-                            </div>
-                            <!--end::Menu 3-->
-                            <!--end::Menu-->
-                        </div>
-                        <!--end::Card toolbar-->
-                    </div>
-                    <!--end::Card header-->
-                    <!--begin::Card body-->
-                    <div class="card-body d-flex flex-column px-9 pt-6 pb-8">
-                        <!--begin::Heading-->
-                        <div class="fs-2tx fw-bolder mb-3">566</div>
-                        <!--end::Heading-->
-                        <!--begin::Stats-->
-                        <div class="d-flex align-items-center flex-wrap mb-5 mt-auto fs-6">
-                            <!--SVG file not found: icons/duotune/arrows/arr007.svg.svg-->
-                            <!--begin::Number-->
-                            <div class="fw-bolder text-success me-2">+11.4%</div>
-                            <!--end::Number-->
-                            <!--begin::Label-->
-                            <div class="fw-bold text-gray-400">more clicks</div>
-                            <!--end::Label-->
-                        </div>
-                        <!--end::Stats-->
-                        <!--begin::Indicator-->
-                        <div class="d-flex align-items-center fw-bold">
-                            <span class="badge bg-light text-gray-700 px-3 py-2 me-2">40%</span>
-                            <span class="text-gray-400 fs-7">Profit</span>
-                        </div>
-                        <!--end::Indicator-->
-                    </div>
-                    <!--end::Card body-->
-                </div>
-                <!--end::Card-->
-            </div>
-            <!--end::Col-->
-            <!--begin::Col-->
-            <div class="col-sm-6 col-xl-4">
-                <!--begin::Card-->
-                <div class="card h-100">
-                    <!--begin::Card header-->
-                    <div class="card-header flex-nowrap border-0 pt-9">
-                        <!--begin::Card title-->
-                        <div class="card-title m-0">
-                            <!--begin::Icon-->
-                            <div class="symbol symbol-45px w-45px bg-light me-5">
-                                <img src="assets/media/svg/brand-logos/reddit.svg" alt="image" class="p-3" />
-                            </div>
-                            <!--end::Icon-->
-                            <!--begin::Title-->
-                            <a href="#" class="fs-4 fw-bold text-hover-primary text-gray-600 m-0">Reddit Awards</a>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Card title-->
-                        <!--begin::Card toolbar-->
-                        <div class="card-toolbar m-0">
-                            <!--begin::Menu-->
-                            <button type="button"
-                                class="btn btn-clean btn-sm btn-icon btn-icon-primary btn-active-light-primary me-n3"
-                                data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-                                <span class="svg-icon svg-icon-3 svg-icon-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor" />
-                                            <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                            <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor"
-                                                opacity="0.3" />
-                                        </g>
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                            </button>
-                            <!--begin::Menu 3-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
-                                data-kt-menu="true">
-                                <!--begin::Heading-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Settings</div>
-                                </div>
-                                <!--end::Heading-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3 my-1">
-                                    <a href="#" class="menu-link px-3">Exit</a>
-                                </div>
-                                <!--end::Menu item-->
-                            </div>
-                            <!--end::Menu 3-->
-                            <!--end::Menu-->
-                        </div>
-                        <!--end::Card toolbar-->
-                    </div>
-                    <!--end::Card header-->
-                    <!--begin::Card body-->
-                    <div class="card-body d-flex flex-column px-9 pt-6 pb-8">
-                        <!--begin::Heading-->
-                        <div class="fs-2tx fw-bolder mb-3">2.1M</div>
-                        <!--end::Heading-->
-                        <!--begin::Stats-->
-                        <div class="d-flex align-items-center flex-wrap mb-5 mt-auto fs-6">
-                            <!--SVG file not found: icons/duotune/arrows/arr007.svg.svg-->
-                            <!--begin::Number-->
-                            <div class="fw-bolder text-success me-2">-46.7%</div>
-                            <!--end::Number-->
-                            <!--begin::Label-->
-                            <div class="fw-bold text-gray-400">more adds</div>
-                            <!--end::Label-->
-                        </div>
-                        <!--end::Stats-->
-                        <!--begin::Indicator-->
-                        <div class="d-flex align-items-center fw-bold">
-                            <span class="badge bg-light text-gray-700 px-3 py-2 me-2">0.0%</span>
-                            <span class="text-gray-400 fs-7">Retention</span>
-                            <i class="fas fa-exclamation-circle fs-7 ms-2" data-bs-toggle="tooltip"
-                                title="This table displays revenue retention"></i>
-                        </div>
-                        <!--end::Indicator-->
-                    </div>
-                    <!--end::Card body-->
-                </div>
-                <!--end::Card-->
-            </div>
-            <!--end::Col-->
+                <!--end::Col-->
+            @endfor
+            {{-- Fed Box --}}
         </div>
         <!--end::Row-->
     </div>
@@ -818,7 +328,7 @@
                                     style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                     <!--begin::Preview existing avatar-->
                                     <div class="image-input-wrapper w-125px h-125px"
-                                        style="background-image: url(assets/media/avatars/300-1.jpg)"></div>
+                                        style="background-image: url(assets/media/avatars/player.jpg)"></div>
                                     <!--end::Preview existing avatar-->
                                     <!--begin::Label-->
                                     <label
@@ -886,12 +396,12 @@
                         <!--begin::Input group-->
                         <div class="row mb-6">
                             <!--begin::Label-->
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Company</label>
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8 fv-row">
                                 <input type="text" name="company" class="form-control form-control-lg form-control-solid"
-                                    placeholder="Company name" value="Keenthemes" />
+                                    placeholder="Company name" value="max_med@gmail.com" />
                             </div>
                             <!--end::Col-->
                         </div>
@@ -900,15 +410,14 @@
                         <div class="row mb-6">
                             <!--begin::Label-->
                             <label class="col-lg-4 col-form-label fw-bold fs-6">
-                                <span class="required">Contact Phone</span>
+                                <span class="required">Date of birth</span>
                                 <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
                                     title="Phone number must be active"></i>
                             </label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8 fv-row">
-                                <input type="tel" name="phone" class="form-control form-control-lg form-control-solid"
-                                    placeholder="Phone number" value="044 3276 454 935" />
+                                    <input class="form-control form-control-lg form-control-solid" type="date" placeholder="" name="email" autocomplete="off" />
                             </div>
                             <!--end::Col-->
                         </div>
@@ -916,12 +425,12 @@
                         <!--begin::Input group-->
                         <div class="row mb-6">
                             <!--begin::Label-->
-                            <label class="col-lg-4 col-form-label fw-bold fs-6">Company Site</label>
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Mobile</label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="website" class="form-control form-control-lg form-control-solid"
-                                    placeholder="Company website" value="keenthemes.com" />
+                                <input type="tel" name="phone" class="form-control form-control-lg form-control-solid"
+                                    placeholder="Phone number" value="044 3276 454 935" />
                             </div>
                             <!--end::Col-->
                         </div>
