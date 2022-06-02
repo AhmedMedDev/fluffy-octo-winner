@@ -1,5 +1,14 @@
 @extends('layouts.master')
 
+@push('css')
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+    </style>
+@endpush
 @section('content')
     <div class="content flex-row-fluid" id="kt_content">
         <!--begin::Navbar-->
@@ -25,19 +34,21 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="number" class="form-control text-center scored" data-player="1" data-row="0"/></td>
-                                <td><input type="number" class="form-control text-center togo" value="501" /></td>
+                                <td><input type="number" class="form-control form-control-solid text-center scored" data-player="1" data-row="0"/></td>
+                                <td><input type="number" class="form-control form-control-solid text-center togo" value="501" disabled /></td>
                                 <td>. .</td>
-                                <td><input type="number" class="form-control text-center scored" data-player="2" data-row="0"/></td>
-                                <td><input type="number" class="form-control text-center togo" value="501" /></td>
+                                <td><input type="number" class="form-control form-control-solid text-center scored" data-player="2" data-row="0"/></td>
+                                <td><input type="number" class="form-control form-control-solid text-center togo" value="501" disabled /></td>
                             </tr>
-                            @for ($i = 1; $i < 3; $i++)
+                            @for ($i = 1; $i < 10; $i++)
                                 <tr>
-                                    <td><input type="number" class="form-control text-center scored" data-player="1" data-row="{{$i}}"/></td>
-                                    <td><input type="number" class="form-control text-center togo togo_{{$i}}_1" /></td>
-                                    <td>{{3 * $i}}</td>
-                                    <td><input type="number" class="form-control text-center scored" data-player="2" data-row="{{$i}}"/></td>
-                                    <td><input type="number" class="form-control text-center togo togo_{{$i}}_2" /></td>
+                                    <td><input type="number" class="form-control form-control-solid text-center scored" data-player="1" data-row="{{$i}}"/></td>
+                                    <td><input type="number" class="form-control form-control-solid text-center togo togo_{{$i}}_1" disabled/></td>
+
+                                    <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $i}}" disabled /></td>
+
+                                    <td><input type="number" class="form-control form-control-solid text-center scored" data-player="2" data-row="{{$i}}"/></td>
+                                    <td><input type="number" class="form-control form-control-solid text-center togo togo_{{$i}}_2" disabled /></td>
                                 </tr>
                             @endfor
                         </tbody>
@@ -60,6 +71,7 @@
             let row = +$(this).attr('data-row') + 1;
             let player = +$(this).attr('data-player');
             $(`.togo_${row}_${player}`).val(togo)
+            if (togo == 0) alert(" Winner Winner Chicken Dinner ✔")
         })
     </script>
 @endpush
