@@ -10,9 +10,9 @@
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
-		<meta property="og:url" content="https://keenthemes.com/metronic" />
+		{{-- <meta property="og:url" content="https://keenthemes.com/metronic" /> --}}
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
-		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+		{{-- <link rel="canonical" href="https://preview.keenthemes.com/metronic8" /> --}}
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
@@ -62,6 +62,8 @@
 		<!--begin::Global Javascript Bundle(used by all pages)-->
 		<script src="assets/plugins/global/plugins.bundle.js"></script>
 		<script src="assets/js/scripts.bundle.js"></script>
+		<script src="assets/custom/blockui/jquery.blockUI.min.js"></script>
+
 		<!--end::Global Javascript Bundle-->
         @stack('js')
 		<!--end::Javascript-->
