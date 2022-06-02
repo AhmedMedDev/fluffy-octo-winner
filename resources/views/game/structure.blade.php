@@ -4,8 +4,23 @@
     <style>
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .blockui-message{
+            display:flex;
+            align-items:center;
+            border-radius:.475rem;
+            box-shadow:0 0 50px 0 rgba(82,63,105,.15);
+            background-color:#fff;
+            color:#7e8299;
+            font-weight:500;
+            margin:auto;
+            width:fit-content;
+            padding:.85rem 1.75rem!important
+        }
+        .blockui-message .spinner-border{
+            margin-right:.65rem
         }
     </style>
 @endpush
@@ -17,7 +32,7 @@
             <h2 class="text-gray-400">Player 2</h2>
         </div>
         <div class="card mb-6 ">
-            <div class="card-body pt-9 ">
+            <div class="card-body pt-9 reload overflow-hidden">
                 <!--begin::Details-->
 
 
@@ -70,8 +85,31 @@
             let togo = +$(this).parent().next().find('.togo').val() - +$(this).val()
             let row = +$(this).attr('data-row') + 1;
             let player = +$(this).attr('data-player');
-            $(`.togo_${row}_${player}`).val(togo)
-            if (togo == 0) alert(" Winner Winner Chicken Dinner ✔")
+
+            if (togo == 0) alert(" Winner Winner Chicken Dinner ✔✔")
+            else if (togo < 0 || +$(this).val() > 179) alert (" What are you doing 👀👀 ")
+
+            else {
+                $(`.togo_${row}_${player}`).val(togo)
+                $(this).prop('disabled', true);
+
+                var block = $('.reload')
+
+                $(block).block({
+                    message: '<div class="blockui-message"><span class="spinner-border text-primary"></span> Loading...</div>',
+                    timeout: 200000, 
+                    overlayCSS: {
+                        backgroundColor: 'rgba(0,0,0,.05)',
+                        opacity: 0.8,
+                        cursor: 'wait'
+                    },
+                    css: {
+                        border: 0,
+                        padding: 0,
+                        backgroundColor: 'transparent'
+                    }
+                });
+            }
         })
     </script>
 @endpush
