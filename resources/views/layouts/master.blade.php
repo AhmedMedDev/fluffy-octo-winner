@@ -38,6 +38,7 @@
 			}
 		</style>
         @stack('css')
+		@livewireStyles
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -108,6 +109,7 @@
 		</script>
 		<!--end::Global Javascript Bundle-->
         @stack('js')
+		@livewireScripts
 		<!--end::Javascript-->
 	</body>
 	<!--end::Body-->
