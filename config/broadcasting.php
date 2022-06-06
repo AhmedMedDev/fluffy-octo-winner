@@ -32,8 +32,8 @@ return [
 
         'pusher' => [
             'driver' => 'pusher',
-            'key' => 'pusher_med_key',
-            'secret' => 'pusher_med_secret',
+            'key' => env('PUSHER_APP_KEY'),
+            'secret' => env('PUSHER_APP_SECRET'),
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
                 'cluster' => 'mtl',
