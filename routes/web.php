@@ -24,7 +24,7 @@ Route::get('games/{id}', function ($id) {
     return view('game.structure')
         ->with('game_info', DB::table('games')
         ->find($id));
-});
+})->middleware('auth');
 
 Auth::routes();
 

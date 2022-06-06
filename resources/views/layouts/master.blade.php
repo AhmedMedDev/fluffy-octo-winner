@@ -12,15 +12,16 @@
 		<meta property="og:title" content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
 		{{-- <meta property="og:url" content="https://keenthemes.com/metronic" /> --}}
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
+		<!-- CSRF Token -->
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+
 		{{-- <link rel="canonical" href="https://preview.keenthemes.com/metronic8" /> --}}
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
-		<!-- Scripts -->
-		<script src="{{ asset('js/app.js') }}" defer></script>
-		
+
 		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<style>
@@ -83,8 +84,8 @@
 		<!--begin::Global Javascript Bundle(used by all pages)-->
 		<script src="assets/plugins/global/plugins.bundle.js"></script>
 		<script src="assets/js/scripts.bundle.js"></script>
+		<script src="{{ asset('js/app.js') }}" ></script>
 		<script src="assets/custom/blockui/jquery.blockUI.min.js"></script>
-
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.0.0/turbolinks.js"integrity="sha512-P3/SDm/poyPMRBbZ4chns8St8nky2t8aeG09fRjunEaKMNEDKjK3BuAstmLKqM7f6L1j0JBYcIRL4h2G6K6Lew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 		<script>
@@ -96,7 +97,7 @@
 
                 $(block).block({
                     message: '<div class="blockui-message"><span class="spinner-border text-primary"></span> Loading...</div>',
-                    timeout: 2000, 
+                    timeout: 200000, 
                     overlayCSS: {
                         backgroundColor: 'rgba(0,0,0,.05)',
                         opacity: 0.8,
@@ -108,6 +109,10 @@
                         backgroundColor: 'transparent'
                     }
                 });
+			}
+			const unblockThis = (block) => {
+
+				$(block).unblock();
 			}
 		</script>
 		<!--end::Global Javascript Bundle-->

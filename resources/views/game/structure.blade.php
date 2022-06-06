@@ -102,6 +102,8 @@
 
 @push('js')
     <script>
+        blockThis($('.reload'))
+
         $('.scored').on('change', function() {
             let togo = +$(this).parent().next().find('.togo').val() - +$(this).val()
             let row = +$(this).attr('data-row');
@@ -126,8 +128,39 @@
                 } else {
                     $(`#scored_${row}_2`).addClass('border-success')
                 }
-                // blockThis($('.reload'))
+                blockThis($('.reload'))
+                // Broadcast to other players
             }
         })
+
+        // Listen to channle with game id
+        let players = 1;
+        window.Echo.join('game.{{$game_info->id}}')
+        .here((users) => {
+
+            // players = users.length;
+        })
+        .joining((user) => {
+
+            // send join request if player 1 only
+            // else send watch request
+
+
+            // Don't send requets if player 1
+            if (+'{{$game_info->player1}}' != user.id && players == 1)  {
+                if (confirm(`${user.name} want to join`)) {
+
+                    unblockThis($('.reload'))
+                    players++;
+                } 
+            }
+        })
+        .leaving((user) => {
+            
+            if (players == 2) {
+                players--;
+                blockThis($('.reload'))
+            }
+        });
     </script>
 @endpush
