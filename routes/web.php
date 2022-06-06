@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('games/{id}', function ($id) {
+
+    return view('game.structure')
+        ->with('game_info', DB::table('games')
+        ->find($id));
 });
 
 Auth::routes();

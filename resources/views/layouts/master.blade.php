@@ -18,9 +18,30 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
+		<!-- Scripts -->
+		<script src="{{ asset('js/app.js') }}" defer></script>
+		
 		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<style>
+			.blockui-message{
+				display:flex;
+				align-items:center;
+				border-radius:.475rem;
+				box-shadow:0 0 50px 0 rgba(82,63,105,.15);
+				background-color:#fff;
+				color:#7e8299;
+				font-weight:500;
+				margin:auto;
+				width:fit-content;
+				padding:.85rem 1.75rem!important
+			}
+			.blockui-message .spinner-border{
+				margin-right:.65rem
+			}
+		</style>
         @stack('css')
+		@livewireStyles
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -64,8 +85,34 @@
 		<script src="assets/js/scripts.bundle.js"></script>
 		<script src="assets/custom/blockui/jquery.blockUI.min.js"></script>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.0.0/turbolinks.js"integrity="sha512-P3/SDm/poyPMRBbZ4chns8St8nky2t8aeG09fRjunEaKMNEDKjK3BuAstmLKqM7f6L1j0JBYcIRL4h2G6K6Lew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<script>
+			$(document).ready(function() {
+				Turbolinks.start()
+			});
+
+			const blockThis = (block) => {
+
+                $(block).block({
+                    message: '<div class="blockui-message"><span class="spinner-border text-primary"></span> Loading...</div>',
+                    timeout: 2000, 
+                    overlayCSS: {
+                        backgroundColor: 'rgba(0,0,0,.05)',
+                        opacity: 0.8,
+                        cursor: 'wait'
+                    },
+                    css: {
+                        border: 0,
+                        padding: 0,
+                        backgroundColor: 'transparent'
+                    }
+                });
+			}
+		</script>
 		<!--end::Global Javascript Bundle-->
         @stack('js')
+		@livewireScripts
 		<!--end::Javascript-->
 	</body>
 	<!--end::Body-->

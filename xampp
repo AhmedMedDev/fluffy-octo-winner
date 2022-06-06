@@ -1,0 +1,3 @@
+rename data to data_old
+create data file with backup content
+copy all data_old to data with skip chosse
