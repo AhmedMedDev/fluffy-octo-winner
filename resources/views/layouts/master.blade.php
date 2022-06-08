@@ -114,10 +114,43 @@
 
 				$(block).unblock();
 			}
+
+			$('.triggerLoader').block({
+				message: '<div class="blockui-message"><span class="spinner-border text-primary"></span> Loading...</div>',
+				timeout: 200000, 
+				overlayCSS: {
+					backgroundColor: 'rgba(0,0,0,.05)',
+					opacity: 0.8,
+					cursor: 'wait'
+				},
+				css: {
+					border: 0,
+					padding: 0,
+					backgroundColor: 'transparent'
+				}
+			});
 		</script>
 		<!--end::Global Javascript Bundle-->
         @stack('js')
 		@livewireScripts
+		<script>
+			window.livewire.on('triggerLoader', () => {
+				$('.reload').block({
+					message: '<div class="blockui-message"><span class="spinner-border text-primary"></span> Loading...</div>',
+					timeout: 200000, 
+					overlayCSS: {
+						backgroundColor: 'rgba(0,0,0,.05)',
+						opacity: 0.8,
+						cursor: 'wait'
+					},
+					css: {
+						border: 0,
+						padding: 0,
+						backgroundColor: 'transparent'
+					}
+				});
+			})
+		</script>
 		<!--end::Javascript-->
 	</body>
 	<!--end::Body-->

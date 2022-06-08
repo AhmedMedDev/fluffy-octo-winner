@@ -5,7 +5,7 @@
         <h2 class="text-gray-400">Player 2</h2>
     </div>
     <div class="card mb-6 ">
-        <div class="card-body pt-9 reload overflow-hidden">
+        <div class="card-body pt-9 reload @if ($open_for == auth()->user()->id) triggerLoader @endif overflow-hidden">
             <!--begin::Details-->
 
             <div class="table-responsive">
@@ -85,6 +85,7 @@
     </div>
     <!--end::Navbar-->
     <input type="hidden" id="player_2" value="{{$player2}}">
+    <input type="hidden" id="open_for" value="{{$open_for}}">
 </div>
 
 @push('js')
@@ -113,14 +114,14 @@
                 } else {
                     $(`#scored_${row}_2`).addClass('border-success')
                 }
-                blockThis($('.reload'))
                 // Broadcast to other players
+                @this.call('roundFinished')
             }
         })
 
         blockThis($('.reload'))
 
-        if (+'{{$open_for}}' == '{{auth()->user()->id}}')  {
+        if (+$('#open_for').val() == '{{auth()->user()->id}}')  {
 
             unblockThis($('.reload'))
         }
@@ -137,7 +138,7 @@
                 }
             }
 
-            if (+'{{$open_for}}' == '{{auth()->user()->id}}')  {
+            if (+$('#open_for').val() == '{{auth()->user()->id}}')  {
 
                 unblockThis($('.reload'))
             }
@@ -145,6 +146,8 @@
         .leaving((user) => {
 
             blockThis($('.reload'))
+        }).listen('RoundFinishedEvent', (e) => {
+            // alert(e.open_for)
         });
     </script>
 @endpush
