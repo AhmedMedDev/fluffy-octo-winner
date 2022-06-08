@@ -17,10 +17,16 @@ class canJoin
     public function handle($request, Closure $next)
     {
         $game = DB::table('games')
-            ->select('player2')
+            ->select('player1','player2')
             ->find($request->id);
 
-        return (is_null($game->player2)) 
+        $auth_id = auth()->user()->id;
+
+        $canJoin = (is_null($game->player2) 
+                    || $auth_id == $game->player1 
+                    || $auth_id == $game->player2);
+
+        return ($canJoin) 
             ? $next($request)
             : redirect('/game-seens');
     }
