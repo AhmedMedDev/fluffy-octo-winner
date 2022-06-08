@@ -118,8 +118,6 @@
             }
         })
 
-        let playerNum = 0;
-
         blockThis($('.reload'))
 
         if (+'{{$open_for}}' == '{{auth()->user()->id}}')  {
@@ -128,10 +126,6 @@
         }
 
         window.Echo.join('game.{{$game_id}}')
-        .here((users) => {
-
-            // playerNum = users.length ;
-        })
         .joining((user) => {
 
             if (+'{{$player1}}' != user.id)  {
@@ -139,7 +133,6 @@
                     if (confirm(`${user.name} want to join`)) {
 
                         @this.call('playerJoining', user.id)
-                        // playerNum++;
                     } 
                 }
             }
