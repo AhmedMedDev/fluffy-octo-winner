@@ -13,6 +13,7 @@ class GamerKernel extends Component
     public $player1;
     public $player2;
     public $open_for;
+    public $details;
 
     public function getListeners()
     {
@@ -32,14 +33,27 @@ class GamerKernel extends Component
         $this->player2 = $player_id;
     }
 
-    public function roundFinished ()
+    public function roundFinished ($scored, $togo)
     {
-        $this->open_for = ($this->open_for == $this->player1) 
-        ? $this->player2 : $this->player1;
+        if ($this->open_for == $this->player1) {
+            $this->open_for =  $this->player2;
+            $rowScore = [$scored, $togo, 0, 0];
+
+            array_push($this->details, $rowScore);
+
+        } else {
+            $this->open_for =  $this->player1;
+            $rowScore = $this->details[count($this->details) - 1];
+            $rowScore[2] = $scored;
+            $rowScore[3] = $togo;
+            $this->details[count($this->details) - 1] = $rowScore;
+        }
+
 
         DB::table('games')
             ->where('id', $this->game_id)
             ->update([
+                'details' => json_encode($this->details),
                 'open_for' => $this->open_for
             ]);
 
@@ -54,6 +68,10 @@ class GamerKernel extends Component
 
     public function render()
     {
+        $game_info = DB::table('games')->find($this->game_id);
+
+        $this->details = json_decode($game_info->details);
+
         return view('livewire.game.gamer-kernel');
     }
 }
