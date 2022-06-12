@@ -30,7 +30,7 @@
 
                                         <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
                                         
-                                        <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored"  onchange="scored($(this))"/></td>
+                                        <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored"  onchange="scored($(this), 2)"/></td>
                                         <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
                                     </tr>
                                 @else
@@ -44,7 +44,7 @@
                                         <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="number" class="form-control form-control-solid text-center scored"  value="000" onchange="scored($(this))"/></td>
+                                        <td><input type="number" class="form-control form-control-solid text-center scored"  value="000" onchange="scored($(this), 1)"/></td>
                                         <td><input type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
 
                                         <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
@@ -55,12 +55,12 @@
                                 @endif
                             @else
                                 <tr>
-                                    <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" id="scored_{{$loop->iteration}}_1" data-player="1" data-row="{{$loop->iteration}}" disabled/></td>
+                                    <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" disabled/></td>
                                     <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
 
                                     <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
                             
-                                    <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored" id="scored_{{$loop->iteration}}_2" data-player="2" data-row="{{$loop->iteration}}" disabled/></td>
+                                    <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored"disabled/></td>
                                     <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
                                 </tr>
                             @endif
@@ -123,25 +123,31 @@
     </div>
     <!--end::Navbar-->
     <input type="hidden" id="player_2" value="{{$player2}}">
+    <input type="hidden" id="details_count" value="{{count($details)}}">
 </div>
 
 @push('js')
     <script>
 
-        const scored = (obj) => {
+        const scored = (obj, player_num) => {
 
             if (confirm('Are You Sure ?')) {
-                
+
+                    let row = +$('#details_count').val();
+
+                    if (player_num == 2) row--;
+
                     let scored = +$(obj).val();
 
-                    let togo = +$('.togo_{{count($details)}}_1').val() - scored
+                    let togo = +$(`.togo_${row}_${player_num}`).val() - scored
 
                     if (togo == 0) alert(" Winner Winner Chicken Dinner ✔✔")
                     else if (togo < 0 || +$(obj).val() > 179) alert (" What are you doing 👀👀 ")
 
                     else {
 
-                        @this.call('roundFinished', scored, togo)
+                        @this.call('roundFinished', scored, togo, (player_num == 1))
+                        blockThis($('.reload'))
                     }
                 }
         }
@@ -153,6 +159,7 @@
 
                     @this.call('playerJoining', user.id)
                 } 
+                // else you should redirect to game seen
             }
         });
     </script>
