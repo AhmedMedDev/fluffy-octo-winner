@@ -131,7 +131,8 @@
         const scored = (obj) => {
 
             if (confirm('Are You Sure ?')) {
-                let scored = +$(obj).val();
+                
+                    let scored = +$(obj).val();
 
                     let togo = +$('.togo_{{count($details)}}_1').val() - scored
 
