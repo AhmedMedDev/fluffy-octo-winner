@@ -70,12 +70,12 @@ class GamerKernel extends Component
         $this->player2 = $player_id;
     }
 
-    public function roundFinished ($scored, $togo)
+    public function roundFinished ($scored, $togo, $is_newRow)
     {
-        if ($this->open_for == $this->player1) {
+        if ($is_newRow) {
+
             $this->open_for =  $this->player2;
             $rowScore = [$scored, $togo, 0, 0];
-
             array_push($this->details, $rowScore);
 
         } else {
@@ -104,7 +104,7 @@ class GamerKernel extends Component
 
     public function render()
     {
-        if (($this->open_for != $this->auth_id || $this->player2 == null)){
+        if (($this->open_for != $this->auth_id ||  is_null($this->player2))){
 
             $this->emit('lockBoard');
         }
