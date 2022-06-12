@@ -14,12 +14,49 @@ class GamerKernel extends Component
     public $player2;
     public $open_for;
     public $details;
+    public $auth_id;
+
+    public function mount () 
+    {
+        $this->auth_id = auth()->user()->id;
+
+        $game_info = DB::table('games')->find($this->game_id);
+
+        $this->player1 = $game_info->player1;
+
+        $this->player2 = $game_info->player2;
+        
+        $this->open_for = $game_info->open_for;
+
+        $this->details = json_decode($game_info->details);
+    }
 
     public function getListeners()
     {
         return [
             "echo-presence:game.{$this->game_id},RoundFinishedEvent" => 'notifyNewRound',
+            "echo-presence:game.{$this->game_id},here" => 'here',
+            "echo-presence:game.{$this->game_id},joining" => 'joining',
+            "echo-presence:game.{$this->game_id},leaving" => 'leaving',
         ];
+    }
+
+    public function here ($players) 
+    {
+        if (count($players) == 1) {
+
+            $this->emit('lockBoard');
+        } 
+    }
+
+    public function joining ($player) 
+    {
+        // Nothing to do
+    }
+
+    public function leaving () 
+    {
+        $this->emit('lockBoard');
     }
 
     public function playerJoining ($player_id)
@@ -49,7 +86,6 @@ class GamerKernel extends Component
             $this->details[count($this->details) - 1] = $rowScore;
         }
 
-
         DB::table('games')
             ->where('id', $this->game_id)
             ->update([
@@ -57,20 +93,21 @@ class GamerKernel extends Component
                 'open_for' => $this->open_for
             ]);
 
-        Broadcast(new RoundFinishedEvent($this->game_id, $this->open_for))->toOthers();
-        $this->emit('triggerLoader');
+        Broadcast(new RoundFinishedEvent($this->game_id, $this->open_for, $this->details))->toOthers();
     }
     
-    public function notifyNewRound($e) 
+    public function notifyNewRound($data) 
     {
-        $this->open_for = $e['open_for'];
+        $this->open_for = $data['open_for'];
+        $this->details = $data['details'];
     }
 
     public function render()
     {
-        $game_info = DB::table('games')->find($this->game_id);
+        if (($this->open_for != $this->auth_id || $this->player2 == null)){
 
-        $this->details = json_decode($game_info->details);
+            $this->emit('lockBoard');
+        }
 
         return view('livewire.game.gamer-kernel');
     }
