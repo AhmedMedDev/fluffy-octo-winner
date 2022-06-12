@@ -5,7 +5,7 @@
         <h2 class="text-gray-400">Player 2</h2>
     </div>
     <div class="card mb-6 ">
-        <div class="card-body pt-9 reload @if ($open_for == auth()->user()->id) triggerLoader @endif overflow-hidden">
+        <div class="card-body pt-9 reload overflow-hidden">
             <!--begin::Details-->
 
             <div class="table-responsive">
@@ -20,24 +20,62 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><input type="number" class="form-control form-control-solid  border-success text-center scored" id="scored_0_1" data-player="1" data-row="0"/></td>
-                            <td><input type="number" class="form-control form-control-solid text-center togo" value="501" disabled /></td>
-                            <td>. .</td>
-                            <td><input type="number" class="form-control form-control-solid text-center scored" id="scored_0_2" data-player="2" data-row="0"/></td> 
-                            <td><input type="number" class="form-control form-control-solid text-center togo" value="501" disabled /></td>
-                        </tr>
-                        @for ($i = 1; $i < 10; $i++)
+                        @foreach ($details as $row)
+
+                            @if ($loop->last )
+                                @if ($row[2] == 0)
+                                    <tr>
+                                        <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" disabled /></td>
+                                        <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
+
+                                        <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
+                                        
+                                        <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored"  onchange="scored($(this))"/></td>
+                                        <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
+                                    </tr>
+                                @else
+                                    <tr>
+                                        <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored"  disabled/></td>
+                                        <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
+
+                                        <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
+                                        
+                                        <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored" disabled/></td>
+                                        <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="number" class="form-control form-control-solid text-center scored"  value="000" onchange="scored($(this))"/></td>
+                                        <td><input type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
+
+                                        <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
+                                        
+                                        <td><input type="number" class="form-control form-control-solid text-center scored" disabled/></td>
+                                        <td><input type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
+                                    </tr>
+                                @endif
+                            @else
+                                <tr>
+                                    <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" id="scored_{{$loop->iteration}}_1" data-player="1" data-row="{{$loop->iteration}}" disabled/></td>
+                                    <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
+
+                                    <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
+                            
+                                    <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored" id="scored_{{$loop->iteration}}_2" data-player="2" data-row="{{$loop->iteration}}" disabled/></td>
+                                    <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
+                                </tr>
+                            @endif
+                        @endforeach
+                        {{-- @for ($i = count($details) + 1; $i <= 15 ; $i++)
                             <tr>
-                                <td><input type="number" class="form-control form-control-solid text-center scored" id="scored_{{$i}}_1" data-player="1" data-row="{{$i}}" disabled/></td>
-                                <td><input type="number" class="form-control form-control-solid text-center togo togo_{{$i}}_1" disabled/></td>
+                                <td><input type="number" class="form-control form-control-solid text-center " disabled/></td>
+                                <td><input type="number" class="form-control form-control-solid text-center " disabled/></td>
 
                                 <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $i}}" disabled /></td>
 
-                                <td><input type="number" class="form-control form-control-solid text-center scored" id="scored_{{$i}}_2" data-player="2" data-row="{{$i}}" disabled/></td>
-                                <td><input type="number" class="form-control form-control-solid text-center togo togo_{{$i}}_2" disabled /></td>
+                                <td><input type="number" class="form-control form-control-solid text-center "disabled/></td>
+                                <td><input type="number" class="form-control form-control-solid text-center " disabled /></td>
                             </tr>
-                        @endfor
+                        @endfor --}}
                     </tbody>
                 </table>
             </div>
@@ -85,69 +123,36 @@
     </div>
     <!--end::Navbar-->
     <input type="hidden" id="player_2" value="{{$player2}}">
-    <input type="hidden" id="open_for" value="{{$open_for}}">
 </div>
 
 @push('js')
     <script>
-        $('.scored').on('change', function() {
-            let togo = +$(this).parent().next().find('.togo').val() - +$(this).val()
-            let row = +$(this).attr('data-row');
-            let player = +$(this).attr('data-player');
 
-            if (togo == 0) alert(" Winner Winner Chicken Dinner ✔✔")
-            else if (togo < 0 || +$(this).val() > 179) alert (" What are you doing 👀👀 ")
+        const scored = (obj) => {
 
-            else {
-                // Compute new togo
-                $(`.togo_${row + 1}_${player}`).val(togo)
+            if (confirm('Are You Sure ?')) {
+                let scored = +$(obj).val();
 
-                // Computing Observing
-                $(this).prop('disabled', true);
-                $(this).removeClass('border-success')
+                    let togo = +$('.togo_{{count($details)}}_1').val() - scored
 
-                // if row has been completed , create new
-                if (player == 2) {
-                    $(`#scored_${row + 1}_1`).addClass('border-success')
-                    $(`#scored_${row + 1}_1`).prop('disabled', false);
-                    $(`#scored_${row + 1}_2`).prop('disabled', false);
-                } else {
-                    $(`#scored_${row}_2`).addClass('border-success')
+                    if (togo == 0) alert(" Winner Winner Chicken Dinner ✔✔")
+                    else if (togo < 0 || +$(obj).val() > 179) alert (" What are you doing 👀👀 ")
+
+                    else {
+
+                        @this.call('roundFinished', scored, togo)
+                    }
                 }
-                // Broadcast to other players
-                @this.call('roundFinished')
-            }
-        })
-
-        blockThis($('.reload'))
-
-        if (+$('#open_for').val() == '{{auth()->user()->id}}')  {
-
-            unblockThis($('.reload'))
         }
 
         window.Echo.join('game.{{$game_id}}')
         .joining((user) => {
+            if (+'{{$player1}}' != user.id && +$('#player_2').val() != user.id)  {
+                if (confirm(`${user.name} want to join`)) {
 
-            if (+'{{$player1}}' != user.id)  {
-                if (+$('#player_2').val() != user.id) {
-                    if (confirm(`${user.name} want to join`)) {
-
-                        @this.call('playerJoining', user.id)
-                    } 
-                }
+                    @this.call('playerJoining', user.id)
+                } 
             }
-
-            if (+$('#open_for').val() == '{{auth()->user()->id}}')  {
-
-                unblockThis($('.reload'))
-            }
-        })
-        .leaving((user) => {
-
-            blockThis($('.reload'))
-        }).listen('RoundFinishedEvent', (e) => {
-            // alert(e.open_for)
         });
     </script>
 @endpush

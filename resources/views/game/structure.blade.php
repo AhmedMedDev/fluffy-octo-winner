@@ -11,5 +11,5 @@
     </style>
 @endpush
 @section('content')
-    <livewire:game.gamer-kernel :game_id="$game_info->id" :player1="$game_info->player1" :player2="$game_info->player2" :open_for="$game_info->open_for"/>
+    <livewire:game.gamer-kernel :game_id="$game_id" />
 @endsection

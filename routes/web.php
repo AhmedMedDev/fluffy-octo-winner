@@ -22,8 +22,7 @@ Route::get('/', function () {
 Route::get('games/{id}', function ($id) {
 
     return view('game.structure')
-        ->with('game_info', DB::table('games')
-        ->find($id));
+        ->with('game_id', $id);
 })->middleware('auth', 'can_join');
 
 Auth::routes();
