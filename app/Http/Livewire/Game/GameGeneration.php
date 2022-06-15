@@ -21,15 +21,21 @@ class GameGeneration extends Component
     {
         $auth_id = auth()->user()->id;
         $game_id = Str::uuid();
+        $start_score_1 = $this->start_score - $this->handicap_1;
+        $start_score_2 = $this->start_score - $this->handicap_2;
 
         DB::table('games')
         ->insert([
             'id' => $game_id,
             'player1' => $auth_id,
             'open_for' => $auth_id,
+            'legs' => json_encode([
+                'current_leg'   => 1,
+                'winners'       => [1, null] 
+            ]),
             'details' => json_encode([
                 1 => [
-                    [null, $this->start_score, null, $this->start_score]
+                    [null, $start_score_1, null, $start_score_2]
                 ]
             ]),
             'setting' => json_encode([
