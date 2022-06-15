@@ -25,6 +25,8 @@ Route::get('games/{id}', function ($id) {
         ->with('game_id', $id);
 })->middleware('auth', 'can_join');
 
+Route::view('/game-genration', 'game.settings');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

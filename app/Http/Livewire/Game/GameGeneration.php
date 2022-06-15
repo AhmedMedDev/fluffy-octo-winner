@@ -35,7 +35,8 @@ class GameGeneration extends Component
             ]),
             'details' => json_encode([
                 1 => [
-                    [null, $start_score_1, null, $start_score_2]
+                    [null, $start_score_1, null, $start_score_2],
+                    [null, null, null, null]
                 ]
             ]),
             'setting' => json_encode([

@@ -23,7 +23,17 @@
                         @foreach ($details as $row)
 
                             @if ($loop->last )
-                                @if ($row[2] == 0)
+                                @if ($row[2] == null) 
+                                <tr>
+                                    <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored"  disabled/></td>
+                                    <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
+
+                                    <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
+                                    
+                                    <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored" disabled/></td>
+                                    <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
+                                </tr>
+                                @elseif ($row[2] == 0)
                                     <tr>
                                         <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" disabled /></td>
                                         <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
@@ -84,7 +94,7 @@
         </div>
     </div>
     <div class="d-flex justify-content-around mt-4">
-        <a href="game.settings" class="btn btn-flex btn-dark px-6">
+        <a href="game-genration" class="btn btn-flex btn-dark px-6">
             <span class="svg-icon svg-icon-2x">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path opacity="0.3" d="M22 5V19C22 19.6 21.6 20 21 20H19.5L11.9 12.4C11.5 12 10.9 12 10.5 12.4L3 20C2.5 20 2 19.5 2 19V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5ZM7.5 7C6.7 7 6 7.7 6 8.5C6 9.3 6.7 10 7.5 10C8.3 10 9 9.3 9 8.5C9 7.7 8.3 7 7.5 7Z" fill="currentColor"></path>
