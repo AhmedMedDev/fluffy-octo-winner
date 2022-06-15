@@ -86,11 +86,11 @@
 		<script src="assets/js/scripts.bundle.js"></script>
 		<script src="{{ asset('js/app.js') }}" ></script>
 		<script src="assets/custom/blockui/jquery.blockUI.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.0.0/turbolinks.js"integrity="sha512-P3/SDm/poyPMRBbZ4chns8St8nky2t8aeG09fRjunEaKMNEDKjK3BuAstmLKqM7f6L1j0JBYcIRL4h2G6K6Lew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.0.0/turbolinks.js"integrity="sha512-P3/SDm/poyPMRBbZ4chns8St8nky2t8aeG09fRjunEaKMNEDKjK3BuAstmLKqM7f6L1j0JBYcIRL4h2G6K6Lew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
 
 		<script>
 			$(document).ready(function() {
-				Turbolinks.start()
+				// Turbolinks.start()
 			});
 
 			const blockThis = (block) => {

@@ -15,6 +15,7 @@ class GamerKernel extends Component
     public $open_for;
     public $details;
     public $auth_id;
+    public $current_leg;
 
     public function mount () 
     {
@@ -29,6 +30,12 @@ class GamerKernel extends Component
         $this->open_for = $game_info->open_for;
 
         $this->details = json_decode($game_info->details);
+
+        $legs = json_decode($game_info->legs);
+
+        $current_leg = $legs->current_leg;
+
+        $this->details = $this->details->$current_leg;
     }
 
     public function getListeners()
