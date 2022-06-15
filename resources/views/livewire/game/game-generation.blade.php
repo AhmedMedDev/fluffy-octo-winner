@@ -30,9 +30,9 @@
                     <h3 class="text-dark fw-bolder mb-5">Limits Rounds</h3>
     
                     <div class="form-check form-switch form-check-custom form-check-solid me-10">
-                        <input class="form-check-input h-30px w-50px" type="checkbox" value="" id="flexSwitch30x50"/>
+                        <input onclick="toggleActivation($(this), '#limit_rounds')" class="form-check-input h-30px w-50px" type="checkbox" value="1" id="flexSwitch30x50"/>
                         <label class="form-check-label" for="flexSwitch30x50">
-                            <input wire:model.defer="limit_rounds" type="number" class="form-control form-control-solid" value="15" disabled/>
+                            <input wire:model.defer="limit_rounds" id="limit_rounds" type="number" class="form-control form-control-solid"  disabled/>
                         </label>
                     </div>
                 </div>
@@ -68,9 +68,9 @@
                     <h6 class="text-gray-800">Player 1</h6>
     
                     <div class="form-check form-switch form-check-custom form-check-solid me-10">
-                        <input class="form-check-input h-30px w-50px" type="checkbox" value="" id="flexSwitch30x50"/>
+                        <input onclick="toggleActivation($(this), '#handicap_1')" class="form-check-input h-30px w-50px" type="checkbox" value="1" id="flexSwitch30x50"/>
                         <label class="form-check-label" for="flexSwitch30x50">
-                            <input wire:model.defer="handicap_1" type="number" class="form-control form-control-solid" value="501" disabled/>
+                            <input wire:model.defer="handicap_1" id="handicap_1" type="number" class="form-control form-control-solid" value="501" disabled/>
                         </label>
                     </div>
                 </div>
@@ -78,9 +78,9 @@
                     <h6 class="text-gray-800">Player 2</h6>
     
                     <div class="form-check form-switch form-check-custom form-check-solid me-10">
-                        <input class="form-check-input h-30px w-50px" type="checkbox" value="" id="flexSwitch30x50"/>
+                        <input onclick="toggleActivation($(this), '#handicap_2')" class="form-check-input h-30px w-50px" type="checkbox" value="1" id="flexSwitch30x50"/>
                         <label class="form-check-label" for="flexSwitch30x50">
-                            <input wire:model.defer="handicap_2" type="number" class="form-control form-control-solid" value="501" disabled/>
+                            <input wire:model.defer="handicap_2" id="handicap_2" type="number" class="form-control form-control-solid" value="501" disabled/>
                         </label>
                     </div>
                 </div>
@@ -105,3 +105,16 @@
         </button>
     </div>
 </div>
+@push('js')
+    <script>
+        const toggleActivation = (obj, elm_id) => {
+
+            let elm = $(obj);
+            let elm_val = +elm.val();
+
+            $(elm_id).prop('disabled', !elm_val);
+
+            elm.val( (elm_val) ? 0 : 1 );
+        }
+    </script>
+@endpush
