@@ -20,6 +20,8 @@ class GamerKernel extends Component
     public $player2_name;
     public $sum_wins_1;
     public $sum_wins_2;
+    public $limit_rounds;
+    public $curr_round;
 
     public function mount () 
     {
@@ -48,7 +50,10 @@ class GamerKernel extends Component
 
         $this->player1_name = $setting->player1;
         $this->player2_name = $setting->player2;
+        $this->limit_rounds = $setting->limit_rounds;
+        $this->curr_round = count($this->details) - 1;
 
+        dd($this->curr_round);
         // 
     }
 
@@ -121,6 +126,7 @@ class GamerKernel extends Component
     {
         $this->open_for = $data['open_for'];
         $this->details = $data['details'];
+        $this->curr_rounds = count($this->details) - 1
     }
 
     public function render()
