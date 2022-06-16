@@ -8,8 +8,8 @@ use Illuminate\Support\Str;
 
 class GameGeneration extends Component
 {
-    public $player1         = null;
-    public $player2         = null;
+    public $player1         = "Player 1";
+    public $player2         = "Player 2";
     public $start_score     = 501;
     public $limit_rounds    = null;
     public $remaining_score = 0;
@@ -31,12 +31,13 @@ class GameGeneration extends Component
             'open_for' => $auth_id,
             'legs' => json_encode([
                 'current_leg'   => 1,
-                'winners'       => [1, null] 
+                'sum_wins_1'    => 0,
+                'sum_wins_2'    => 0,
+                'winners'       => [] 
             ]),
             'details' => json_encode([
                 1 => [
-                    [null, $start_score_1, null, $start_score_2],
-                    [null, null, null, null]
+                    [null, $start_score_1, null, $start_score_2]
                 ]
             ]),
             'setting' => json_encode([
