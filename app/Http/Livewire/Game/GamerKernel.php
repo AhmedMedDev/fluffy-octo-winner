@@ -49,8 +49,7 @@ class GamerKernel extends Component
         $this->player1_name = $setting->player1;
         $this->player2_name = $setting->player2;
 
-        // start_score, limit_rounds,
-        // remaining_score, handicap_1, handicap_2
+        // 
     }
 
     public function getListeners()
