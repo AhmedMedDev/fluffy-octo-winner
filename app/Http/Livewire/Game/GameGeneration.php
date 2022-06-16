@@ -8,8 +8,8 @@ use Illuminate\Support\Str;
 
 class GameGeneration extends Component
 {
-    public $player1         = null;
-    public $player2         = null;
+    public $player1         = "Player 1";
+    public $player2         = "Player 2";
     public $start_score     = 501;
     public $limit_rounds    = null;
     public $remaining_score = 0;

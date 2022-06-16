@@ -16,6 +16,8 @@ class GamerKernel extends Component
     public $details;
     public $auth_id;
     public $current_leg;
+    public $player1_name;
+    public $player2_name;
 
     public function mount () 
     {
@@ -36,6 +38,14 @@ class GamerKernel extends Component
         $current_leg = $legs->current_leg;
 
         $this->details = $this->details->$current_leg;
+
+        $setting = json_decode($game_info->setting);
+
+        $this->player1_name = $setting->player1;
+        $this->player2_name = $setting->player2;
+
+        // start_score, limit_rounds,
+        // remaining_score, handicap_1, handicap_2
     }
 
     public function getListeners()
