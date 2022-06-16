@@ -14,78 +14,56 @@
                         <tr class="fw-bolder fs-6 text-gray-800">
                             <th>Scored</th>
                             <th>To GO</th>
-                            <th>. . . </th>
+                            <th> 0 - 0 </th>
                             <th>Scored</th>
                             <th>To GO</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($details as $row)
-
-                            @if ($loop->last )
-                                @if ($row[2] == null) 
+                            @if (!$loop->last)
                                 <tr>
-                                    <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored"  disabled/></td>
+                                    <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" disabled/></td>
                                     <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
 
-                                    <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
-                                    
-                                    <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored" disabled/></td>
+                                    <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->iteration}}" disabled /></td>
+                            
+                                    <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored"disabled/></td>
                                     <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
                                 </tr>
-                                @elseif ($row[2] == 0)
-                                    <tr>
-                                        <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" disabled /></td>
-                                        <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
-
-                                        <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
-                                        
-                                        <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored"  onchange="scored($(this), 2)"/></td>
-                                        <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
-                                    </tr>
-                                @else
+                            @else
+                                @if ($open_for == $player1)
                                     <tr>
                                         <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored"  disabled/></td>
                                         <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
 
-                                        <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
+                                        <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->iteration}}" disabled /></td>
                                         
                                         <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored" disabled/></td>
                                         <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="number" class="form-control form-control-solid text-center scored"  value="000" onchange="scored($(this), 1)"/></td>
+                                        <td><input type="number" class="form-control form-control-solid text-center scored"   onchange="scored($(this), 1)"/></td>
                                         <td><input type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
 
-                                        <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
+                                        <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->iteration}}" disabled /></td>
                                         
                                         <td><input type="number" class="form-control form-control-solid text-center scored" disabled/></td>
                                         <td><input type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
                                     </tr>
-                                @endif
-                            @else
-                                <tr>
-                                    <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" disabled/></td>
-                                    <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
+                                @else
+                                    <tr>
+                                        <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" disabled /></td>
+                                        <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
 
-                                    <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
-                            
-                                    <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored"disabled/></td>
-                                    <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
-                                </tr>
+                                        <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->iteration}}" disabled /></td>
+                                        
+                                        <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored"  onchange="scored($(this), 2)"/></td>
+                                        <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
+                                    </tr>
+                                @endif
                             @endif
                         @endforeach
-                        {{-- @for ($i = count($details) + 1; $i <= 15 ; $i++)
-                            <tr>
-                                <td><input type="number" class="form-control form-control-solid text-center " disabled/></td>
-                                <td><input type="number" class="form-control form-control-solid text-center " disabled/></td>
-
-                                <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $i}}" disabled /></td>
-
-                                <td><input type="number" class="form-control form-control-solid text-center "disabled/></td>
-                                <td><input type="number" class="form-control form-control-solid text-center " disabled /></td>
-                            </tr>
-                        @endfor --}}
                     </tbody>
                 </table>
             </div>
