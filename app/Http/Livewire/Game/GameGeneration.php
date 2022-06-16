@@ -31,6 +31,8 @@ class GameGeneration extends Component
             'open_for' => $auth_id,
             'legs' => json_encode([
                 'current_leg'   => 1,
+                'sum_wins_1'    => 0,
+                'sum_wins_2'    => 0,
                 'winners'       => [1, null] 
             ]),
             'details' => json_encode([

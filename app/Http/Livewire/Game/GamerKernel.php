@@ -18,6 +18,8 @@ class GamerKernel extends Component
     public $current_leg;
     public $player1_name;
     public $player2_name;
+    public $sum_wins_1;
+    public $sum_wins_2;
 
     public function mount () 
     {
@@ -38,6 +40,9 @@ class GamerKernel extends Component
         $current_leg = $legs->current_leg;
 
         $this->details = $this->details->$current_leg;
+
+        $this->sum_wins_1 = $legs->sum_wins_1;
+        $this->sum_wins_2 = $legs->sum_wins_2;
 
         $setting = json_decode($game_info->setting);
 

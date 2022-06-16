@@ -14,7 +14,7 @@
                         <tr class="fw-bolder fs-6 text-gray-800">
                             <th>Scored</th>
                             <th>To GO</th>
-                            <th> 0 - 0 </th>
+                            <th> {{$sum_wins_1}} - {{$sum_wins_2}} </th>
                             <th>Scored</th>
                             <th>To GO</th>
                         </tr>
