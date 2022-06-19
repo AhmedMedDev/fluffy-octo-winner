@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Game;
 
+use App\Events\EnemyJoiningEvent;
 use App\Events\LegFinishedEvent;
 use App\Events\RoundFinishedEvent;
 use Illuminate\Support\Facades\Broadcast;
@@ -24,6 +25,8 @@ class GamerKernel extends Component
     public $sum_wins_2;
     public $limit_rounds;
     public $winners;
+    public $double_in;
+    public $double_out;
 
     public function mount () 
     {
@@ -57,6 +60,9 @@ class GamerKernel extends Component
         $this->player2_name = $setting->player2;
         
         $this->limit_rounds = $setting->limit_rounds;
+
+        $this->double_in = $setting->double_in;
+        $this->double_out = $setting->double_out;
     }
 
     public function getListeners()
@@ -64,6 +70,7 @@ class GamerKernel extends Component
         return [
             "echo-presence:game.{$this->game_id},RoundFinishedEvent" => 'notifyNewRound',
             "echo-presence:game.{$this->game_id},LegFinishedEvent" => 'notifyNewLeg',
+            "echo-presence:game.{$this->game_id},EnemyJoiningEvent" => 'notifyEnemyJoining',
             "echo-presence:game.{$this->game_id},here" => 'here',
             "echo-presence:game.{$this->game_id},joining" => 'joining',
             "echo-presence:game.{$this->game_id},leaving" => 'leaving',
@@ -97,48 +104,50 @@ class GamerKernel extends Component
             ]);
 
         $this->player2 = $player_id;
+
+        Broadcast(new EnemyJoiningEvent($this->game_id, $player_id))->toOthers();
     }
 
     public function legFinished ($is_win_1)
     {
-        //->>> I don't store final leg
+        //->>> I don't store final round
 
         $this->open_for == $this->auth_id;
 
         // Details Updating
-       $this->details = json_decode($this->details);
-
-       $new_leg = ++$this->current_leg;
-       $this->details->$new_leg =  [
-               [null, 501, null, 501]
-       ];
+        $this->details = json_decode($this->details);
+        $this->scores = [
+            [null, 501, null, 501]
+        ];
+        $new_leg = ++$this->current_leg;
+        $this->details->$new_leg =  $this->scores;
 
         // Sum wins Updating
-       ($is_win_1) // player 1 who played
-       ? $this->sum_wins_1++
-       : $this->sum_wins_2++;
+        ($is_win_1) // player 1 who played
+        ? $this->sum_wins_1++
+        : $this->sum_wins_2++;
 
-       // Winners Updating
-       array_push($this->winners, [$this->current_leg - 1, $this->auth_id]);
+        // Winners Updating
+        array_push($this->winners, [$this->current_leg - 1, $this->auth_id]);
 
-       $this->details = json_encode($this->details);
+        $this->details = json_encode($this->details);
 
-       DB::table('games')
-       ->where('id', $this->game_id)
-       ->update([
-           'legs' => json_encode([
-               'current_leg'   => $this->current_leg,
-               'sum_wins_1'    => $this->sum_wins_1,
-               'sum_wins_2'    => $this->sum_wins_2,
-               'winners'       => $this->winners 
-           ]),
-           'details' => $this->details,
-           'open_for' => $this->open_for
-       ]);
+        DB::table('games')
+        ->where('id', $this->game_id)
+        ->update([
+            'legs' => json_encode([
+                'current_leg'   => $this->current_leg,
+                'sum_wins_1'    => $this->sum_wins_1,
+                'sum_wins_2'    => $this->sum_wins_2,
+                'winners'       => $this->winners 
+            ]),
+            'details' => $this->details,
+            'open_for' => $this->open_for
+        ]);
 
-       Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
-
+        Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
     }
+
     public function roundFinished ($scored, $togo, $is_newRow)
     {
         if ($is_newRow) {
@@ -176,6 +185,11 @@ class GamerKernel extends Component
     public function notifyNewLeg() 
     {
         return redirect(request()->header('Referer'));
+    }
+
+    public function notifyEnemyJoining($data) 
+    {
+        $this->player2 = $data['player2'];
     }
 
     public function render()

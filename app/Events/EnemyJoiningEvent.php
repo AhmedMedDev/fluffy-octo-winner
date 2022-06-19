@@ -10,20 +10,22 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class LegFinishedEvent implements ShouldBroadcast
+class EnemyJoiningEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $game_id;
+    public $player2;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($game_id)
+    public function __construct($game_id, $player2)
     {
         $this->game_id = $game_id;
+        $this->player2 = $player2;
     }
 
     /**
@@ -34,5 +36,12 @@ class LegFinishedEvent implements ShouldBroadcast
     public function broadcastOn()
     {
         return new PresenceChannel('game.' . $this->game_id);
+    }
+    
+    public function broadcastWith()
+    {
+        return [
+            'player2' => $this->player2,
+        ];
     }
 }

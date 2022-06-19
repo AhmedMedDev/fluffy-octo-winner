@@ -14,6 +14,8 @@ class GameGeneration extends Component
     public $limit_rounds    = null;
     public $remaining_score = 0;
     public $com_score       = 0;
+    public $double_in      = 0;
+    public $double_out      = 0;
     public $handicap_1      = 0;
     public $handicap_2      = 0;
 
@@ -49,6 +51,8 @@ class GameGeneration extends Component
                 'com_score'         => $this->com_score,
                 'handicap_1'        => $this->handicap_1,
                 'handicap_2'        => $this->handicap_2,
+                'double_in'        => $this->double_in,
+                'double_out'        => $this->double_out,
             ])
         ]);
 
