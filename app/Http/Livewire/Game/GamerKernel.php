@@ -101,44 +101,44 @@ class GamerKernel extends Component
 
     public function legFinished ($is_win_1)
     {
-        //->>> I don't store final leg
+        //->>> I don't store final round
 
         $this->open_for == $this->auth_id;
 
         // Details Updating
-       $this->details = json_decode($this->details);
-
-       $new_leg = ++$this->current_leg;
-       $this->details->$new_leg =  [
-               [null, 501, null, 501]
-       ];
+        $this->details = json_decode($this->details);
+        $this->scores = [
+            [null, 501, null, 501]
+        ];
+        $new_leg = ++$this->current_leg;
+        $this->details->$new_leg =  $this->scores;
 
         // Sum wins Updating
-       ($is_win_1) // player 1 who played
-       ? $this->sum_wins_1++
-       : $this->sum_wins_2++;
+        ($is_win_1) // player 1 who played
+        ? $this->sum_wins_1++
+        : $this->sum_wins_2++;
 
-       // Winners Updating
-       array_push($this->winners, [$this->current_leg - 1, $this->auth_id]);
+        // Winners Updating
+        array_push($this->winners, [$this->current_leg - 1, $this->auth_id]);
 
-       $this->details = json_encode($this->details);
+        $this->details = json_encode($this->details);
 
-       DB::table('games')
-       ->where('id', $this->game_id)
-       ->update([
-           'legs' => json_encode([
-               'current_leg'   => $this->current_leg,
-               'sum_wins_1'    => $this->sum_wins_1,
-               'sum_wins_2'    => $this->sum_wins_2,
-               'winners'       => $this->winners 
-           ]),
-           'details' => $this->details,
-           'open_for' => $this->open_for
-       ]);
+        DB::table('games')
+        ->where('id', $this->game_id)
+        ->update([
+            'legs' => json_encode([
+                'current_leg'   => $this->current_leg,
+                'sum_wins_1'    => $this->sum_wins_1,
+                'sum_wins_2'    => $this->sum_wins_2,
+                'winners'       => $this->winners 
+            ]),
+            'details' => $this->details,
+            'open_for' => $this->open_for
+        ]);
 
-       Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
-
+        Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
     }
+
     public function roundFinished ($scored, $togo, $is_newRow)
     {
         if ($is_newRow) {

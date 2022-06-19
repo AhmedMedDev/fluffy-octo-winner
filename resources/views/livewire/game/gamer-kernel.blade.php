@@ -135,7 +135,7 @@
 
                         alert(" Winner Winner Chicken Dinner ✔✔")
                     }
-                    else if (+$(obj).val() > 179) alert (" What are you doing 👀👀 ")
+                    // else if (+$(obj).val() > 179) alert (" What are you doing 👀👀 ")
                     else {
 
                         @this.call('roundFinished', scored, togo, (player_num == 1))
