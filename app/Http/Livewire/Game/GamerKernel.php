@@ -152,17 +152,25 @@ class GamerKernel extends Component
     {
         if (!is_null($this->limit_rounds) && ($this->limit_rounds == count($this->scores) - 1)) {
 
-            ################################# Game End with player 2 #################################
 
-            // player2 is winner
-            $this->open_for = ($this->scores[count($this->scores) - 1][1] <= $togo) // Get smallest togo
-            ? $this->player1
-            : $this->player2;
+            if ($is_newRow) { // player2 is winner
+
+                $this->open_for = ($this->scores[count($this->scores) - 1][1] <= $togo) // Get smallest togo
+                ? $this->player2
+                : $this->player1;
+                
+            
+            } else {  // player2 is winner
+
+                $this->open_for = ($this->scores[count($this->scores) - 1][1] <= $togo) // Get smallest togo
+                ? $this->player1
+                : $this->player2;
+            }
 
             // Details Updating
             $this->details = json_decode($this->details);
             $this->scores = [
-                [null, 501, null, 501]
+                [null, 501, null, 501],
             ];
             $new_leg = ++$this->current_leg;
             $this->details->$new_leg =  $this->scores;
