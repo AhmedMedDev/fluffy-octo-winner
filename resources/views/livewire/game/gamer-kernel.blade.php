@@ -129,20 +129,18 @@
 
                     let togo = +$(`.togo_${row}_${player_num}`).val() - scored
 
-                    @this.call('roundFinished', scored, togo, (player_num == 1))
-                    blockThis($('.reload'))
+                    if (togo == 0) {
 
-                    // if (togo == 0) alert(" Winner Winner Chicken Dinner ✔✔")
-                    // else if (+$(obj).val() > 179) alert (" What are you doing 👀👀 ")
-                    // else if (togo < 0) {
-                    //     togo += scored;
-                    //     scored = 0;
-                    // }
-                    // else {
+                        @this.call('legFinished', (player_num == 1))
 
-                    //     @this.call('roundFinished', scored, togo, (player_num == 1))
-                    //     blockThis($('.reload'))
-                    // }
+                        alert(" Winner Winner Chicken Dinner ✔✔")
+                    }
+                    else if (+$(obj).val() > 179) alert (" What are you doing 👀👀 ")
+                    else {
+
+                        @this.call('roundFinished', scored, togo, (player_num == 1))
+                        blockThis($('.reload'))
+                    }
                 }
         }
 

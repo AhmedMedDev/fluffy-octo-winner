@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Game;
 
+use App\Events\LegFinishedEvent;
 use App\Events\RoundFinishedEvent;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\DB;
@@ -62,6 +63,7 @@ class GamerKernel extends Component
     {
         return [
             "echo-presence:game.{$this->game_id},RoundFinishedEvent" => 'notifyNewRound',
+            "echo-presence:game.{$this->game_id},LegFinishedEvent" => 'notifyNewLeg',
             "echo-presence:game.{$this->game_id},here" => 'here',
             "echo-presence:game.{$this->game_id},joining" => 'joining',
             "echo-presence:game.{$this->game_id},leaving" => 'leaving',
@@ -97,49 +99,48 @@ class GamerKernel extends Component
         $this->player2 = $player_id;
     }
 
+    public function legFinished ($is_win_1)
+    {
+        //->>> I don't store final leg
+
+        $this->open_for == $this->auth_id;
+
+        // Details Updating
+       $this->details = json_decode($this->details);
+
+       $new_leg = ++$this->current_leg;
+       $this->details->$new_leg =  [
+               [null, 501, null, 501]
+       ];
+
+        // Sum wins Updating
+       ($is_win_1) // player 1 who played
+       ? $this->sum_wins_1++
+       : $this->sum_wins_2++;
+
+       // Winners Updating
+       array_push($this->winners, [$this->current_leg - 1, $this->auth_id]);
+
+       $this->details = json_encode($this->details);
+
+       DB::table('games')
+       ->where('id', $this->game_id)
+       ->update([
+           'legs' => json_encode([
+               'current_leg'   => $this->current_leg,
+               'sum_wins_1'    => $this->sum_wins_1,
+               'sum_wins_2'    => $this->sum_wins_2,
+               'winners'       => $this->winners 
+           ]),
+           'details' => $this->details,
+           'open_for' => $this->open_for
+       ]);
+
+       Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
+
+    }
     public function roundFinished ($scored, $togo, $is_newRow)
     {
-        // Finishing Leg Case
-        if ($togo == 0){
-
-            $this->open_for == $this->auth_id;
-
-             // Details Updating
-            $this->details = json_decode($this->details);
-
-            $new_leg = ++$this->current_leg;
-            $this->details->$new_leg =  [
-                    [null, 501, null, 501]
-            ];
-
-             // Sum wins Updating
-            ($is_newRow) // player 1 who played
-            ? $this->sum_wins_1++
-            : $this->sum_wins_2++;
-
-            // Winners Updating
-            array_push($this->winners, [$this->current_leg - 1, $this->auth_id]);
-
-            $this->details = json_encode($this->details);
-
-            DB::table('games')
-            ->where('id', $this->game_id)
-            ->update([
-                'legs' => json_encode([
-                    'current_leg'   => $this->current_leg,
-                    'sum_wins_1'    => $this->sum_wins_1,
-                    'sum_wins_2'    => $this->sum_wins_2,
-                    'winners'       => $this->winners 
-                ]),
-                'details' => $this->details,
-                'open_for' => $this->open_for
-            ]);
-
-            Broadcast(new RoundFinishedEvent($this->game_id, $this->open_for, $this->scores))->toOthers();
-
-            return 0;
-        }
-
         if ($is_newRow) {
 
             $this->open_for =  $this->player2;
@@ -170,6 +171,12 @@ class GamerKernel extends Component
     {
         $this->open_for = $data['open_for'];
         $this->scores = $data['scores'];
+    }
+
+    public function notifyNewLeg() 
+    {
+        // Nothing to do
+
     }
 
     public function render()
