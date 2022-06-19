@@ -110,6 +110,7 @@
         </a>
     </div>
     <!--end::Navbar-->
+    <input type="hidden" id="double_in" value="{{$double_in}}">
     <input type="hidden" id="double_out" value="{{$double_out}}">
     <input type="hidden" id="player_2" value="{{$player2}}">
     <input type="hidden" id="scores_count" value="{{count($scores)}}">
@@ -123,6 +124,7 @@
             if (confirm('Are You Sure ?')) {
 
                     let row = +$('#scores_count').val();
+                    let double_in = +$('#double_in').val();
                     let double_out = +$('#double_out').val();
 
                     if (player_num == 2) row--;
@@ -131,7 +133,8 @@
 
                     let togo = +$(`.togo_${row}_${player_num}`).val() - scored
 
-                    if (+$(obj).val() > 179 || (double_out && togo == 1)) {
+                    if (scored > 179 || (double_out && togo == 1) 
+                                     || (double_in && scored % 2 != 0)) {
 
                         alert (" What are you doing 👀👀 ")
                     }

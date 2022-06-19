@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Game;
 
+use App\Events\EnemyJoiningEvent;
 use App\Events\LegFinishedEvent;
 use App\Events\RoundFinishedEvent;
 use Illuminate\Support\Facades\Broadcast;
@@ -59,7 +60,7 @@ class GamerKernel extends Component
         $this->player2_name = $setting->player2;
         
         $this->limit_rounds = $setting->limit_rounds;
-        
+
         $this->double_in = $setting->double_in;
         $this->double_out = $setting->double_out;
     }
@@ -69,6 +70,7 @@ class GamerKernel extends Component
         return [
             "echo-presence:game.{$this->game_id},RoundFinishedEvent" => 'notifyNewRound',
             "echo-presence:game.{$this->game_id},LegFinishedEvent" => 'notifyNewLeg',
+            "echo-presence:game.{$this->game_id},EnemyJoiningEvent" => 'notifyEnemyJoining',
             "echo-presence:game.{$this->game_id},here" => 'here',
             "echo-presence:game.{$this->game_id},joining" => 'joining',
             "echo-presence:game.{$this->game_id},leaving" => 'leaving',
@@ -102,6 +104,8 @@ class GamerKernel extends Component
             ]);
 
         $this->player2 = $player_id;
+
+        Broadcast(new EnemyJoiningEvent($this->game_id, $player_id))->toOthers();
     }
 
     public function legFinished ($is_win_1)
@@ -181,6 +185,11 @@ class GamerKernel extends Component
     public function notifyNewLeg() 
     {
         return redirect(request()->header('Referer'));
+    }
+
+    public function notifyEnemyJoining($data) 
+    {
+        $this->player2 = $data['player2'];
     }
 
     public function render()
