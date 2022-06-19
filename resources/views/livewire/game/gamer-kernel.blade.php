@@ -130,8 +130,11 @@
                     let togo = +$(`.togo_${row}_${player_num}`).val() - scored
 
                     if (togo == 0) alert(" Winner Winner Chicken Dinner ✔✔")
-                    else if (togo < 0 || +$(obj).val() > 179) alert (" What are you doing 👀👀 ")
-
+                    else if (+$(obj).val() > 179) alert (" What are you doing 👀👀 ")
+                    else if (togo < 0) {
+                        togo += scored;
+                        scored = 0;
+                    }
                     else {
 
                         @this.call('roundFinished', scored, togo, (player_num == 1))

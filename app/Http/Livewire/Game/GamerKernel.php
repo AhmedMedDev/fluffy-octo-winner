@@ -21,7 +21,6 @@ class GamerKernel extends Component
     public $sum_wins_1;
     public $sum_wins_2;
     public $limit_rounds;
-    public $curr_round;
 
     public function mount () 
     {
@@ -35,11 +34,12 @@ class GamerKernel extends Component
         
         $this->open_for = $game_info->open_for;
 
-        $this->details = json_decode($game_info->details);
-
         $legs = json_decode($game_info->legs);
 
+        $this->current_leg = $legs->current_leg;
         $current_leg = $legs->current_leg;
+
+        $this->details = json_decode($game_info->details);
 
         $this->details = $this->details->$current_leg;
 
@@ -50,11 +50,8 @@ class GamerKernel extends Component
 
         $this->player1_name = $setting->player1;
         $this->player2_name = $setting->player2;
+        
         $this->limit_rounds = $setting->limit_rounds;
-        $this->curr_round = count($this->details) - 1;
-
-        dd($this->curr_round);
-        // 
     }
 
     public function getListeners()
@@ -115,7 +112,9 @@ class GamerKernel extends Component
         DB::table('games')
             ->where('id', $this->game_id)
             ->update([
-                'details' => json_encode($this->details),
+                'details' => json_encode([
+                    $this->current_leg => $this->details
+                ]),
                 'open_for' => $this->open_for
             ]);
 
@@ -126,7 +125,6 @@ class GamerKernel extends Component
     {
         $this->open_for = $data['open_for'];
         $this->details = $data['details'];
-        $this->curr_rounds = count($this->details) - 1
     }
 
     public function render()
