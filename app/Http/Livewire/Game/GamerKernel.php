@@ -24,6 +24,8 @@ class GamerKernel extends Component
     public $sum_wins_2;
     public $limit_rounds;
     public $winners;
+    public $double_in;
+    public $double_out;
 
     public function mount () 
     {
@@ -57,6 +59,9 @@ class GamerKernel extends Component
         $this->player2_name = $setting->player2;
         
         $this->limit_rounds = $setting->limit_rounds;
+        
+        $this->double_in = $setting->double_in;
+        $this->double_out = $setting->double_out;
     }
 
     public function getListeners()

@@ -61,6 +61,28 @@
             </div>
             <div class="separator my-10"></div>
             {{--  --}}
+            <h3 class="text-dark fw-bolder mb-5">Double Mode</h3>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-check form-switch form-check-custom form-check-solid me-10">
+                        <input wire:model.defer="double_in" class="form-check-input h-30px w-50px" type="checkbox" value="" id="flexSwitch30x50"/>
+                        <label class="form-check-label" for="flexSwitch30x50">
+                            Double in
+                        </label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-check form-switch form-check-custom form-check-solid me-10">
+                        <input wire:model.defer="double_out" class="form-check-input h-30px w-50px" type="checkbox" value="" id="flexSwitch30x50"/>
+                        <label class="form-check-label" for="flexSwitch30x50">
+                            Double out
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator my-10"></div>
+            {{--  --}}
     
             <h3 class="text-dark fw-bolder mb-5">Handicap</h3>
             <div class="row">
