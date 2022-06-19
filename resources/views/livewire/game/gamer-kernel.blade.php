@@ -20,7 +20,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($details as $row)
+                        @foreach ($scores as $row)
                             @if (!$loop->last)
                                 <tr>
                                     <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" disabled/></td>
@@ -111,7 +111,7 @@
     </div>
     <!--end::Navbar-->
     <input type="hidden" id="player_2" value="{{$player2}}">
-    <input type="hidden" id="details_count" value="{{count($details)}}">
+    <input type="hidden" id="scores_count" value="{{count($scores)}}">
 </div>
 
 @push('js')
@@ -121,7 +121,7 @@
 
             if (confirm('Are You Sure ?')) {
 
-                    let row = +$('#details_count').val();
+                    let row = +$('#scores_count').val();
 
                     if (player_num == 2) row--;
 
@@ -129,12 +129,13 @@
 
                     let togo = +$(`.togo_${row}_${player_num}`).val() - scored
 
-                    if (togo == 0) alert(" Winner Winner Chicken Dinner ✔✔")
-                    else if (+$(obj).val() > 179) alert (" What are you doing 👀👀 ")
-                    else if (togo < 0) {
-                        togo += scored;
-                        scored = 0;
+                    if (togo == 0) {
+
+                        @this.call('legFinished', (player_num == 1))
+
+                        alert(" Winner Winner Chicken Dinner ✔✔")
                     }
+                    else if (+$(obj).val() > 179) alert (" What are you doing 👀👀 ")
                     else {
 
                         @this.call('roundFinished', scored, togo, (player_num == 1))
