@@ -1,0 +1,7 @@
+
+- after 2mins bloacker is disapear
+
+- if togo < 0 
+-- put scored = 0 , togo = old_togo
+
+
