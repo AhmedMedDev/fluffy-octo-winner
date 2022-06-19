@@ -16,18 +16,18 @@ class RoundFinishedEvent implements ShouldBroadcast
 
     public $game_id;
     public $open_for;
-    public $details;
+    public $scores;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($game_id, $open_for, $details)
+    public function __construct($game_id, $open_for, $scores)
     {
         $this->game_id = $game_id;
         $this->open_for = $open_for;
-        $this->details = $details;
+        $this->details = $scores;
     }
 
     /**
@@ -44,7 +44,7 @@ class RoundFinishedEvent implements ShouldBroadcast
     {
         return [
             'open_for' => $this->open_for,
-            'details' => $this->details,
+            'scores' => $this->scores,
         ];
     }
 }
