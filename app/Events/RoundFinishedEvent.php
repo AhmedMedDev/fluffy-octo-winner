@@ -27,7 +27,7 @@ class RoundFinishedEvent implements ShouldBroadcast
     {
         $this->game_id = $game_id;
         $this->open_for = $open_for;
-        $this->details = $scores;
+        $this->scores = $scores;
     }
 
     /**

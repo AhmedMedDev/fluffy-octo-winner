@@ -175,8 +175,7 @@ class GamerKernel extends Component
 
     public function notifyNewLeg() 
     {
-        // Nothing to do
-
+        return redirect(request()->header('Referer'));
     }
 
     public function render()
