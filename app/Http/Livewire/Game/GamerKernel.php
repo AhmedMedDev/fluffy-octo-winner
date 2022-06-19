@@ -150,30 +150,75 @@ class GamerKernel extends Component
 
     public function roundFinished ($scored, $togo, $is_newRow)
     {
-        if ($is_newRow) {
+        if (!is_null($this->limit_rounds) && ($this->limit_rounds == count($this->scores) - 1)) {
 
-            $this->open_for =  $this->player2;
-            $rowScore = [$scored, $togo, 0, 0];
-            array_push($this->scores, $rowScore);
+            ################################# Game End with player 2 #################################
 
-        } else {
-            $this->open_for =  $this->player1;
-            $rowScore = $this->scores[count($this->scores) - 1];
-            $rowScore[2] = $scored;
-            $rowScore[3] = $togo;
-            $this->scores[count($this->scores) - 1] = $rowScore;
-        }
+            // player2 is winner
+            $this->open_for = ($this->scores[count($this->scores) - 1][1] <= $togo) // Get smallest togo
+            ? $this->player1
+            : $this->player2;
 
-        DB::table('games')
+            // Details Updating
+            $this->details = json_decode($this->details);
+            $this->scores = [
+                [null, 501, null, 501]
+            ];
+            $new_leg = ++$this->current_leg;
+            $this->details->$new_leg =  $this->scores;
+
+            // Sum wins Updating
+            ($this->open_for == $this->player1) // player 1 who played
+            ? $this->sum_wins_1++
+            : $this->sum_wins_2++;
+
+            // Winners Updating
+            array_push($this->winners, [$this->current_leg - 1, $this->auth_id]);
+
+            $this->details = json_encode($this->details);
+
+            DB::table('games')
             ->where('id', $this->game_id)
             ->update([
-                'details' => json_encode([
-                    $this->current_leg => $this->scores
+                'legs' => json_encode([
+                    'current_leg'   => $this->current_leg,
+                    'sum_wins_1'    => $this->sum_wins_1,
+                    'sum_wins_2'    => $this->sum_wins_2,
+                    'winners'       => $this->winners 
                 ]),
+                'details' => $this->details,
                 'open_for' => $this->open_for
             ]);
 
-        Broadcast(new RoundFinishedEvent($this->game_id, $this->open_for, $this->scores))->toOthers();
+            Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
+
+
+        } else {
+            if ($is_newRow) {
+
+                $this->open_for =  $this->player2;
+                $rowScore = [$scored, $togo, 0, 0];
+                array_push($this->scores, $rowScore);
+    
+            } else {
+                $this->open_for =  $this->player1;
+                $rowScore = $this->scores[count($this->scores) - 1];
+                $rowScore[2] = $scored;
+                $rowScore[3] = $togo;
+                $this->scores[count($this->scores) - 1] = $rowScore;
+            }
+    
+            DB::table('games')
+                ->where('id', $this->game_id)
+                ->update([
+                    'details' => json_encode([
+                        $this->current_leg => $this->scores
+                    ]),
+                    'open_for' => $this->open_for
+                ]);
+    
+            Broadcast(new RoundFinishedEvent($this->game_id, $this->open_for, $this->scores))->toOthers();
+        }
     }
     
     public function notifyNewRound($data) 
