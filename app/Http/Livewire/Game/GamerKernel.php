@@ -18,6 +18,7 @@ class GamerKernel extends Component
     public $details;
     public $scores;
     public $auth_id;
+    public $auth_player_num;
     public $current_leg;
     public $player1_name;
     public $player2_name;
@@ -37,6 +38,8 @@ class GamerKernel extends Component
         $this->player1 = $game_info->player1;
 
         $this->player2 = $game_info->player2;
+
+        $this->auth_player_num = ($this->auth_id == $this->player1) ? 1 : 2;
         
         $this->open_for = $game_info->open_for;
 
@@ -117,7 +120,8 @@ class GamerKernel extends Component
         // Details Updating
         $this->details = json_decode($this->details);
         $this->scores = [
-            [null, 501, null, 501]
+            [null, 501, null, 501],
+            [null, null, null, null]
         ];
         $new_leg = ++$this->current_leg;
         $this->details->$new_leg =  $this->scores;
@@ -148,12 +152,12 @@ class GamerKernel extends Component
         Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
     }
 
-    public function roundFinished ($scored, $togo, $is_newRow)
+    public function roundFinished ($scored, $togo, $is_player1)
     {
         if (!is_null($this->limit_rounds) && ($this->limit_rounds == count($this->scores) - 1)) {
 
 
-            if ($is_newRow) { // player2 is winner
+            if ($is_player1) { // player2 is winner
 
                 $this->open_for = ($this->scores[count($this->scores) - 1][1] <= $togo) // Get smallest togo
                 ? $this->player2
@@ -202,20 +206,26 @@ class GamerKernel extends Component
 
 
         } else {
-            if ($is_newRow) {
+            $curr_round = $this->scores[count($this->scores) - 1];
 
+            if ($is_player1) {
                 $this->open_for =  $this->player2;
-                $rowScore = [$scored, $togo, 0, 0];
-                array_push($this->scores, $rowScore);
+                $curr_round[0] = $scored;
+                $curr_round[1] = $togo;
     
             } else {
                 $this->open_for =  $this->player1;
-                $rowScore = $this->scores[count($this->scores) - 1];
-                $rowScore[2] = $scored;
-                $rowScore[3] = $togo;
-                $this->scores[count($this->scores) - 1] = $rowScore;
+                $curr_round[2] = $scored;
+                $curr_round[3] = $togo;
             }
-    
+
+            $this->scores[count($this->scores) - 1] = $curr_round;
+
+            // Insert New Row If both players played
+            if (!in_array(null, $curr_round)) {
+                array_push($this->scores, [null, null, null, null,]);
+            }
+
             DB::table('games')
                 ->where('id', $this->game_id)
                 ->update([
