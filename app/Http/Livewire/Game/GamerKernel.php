@@ -223,7 +223,7 @@ class GamerKernel extends Component
             $this->scores[count($this->scores) - 1] = $curr_round;
 
             // Insert New Row If both players played
-            if (!in_array(null, $curr_round)) {
+            if (!is_null($curr_round[1]) && !is_null($curr_round[3])) {
                 array_push($this->scores, [null, null, null, null,]);
             }
 

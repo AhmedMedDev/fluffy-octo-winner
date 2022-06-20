@@ -125,11 +125,11 @@
                         alert(" Winner Winner Chicken Dinner ✔✔ ")
                     }
                     else {
-                        // if (togo < 0) {
-                        //     togo = togo + scored;
-                        //     scored = 0;
-                        //     $(obj).val(scored)
-                        // }
+                        if (togo < 0) {
+                            togo = togo + scored;
+                            scored = 0;
+                            $(obj).val(scored)
+                        }
                         @this.call('roundFinished', scored, togo, (player_num == 1))
                         blockThis($('.reload'))
                     }
