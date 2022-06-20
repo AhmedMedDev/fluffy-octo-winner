@@ -95,6 +95,57 @@
     <input type="hidden" id="scores_count" value="{{count($scores)}}">
 </div>
 
+@push('modals')
+    <div class="modal fade joining_request_modal" tabindex="-1" id="kt_modal_1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--begin::Alert-->
+                <div class="alert alert-dismissible bg-light-info d-flex flex-center flex-column py-10 px-10 px-lg-20 mb-0">
+                    <!--begin::Close-->
+                    <button type="button" class="position-absolute top-0 end-0 m-2 btn btn-icon btn-icon-info" data-bs-dismiss="alert">
+                        <span class="svg-icon svg-icon-1">...</span>
+                    </button>
+                    <!--end::Close-->
+
+                    <!--begin::Icon-->
+                    <span class="svg-icon svg-icon-5tx svg-icon-info mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path opacity="0.3" d="M12 22C13.6569 22 15 20.6569 15 19C15 17.3431 13.6569 16 12 16C10.3431 16 9 17.3431 9 19C9 20.6569 10.3431 22 12 22Z" fill="currentColor"></path>
+                            <path d="M19 15V18C19 18.6 18.6 19 18 19H6C5.4 19 5 18.6 5 18V15C6.1 15 7 14.1 7 13V10C7 7.6 8.7 5.6 11 5.1V3C11 2.4 11.4 2 12 2C12.6 2 13 2.4 13 3V5.1C15.3 5.6 17 7.6 17 10V13C17 14.1 17.9 15 19 15ZM11 10C11 9.4 11.4 9 12 9C12.6 9 13 8.6 13 8C13 7.4 12.6 7 12 7C10.3 7 9 8.3 9 10C9 10.6 9.4 11 10 11C10.6 11 11 10.6 11 10Z" fill="currentColor"></path>
+                        </svg>
+                    </span>
+                    <!--end::Icon-->
+
+                    <!--begin::Wrapper-->
+                    <div class="text-center">
+                        <!--begin::Title-->
+                        <h1 class="fw-bolder mb-5">ِAhmed Said Ask For join </h1>
+                        <!--end::Title-->
+
+                        <!--begin::Separator-->
+                        <div class="separator separator-dashed border-info opacity-25 mb-5"></div>
+                        <!--end::Separator-->
+
+                        <!--begin::Content-->
+                        <div class="mb-9 text-dark">
+                            {{-- <strong>ِAhmed Said</strong> Ask For join  --}}
+                        </div>
+                        <!--end::Content-->
+
+                        <!--begin::Buttons-->
+                        <div class="d-flex flex-center flex-wrap">
+                            <a href="#" class="btn btn-outline btn-outline-info btn-active-info m-2">Cancel</a>
+                            <a href="#" class="btn btn-info m-2">Ok, I got it</a>
+                        </div>
+                        <!--end::Buttons-->
+                    </div>
+                    <!--end::Wrapper-->
+                </div>
+                <!--end::Alert-->   
+            </div>
+        </div>
+    </div>
+@endpush
 @push('js')
     <script>
 
@@ -139,6 +190,7 @@
         window.Echo.join('game.{{$game_id}}')
         .joining((user) => {
             if (+'{{$player1}}' != user.id && +$('#player_2').val() != user.id)  {
+                // $('.joining_request_modal').modal('show')
                 if (confirm(`${user.name} want to join`)) {
 
                     @this.call('playerJoining', user.id)
