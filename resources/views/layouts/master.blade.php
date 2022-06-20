@@ -97,7 +97,6 @@
 
                 $(block).block({
                     message: '<div class="blockui-message"><span class="spinner-border text-primary"></span> Loading...</div>',
-                    timeout: 200000, 
                     overlayCSS: {
                         backgroundColor: 'rgba(0,0,0,.05)',
                         opacity: 0.8,
