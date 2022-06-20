@@ -175,6 +175,7 @@ class GamerKernel extends Component
             $this->details = json_decode($this->details);
             $this->scores = [
                 [null, 501, null, 501],
+                [null, null, null, null]
             ];
             $new_leg = ++$this->current_leg;
             $this->details->$new_leg =  $this->scores;
