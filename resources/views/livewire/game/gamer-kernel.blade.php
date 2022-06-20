@@ -194,9 +194,14 @@
                 if (confirm(`${user.name} want to join`)) {
 
                     @this.call('playerJoining', user.id)
-                } 
-                // else you should redirect to game seen
+                } else {
+
+                    @this.call('cancelJoiningRequest')
+                }
             }
-        });
+        }).listen('CancelJoiningEvent', (e) => {
+            alert('Your Request Has Been Rejected 👋🏻👋🏻')
+            window.location.href = '/games';
+        });     
     </script>
 @endpush

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Game;
 
+use App\Events\CancelJoiningEvent;
 use App\Events\EnemyJoiningEvent;
 use App\Events\LegFinishedEvent;
 use App\Events\RoundFinishedEvent;
@@ -109,6 +110,11 @@ class GamerKernel extends Component
         $this->player2 = $player_id;
 
         Broadcast(new EnemyJoiningEvent($this->game_id, $player_id))->toOthers();
+    }
+
+    public function cancelJoiningRequest ()
+    {
+        Broadcast(new CancelJoiningEvent($this->game_id))->toOthers();
     }
 
     public function legFinished ($is_win_1)
