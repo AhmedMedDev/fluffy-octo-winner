@@ -25,7 +25,8 @@ Route::get('games/{id}', function ($id) {
         ->with('game_id', $id);
 })->middleware('auth', 'can_join');
 
-Route::view('/game-genration', 'game.settings');
+Route::view('/game-genration', 'game.settings')->middleware('auth');
+Route::view('/games', 'game.games')->middleware('auth');
 
 Auth::routes();
 
