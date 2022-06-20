@@ -31,7 +31,6 @@
                                     <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored"disabled/></td>
                                     <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
                                 </tr>
-                            {{--  --}}
                             @else
                                 <tr>
                                     <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" @if ($auth_player_num == 1)  onchange="scored($(this), 1)" @else disabled @endif/></td>
@@ -43,7 +42,6 @@
                                     <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
                                 </tr>
                             @endif
-                            {{--  --}}
                         @endforeach
                     </tbody>
                 </table>
@@ -127,7 +125,11 @@
                         alert(" Winner Winner Chicken Dinner ✔✔ ")
                     }
                     else {
-
+                        // if (togo < 0) {
+                        //     togo = togo + scored;
+                        //     scored = 0;
+                        //     $(obj).val(scored)
+                        // }
                         @this.call('roundFinished', scored, togo, (player_num == 1))
                         blockThis($('.reload'))
                     }
