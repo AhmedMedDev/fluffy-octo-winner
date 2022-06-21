@@ -174,23 +174,21 @@ class GamerKernel extends Component
             }
 
             // Details Updating
-            $this->details = json_decode($this->details);
-            $this->scores = [
-                [null, 501, null, 501],
-                [null, null, null, null]
-            ];
-            $new_leg = ++$this->current_leg;
-            $this->details->$new_leg =  $this->scores;
+            $this->details[$this->current_leg] = $this->scores;
 
             // Sum wins Updating
-            ($this->open_for == $this->player1) // player 1 who played
+            ($is_win_1) // player 1 who played
             ? $this->sum_wins_1++
             : $this->sum_wins_2++;
 
             // Winners Updating
-            array_push($this->winners, [$this->current_leg - 1, $this->auth_id]);
+            array_push($this->winners, [$this->current_leg , $this->auth_id]);
 
-            $this->details = json_encode($this->details);
+            // Reset Curr leg
+            $this->scores = [
+                [null, 501, null, 501],
+                [null, null, null, null]
+            ];
 
             DB::table('games')
             ->where('id', $this->game_id)
@@ -199,9 +197,10 @@ class GamerKernel extends Component
                     'current_leg'   => $this->current_leg,
                     'sum_wins_1'    => $this->sum_wins_1,
                     'sum_wins_2'    => $this->sum_wins_2,
-                    'winners'       => $this->winners 
+                    'winners'       => $this->winners,
+                    'details'       => json_encode($this->details)
                 ]),
-                'details' => $this->details,
+                'curr_leg' => json_encode($this->scores),
                 'open_for' => $this->open_for
             ]);
 
