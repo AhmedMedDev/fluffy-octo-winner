@@ -123,6 +123,9 @@ class GamerKernel extends Component
         // Details Updating
         $this->details[$this->current_leg] = $this->scores;
 
+        // Increase Curr_leg
+        $this->current_leg++;
+        
         // Sum wins Updating
         ($is_win_1) // player 1 who played
         ? $this->sum_wins_1++
@@ -177,7 +180,7 @@ class GamerKernel extends Component
             $this->details[$this->current_leg] = $this->scores;
 
             // Sum wins Updating
-            ($is_win_1) // player 1 who played
+            ($this->open_for == $this->player1) // player 1 who played
             ? $this->sum_wins_1++
             : $this->sum_wins_2++;
 
