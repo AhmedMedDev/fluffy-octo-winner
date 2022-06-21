@@ -36,13 +36,12 @@ class GameGeneration extends Component
                 'current_leg'   => 1,
                 'sum_wins_1'    => 0,
                 'sum_wins_2'    => 0,
-                'winners'       => [] 
+                'winners'       => [],
+                'details'       => []
             ]),
-            'details' => json_encode([
-                1 => [
-                    [null, $start_score_1, null, $start_score_2],
-                    [null, null, null, null]
-                ]
+            'curr_leg' => json_encode([
+                [null, $start_score_1, null, $start_score_2],
+                [null, null, null, null]
             ]),
             'setting' => json_encode([
                 'player1'           => $this->player1,
