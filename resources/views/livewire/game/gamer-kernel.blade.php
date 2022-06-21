@@ -83,7 +83,7 @@
                 </svg>
             </span>
             <span class="d-flex flex-column align-items-start ms-2">
-                <span class="fs-3 fw-bolder">Final</span>
+                <span class="fs-3 fw-bolder">Finish</span>
                 <span class="fs-7">Some description</span>
             </span>
         </a>
@@ -145,6 +145,27 @@
             </div>
         </div>
     </div>
+    {{--  --}}
+    <div class="modal fade" tabindex="-1" id="double_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Winner Winner Chicken Dinner ✔✔</h5>
+    
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="svg-icon svg-icon-2x"></span>
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <div class="modal-body">
+                    <a href="#" class="btn btn-dark w-100 mb-3">First</a>
+                    <a href="#" class="btn btn-dark w-100 mb-3">Seconde</a>
+                    <a href="#" class="btn btn-dark w-100 mb-3">Therd</a>
+                </div>
+            </div>
+        </div>
+    </div>
 @endpush
 @push('js')
     <script>
@@ -167,13 +188,20 @@
                     else if (togo == 0) {
 
                         if (double_out) {
-                            // show modal
-                            alert(' Model Is Opened 👌')
+
+                            $('#double_modal').modal('show')
+
+                            // Don't Complete Game until ans question
+                            @this.call('legFinished', (player_num == 1))
+
+                        } else {
+
+                            @this.call('legFinished', (player_num == 1))
+
+                            alert(" Winner Winner Chicken Dinner ✔✔ ")
                         }
 
-                        @this.call('legFinished', (player_num == 1))
 
-                        alert(" Winner Winner Chicken Dinner ✔✔ ")
                     }
                     else {
                         if (togo < 0) {

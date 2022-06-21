@@ -46,13 +46,10 @@ class GamerKernel extends Component
 
         $legs = json_decode($game_info->legs);
 
+        $this->details = $legs->details;
         $this->current_leg = $legs->current_leg;
-        $current_leg = $legs->current_leg;
 
-        $this->details = $game_info->details;
-
-        $details = json_decode($game_info->details);
-        $this->scores = $details->$current_leg;
+        $this->scores = json_decode($game_info->curr_leg);
 
         $this->sum_wins_1 = $legs->sum_wins_1;
         $this->sum_wins_2 = $legs->sum_wins_2;
@@ -124,23 +121,24 @@ class GamerKernel extends Component
         $this->open_for == $this->auth_id;
 
         // Details Updating
-        $this->details = json_decode($this->details);
-        $this->scores = [
-            [null, 501, null, 501],
-            [null, null, null, null]
-        ];
-        $new_leg = ++$this->current_leg;
-        $this->details->$new_leg =  $this->scores;
+        $this->details[$this->current_leg] = $this->scores;
 
+        // Increase Curr_leg
+        $this->current_leg++;
+        
         // Sum wins Updating
         ($is_win_1) // player 1 who played
         ? $this->sum_wins_1++
         : $this->sum_wins_2++;
 
         // Winners Updating
-        array_push($this->winners, [$this->current_leg - 1, $this->auth_id]);
+        array_push($this->winners, [$this->current_leg , $this->auth_id]);
 
-        $this->details = json_encode($this->details);
+        // Reset Curr leg
+        $this->scores = [
+            [null, 501, null, 501],
+            [null, null, null, null]
+        ];
 
         DB::table('games')
         ->where('id', $this->game_id)
@@ -149,9 +147,10 @@ class GamerKernel extends Component
                 'current_leg'   => $this->current_leg,
                 'sum_wins_1'    => $this->sum_wins_1,
                 'sum_wins_2'    => $this->sum_wins_2,
-                'winners'       => $this->winners 
+                'winners'       => $this->winners,
+                'details'       => json_encode($this->details)
             ]),
-            'details' => $this->details,
+            'curr_leg' => json_encode($this->scores),
             'open_for' => $this->open_for
         ]);
 
@@ -178,13 +177,7 @@ class GamerKernel extends Component
             }
 
             // Details Updating
-            $this->details = json_decode($this->details);
-            $this->scores = [
-                [null, 501, null, 501],
-                [null, null, null, null]
-            ];
-            $new_leg = ++$this->current_leg;
-            $this->details->$new_leg =  $this->scores;
+            $this->details[$this->current_leg] = $this->scores;
 
             // Sum wins Updating
             ($this->open_for == $this->player1) // player 1 who played
@@ -192,9 +185,13 @@ class GamerKernel extends Component
             : $this->sum_wins_2++;
 
             // Winners Updating
-            array_push($this->winners, [$this->current_leg - 1, $this->auth_id]);
+            array_push($this->winners, [$this->current_leg , $this->auth_id]);
 
-            $this->details = json_encode($this->details);
+            // Reset Curr leg
+            $this->scores = [
+                [null, 501, null, 501],
+                [null, null, null, null]
+            ];
 
             DB::table('games')
             ->where('id', $this->game_id)
@@ -203,9 +200,10 @@ class GamerKernel extends Component
                     'current_leg'   => $this->current_leg,
                     'sum_wins_1'    => $this->sum_wins_1,
                     'sum_wins_2'    => $this->sum_wins_2,
-                    'winners'       => $this->winners 
+                    'winners'       => $this->winners,
+                    'details'       => json_encode($this->details)
                 ]),
-                'details' => $this->details,
+                'curr_leg' => json_encode($this->scores),
                 'open_for' => $this->open_for
             ]);
 
@@ -236,9 +234,7 @@ class GamerKernel extends Component
             DB::table('games')
                 ->where('id', $this->game_id)
                 ->update([
-                    'details' => json_encode([
-                        $this->current_leg => $this->scores
-                    ]),
+                    'curr_leg' => json_encode($this->scores),
                     'open_for' => $this->open_for
                 ]);
     

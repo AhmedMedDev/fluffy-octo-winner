@@ -36,7 +36,7 @@
            </div>
         {{--  --}}
 
-        @foreach (DB::table('games')->select('id', 'setting')->get() as $game)
+        @foreach (DB::table('games')->select('id', 'setting', 'date')->orderBy('date', 'desc')->get() as $game)
             <div class="card card-flush shadow-sm mb-4">
                 <div class="card-header">
                     <h3 class="card-title">
@@ -47,6 +47,7 @@
                     </div>
                 </div>
                 <div class="card-body py-5">
+                    Created at : <strong>{{$game->date }}</strong> <br>
                     Lorem Ipsum is simply dummy text...
                 </div>
                 <div class="card-footer">
