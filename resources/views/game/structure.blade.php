@@ -7,7 +7,9 @@
             -webkit-appearance: none;
             margin: 0;
         }
-
+        .modal#double_modal{
+            top: 35%;
+        }
     </style>
 @endpush
 @section('content')
