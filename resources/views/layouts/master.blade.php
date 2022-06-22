@@ -47,7 +47,14 @@
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
-	<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled">
+	<body id="kt_body" class="page-loading-enabled page-loading header-fixed header-tablet-and-mobile-fixed toolbar-enabled">
+		<!--begin::loader-->
+		<div class="page-loader">
+			<span class="spinner-border text-primary" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</span>
+		</div>
+		<!--end::Loader-->
 		<!--begin::Main-->
 		<!--begin::Root-->
 		<div class="d-flex flex-column flex-root">
