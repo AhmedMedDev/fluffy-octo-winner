@@ -31,7 +31,7 @@
                 <!--end::Form-->
             </div>
             <div class="col-2">
-                <a href="{{url('game-genration')}}" class="btn btn-light-primary">Generate New Game</a>
+                <a href="{{url('game-genration')}}" class="btn btn-primary">Generate New Game</a>
             </div>
            </div>
         {{--  --}}
@@ -43,7 +43,7 @@
                     {{ json_decode($game->setting)->game_title  }}
                     </h3>
                     <div class="card-toolbar">
-                        <a href="{{url('games', $game->id)}}" class="btn btn-info">Ask To Join</a>
+                        <a href="{{url('games', $game->id)}}" class="btn btn-danger">Ask To Join</a>
                     </div>
                 </div>
                 <div class="card-body py-5">
