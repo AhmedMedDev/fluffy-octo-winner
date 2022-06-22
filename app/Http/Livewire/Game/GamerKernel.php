@@ -193,7 +193,11 @@ class GamerKernel extends Component
                 }
     
                 // Details Updating
-                $this->details[$this->current_leg] = $this->scores;
+                $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
+                array_push($this->details, $this->scores);
+
+                // Increase Curr_leg
+                $this->current_leg++;
     
                 // Sum wins Updating
                 ($this->open_for == $this->player1) // player 1 who played
@@ -252,7 +256,7 @@ class GamerKernel extends Component
 
     public function notifyNewLeg() 
     {
-        return redirect(request()->header('Referer'));
+        $this->mount();
     }
 
     public function notifyEnemyJoining($data) 

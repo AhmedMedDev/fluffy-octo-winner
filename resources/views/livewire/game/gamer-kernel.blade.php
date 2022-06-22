@@ -210,6 +210,7 @@
                             $(obj).val(scored)
                         }
                         @this.call('roundFinished', scored, togo, (player_num == 1))
+                        // $(obj).val(null)
                         blockThis($('.reload'))
                     }
                 }
