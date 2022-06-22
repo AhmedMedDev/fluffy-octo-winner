@@ -121,6 +121,7 @@ class GamerKernel extends Component
         $this->open_for == $this->auth_id;
 
         // Details Updating
+        $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
         $this->details[$this->current_leg] = $this->scores;
 
         // Increase Curr_leg
