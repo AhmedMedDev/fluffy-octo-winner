@@ -25,6 +25,12 @@ Route::get('games/{id}', function ($id) {
         ->with('game_id', $id);
 })->middleware('auth', 'can_join');
 
+Route::get('archive/{id}', function ($id) {
+
+    return view('game.archive')
+        ->with('game_id', $id);
+})->middleware('auth', 'can_join');
+
 Route::view('/game-genration', 'game.settings')->middleware('auth');
 Route::view('game/stats/{id}', 'game.stats')->middleware('auth');
 Route::view('/games', 'game.games')->middleware('auth');

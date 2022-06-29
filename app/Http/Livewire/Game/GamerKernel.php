@@ -158,6 +158,17 @@ class GamerKernel extends Component
         Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
     }
 
+    public function close_game()
+    {
+        DB::table('games')
+            ->where('id', $this->game_id)
+            ->update([
+                'open_for' => 0
+            ]);
+
+        return redirect('games');
+    }
+
     public function roundFinished ($scored, $togo, $is_player1)
     {
         $curr_round = $this->scores[count($this->scores) - 1];
