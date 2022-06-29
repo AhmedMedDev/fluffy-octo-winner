@@ -172,48 +172,45 @@
 
         const scored = (obj, player_num) => {
 
-            if (confirm('Are You Sure ?')) {
+            let row = +$('#scores_count').val();
+            let double_in = +$('#double_in').val();
+            let double_out = +$('#double_out').val();
+            let scored = +$(obj).val();
+            let togo = +$(`.togo_${row - 1}_${player_num}`).val() - scored
 
-                    let row = +$('#scores_count').val();
-                    let double_in = +$('#double_in').val();
-                    let double_out = +$('#double_out').val();
-                    let scored = +$(obj).val();
-                    let togo = +$(`.togo_${row - 1}_${player_num}`).val() - scored
+            if (scored > 179 || (double_out && togo == 1) 
+                                || (double_in && scored % 2 != 0)) {
 
-                    if (scored > 179 || (double_out && togo == 1) 
-                                     || (double_in && scored % 2 != 0)) {
+                alert (" What are you doing 👀👀 ")
+            }
+            else if (togo == 0) {
 
-                        alert (" What are you doing 👀👀 ")
-                    }
-                    else if (togo == 0) {
+                if (double_out) {
 
-                        if (double_out) {
+                    $('#double_modal').modal('show')
 
-                            $('#double_modal').modal('show')
+                    // Don't Complete Game until ans question
+                    @this.call('legFinished', (player_num == 1))
 
-                            // Don't Complete Game until ans question
-                            @this.call('legFinished', (player_num == 1))
+                } else {
 
-                        } else {
+                    @this.call('legFinished', (player_num == 1))
 
-                            @this.call('legFinished', (player_num == 1))
-
-                            alert(" Winner Winner Chicken Dinner ✔✔ ")
-                        }
-
-
-                    }
-                    else {
-                        if (togo < 0) {
-                            togo = togo + scored;
-                            scored = 0;
-                            $(obj).val(scored)
-                        }
-                        @this.call('roundFinished', scored, togo, (player_num == 1))
-                        // $(obj).val(null)
-                        blockThis($('.reload'))
-                    }
+                    alert(" Winner Winner Chicken Dinner ✔✔ ")
                 }
+
+
+            }
+            else {
+                if (togo < 0) {
+                    togo = togo + scored;
+                    scored = 0;
+                    $(obj).val(scored)
+                }
+                @this.call('roundFinished', scored, togo, (player_num == 1))
+                // $(obj).val(null)
+                blockThis($('.reload'))
+            }
         }
 
         window.Echo.join('game.{{$game_id}}')
