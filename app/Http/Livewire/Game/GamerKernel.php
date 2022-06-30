@@ -136,7 +136,8 @@ class GamerKernel extends Component
     public function close_leg ($is_winner1 = true)
     {
         $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
-        $this->details[$this->current_leg] = $this->scores;
+        
+        array_push($this->details, $this->scores);
 
         if ($is_winner1) {
 
