@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Game;
 
 use App\Events\CancelJoiningEvent;
 use App\Events\EnemyJoiningEvent;
+use App\Events\GameClosedEvent;
 use App\Events\LegFinishedEvent;
 use App\Events\RoundFinishedEvent;
 use Illuminate\Support\Facades\Broadcast;
@@ -74,6 +75,7 @@ class GamerKernel extends Component
             "echo-presence:game.{$this->game_id},RoundFinishedEvent" => 'notifyNewRound',
             "echo-presence:game.{$this->game_id},LegFinishedEvent" => 'notifyNewLeg',
             "echo-presence:game.{$this->game_id},EnemyJoiningEvent" => 'notifyEnemyJoining',
+            "echo-presence:game.{$this->game_id},GameClosedEvent" => 'gameClosed',
             "echo-presence:game.{$this->game_id},here" => 'here',
             "echo-presence:game.{$this->game_id},joining" => 'joining',
             "echo-presence:game.{$this->game_id},leaving" => 'leaving',
@@ -196,11 +198,13 @@ class GamerKernel extends Component
         ? DB::table('games')
             ->where('id', $this->game_id)
             ->delete()
-            
+
         : DB::table('games')
             ->where('id', $this->game_id)
             ->update(['open_for' => 0]);
 
+        Broadcast(new GameClosedEvent($this->game_id))->toOthers();
+        
         return redirect('games');
     }
 
@@ -257,6 +261,11 @@ class GamerKernel extends Component
     public function notifyNewLeg() 
     {
         $this->mount();
+    }
+
+    public function gameClosed()
+    {
+        return redirect('games');
     }
 
     public function notifyEnemyJoining($data) 
