@@ -43,7 +43,11 @@
                     {{ json_decode($game->setting)->game_title  }}
                     </h3>
                     <div class="card-toolbar">
-                        <a href="{{url('games', $game->id)}}" class="btn btn-danger">Join Game</a>
+                        @if ($game->open_for == 0)
+                            <a href="{{url('game/archive', $game->id)}}" class="btn btn-dark">Game Archive</a>
+                        @else
+                            <a href="{{url('games', $game->id)}}" class="btn btn-danger">Continue Game</a>
+                        @endif
                     </div>
                 </div>
                 <div class="card-body py-5">

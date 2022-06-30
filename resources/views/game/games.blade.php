@@ -36,7 +36,7 @@
            </div>
         {{--  --}}
 
-        @foreach (DB::table('games')->where('open_for', '!=', 0)->select('id', 'setting', 'date')->orderBy('date', 'desc')->get() as $game)
+        @foreach ($games as $game)
             <div class="card card-flush shadow-sm mb-4">
                 <div class="card-header">
                     <h3 class="card-title">
