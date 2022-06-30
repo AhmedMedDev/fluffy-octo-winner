@@ -114,8 +114,21 @@ class GamerKernel extends Component
         Broadcast(new CancelJoiningEvent($this->game_id))->toOthers();
     }
 
-    public function legFinished ($is_winner1)
+    public function legFinished ($scored, $togo,$is_winner1)
     {
+        // save final round firstly 
+        if ($is_winner1) {
+
+            $this->scores[count($this->scores) - 1][0] = $scored;
+
+            $this->scores[count($this->scores) - 1][1] = $togo;
+        } else {
+
+            $this->scores[count($this->scores) - 1][2] = $scored;
+
+            $this->scores[count($this->scores) - 1][3] = $togo;
+        }
+        
         $this->close_leg($is_winner1);
     }
 
@@ -136,7 +149,7 @@ class GamerKernel extends Component
     public function close_leg ($is_winner1 = true)
     {
         $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
-        
+
         array_push($this->details, $this->scores);
 
         if ($is_winner1) {
