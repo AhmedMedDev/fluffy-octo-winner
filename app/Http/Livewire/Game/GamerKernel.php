@@ -114,28 +114,44 @@ class GamerKernel extends Component
         Broadcast(new CancelJoiningEvent($this->game_id))->toOthers();
     }
 
-    public function legFinished ($is_win_1)
+    public function legFinished ($is_winner1)
     {
-        //->>> I don't store final round
+        $this->close_leg($is_winner1);
+    }
 
-        $this->open_for == $this->auth_id;
-
-        // Details Updating
+    /**
+     * Details Updating
+     * 
+     * Open for Winner
+     * Sum wins Updating
+     * 
+     * Winners Updating
+     * 
+     * Increase Curr_leg
+     * Reset Curr leg
+     * 
+     * @param $who did won ? 
+     *  is player 1 !
+     */
+    public function close_leg ($is_winner1 = true)
+    {
         $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
         $this->details[$this->current_leg] = $this->scores;
 
-        // Increase Curr_leg
+        if ($is_winner1) {
+
+            $this->open_for = $this->player1;
+            $this->sum_wins_1++;
+        } else {
+
+            $this->open_for = $this->player2;
+            $this->sum_wins_2++;
+        }
+
+        array_push($this->winners, [$this->current_leg , $this->open_for]);
+
         $this->current_leg++;
-        
-        // Sum wins Updating
-        ($is_win_1) // player 1 who played
-        ? $this->sum_wins_1++
-        : $this->sum_wins_2++;
 
-        // Winners Updating
-        array_push($this->winners, [$this->current_leg , $this->auth_id]);
-
-        // Reset Curr leg
         $this->scores = [
             [null, 501, null, 501],
             [null, null, null, null]
@@ -187,60 +203,13 @@ class GamerKernel extends Component
         $this->scores[count($this->scores) - 1] = $curr_round;
 
         // Cond Explaination : limit is active , This final round, Final Round is Completed
-        if (!is_null($this->limit_rounds) && ($this->limit_rounds == count($this->scores) - 1) && !is_null($curr_round[1]) && !is_null($curr_round[3])) {
+        if (!is_null($this->limit_rounds) && 
+            ($this->limit_rounds == count($this->scores) - 1) && 
+            !is_null($curr_round[1]) && !is_null($curr_round[3])) {
 
-            ############################################################## Repeted 
-                if ($is_player1) { // player2 is winner
-
-                    $this->open_for = ($this->scores[count($this->scores) - 1][1] <= $togo) // Get smallest togo
-                    ? $this->player2
-                    : $this->player1;
-                    
-                
-                } else {  // player2 is winner
-    
-                    $this->open_for = ($this->scores[count($this->scores) - 1][1] <= $togo) // Get smallest togo
-                    ? $this->player1
-                    : $this->player2;
-                }
-    
-                // Details Updating
-                $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
-                array_push($this->details, $this->scores);
-
-                // Increase Curr_leg
-                $this->current_leg++;
-    
-                // Sum wins Updating
-                ($this->open_for == $this->player1) // player 1 who played
-                ? $this->sum_wins_1++
-                : $this->sum_wins_2++;
-    
-                // Winners Updating
-                array_push($this->winners, [$this->current_leg , $this->auth_id]);
-    
-                // Reset Curr leg
-                $this->scores = [
-                    [null, 501, null, 501],
-                    [null, null, null, null]
-                ];
-    
-                DB::table('games')
-                ->where('id', $this->game_id)
-                ->update([
-                    'legs' => json_encode([
-                        'current_leg'   => $this->current_leg,
-                        'sum_wins_1'    => $this->sum_wins_1,
-                        'sum_wins_2'    => $this->sum_wins_2,
-                        'winners'       => $this->winners,
-                        'details'       => json_encode($this->details)
-                    ]),
-                    'curr_leg' => json_encode($this->scores),
-                    'open_for' => $this->open_for
-                ]);
-    
-                Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
-            ############################################################## Repeted 
+                $is_winner1 = ($curr_round[1] <= $curr_round[3]);
+          
+                $this->close_leg($is_winner1);
 
         } else {
 
