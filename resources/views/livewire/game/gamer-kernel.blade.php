@@ -2,6 +2,12 @@
     <!--begin::Navbar-->
     <div class="d-flex justify-content-around mb-4">
         <h2 class="text-gray-400">{{$player1_name}}</h2>
+        <div class="" wire:ignore.self>
+            <select class="form-select " aria-label="Select example" onchange="undo_round($(this).val())">
+                <option value="1"> Undo One Round</option>
+                <option value="2"> Undo Two Round</option>
+            </select>
+        </div>
         <h2 class="text-gray-400">{{$player2_name}}</h2>
     </div>
     <div class="card mb-6 ">
@@ -181,6 +187,21 @@
 @endpush
 @push('js')
     <script>
+        window.Echo.private('game.{{$game_id}}')
+        .listenForWhisper('typing', (e) => {
+            alert(e.name);
+        });
+
+        const undo_round = (round_num) => {
+            if (confirm('Are You Sure ? 👀👀')) {
+
+                // send request to player 2
+                window.Echo.private('game.{{$game_id}}')
+                    .whisper('typing', {
+                        name: "Ahmed want to undo " + round_num + " Round "
+                    });
+            }
+        }
 
         const scored = (obj, player_num) => {
 
