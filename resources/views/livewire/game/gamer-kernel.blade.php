@@ -191,11 +191,19 @@
         const undo_round = (round_num) => {
             if (confirm('Are You Sure ? 👀👀')) {
 
-                // send request to player 2
+                // send request to other player
                 window.Echo.join('game.{{$game_id}}')
-                    .whisper('typing', {
-                        name: "Ahmed want to undo " + round_num + " Round "
+                    .whisper('undoRound', {
+                        message: "The Enemy want to undo " + round_num + " Round "
                     });
+
+                Swal.fire({
+                    html: `<span class="spinner-border text-primary m-2"></span>`,
+                    confirmButtonText: "Waiting Approval . . . ",
+                    customClass: {
+                        confirmButton: "btn btn-primary"
+                    }
+                });
             }
         }
 
@@ -257,8 +265,23 @@
         }).listen('CancelJoiningEvent', (e) => {
             alert('Your Request Has Been Rejected 👋🏻👋🏻')
             window.location.href = '/games';
-        }).listenForWhisper('typing', (e) => {
-            alert(e.name);
-        });    
+        }).listenForWhisper('undoRound', (e) => {
+            if (confirm(e.message)){
+
+            } else {
+                window.Echo.join('game.{{$game_id}}')
+                    .whisper('undoCanceled');
+            }
+        }).listenForWhisper('undoCanceled', (e) => {
+            Swal.fire({
+                text: "Your Undo Request Has Canceled",
+                icon: "error",
+                buttonsStyling: false,
+                confirmButtonText: "Ok, got it!",
+                customClass: {
+                    confirmButton: "btn btn-danger"
+                }
+            });
+        });
     </script>
 @endpush
