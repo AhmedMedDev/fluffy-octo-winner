@@ -206,7 +206,7 @@
 
                 } else {
 
-                    @this.call('legFinished', (player_num == 1))
+                    @this.call('legFinished', scored, togo, (player_num == 1))
 
                     alert(" Winner Winner Chicken Dinner ✔✔ ")
                 }
