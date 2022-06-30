@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="card-body py-5">
-                    Created at : <strong>{{$game->date }}</strong> <br>
+                    Created from : <strong>{{ Carbon\Carbon::parse($game->date)->diffForHumans() }}</strong> <br>
                     Lorem Ipsum is simply dummy text...
                 </div>
                 <div class="card-footer">
