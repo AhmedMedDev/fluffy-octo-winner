@@ -11,6 +11,14 @@
                 <div class="p-1">
                     <input wire:model.defer="player2" type="text" class="form-control form-control-solid" placeholder="Player 2"/>
                 </div>
+                <div class="p-1 d-flex justify-content-center align-items-center">
+                    <div class="form-check form-switch form-check-custom form-check-solid me-10">
+                        <input wire:model.defer="unsaved" class="form-check-input h-30px w-50px" type="checkbox" value="" id="flexSwitch30x50"/>
+                        <label class="form-check-label" for="flexSwitch30x50">
+                            Unsaved This Game
+                        </label>
+                    </div>
+                </div>
             </div>
             {{--  --}}
     

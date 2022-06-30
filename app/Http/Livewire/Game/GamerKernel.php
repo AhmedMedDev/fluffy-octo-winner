@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Game;
 
 use App\Events\CancelJoiningEvent;
 use App\Events\EnemyJoiningEvent;
+use App\Events\GameClosedEvent;
 use App\Events\LegFinishedEvent;
 use App\Events\RoundFinishedEvent;
 use Illuminate\Support\Facades\Broadcast;
@@ -29,6 +30,7 @@ class GamerKernel extends Component
     public $winners;
     public $double_in;
     public $double_out;
+    public $unsaved;
 
     public function mount () 
     {
@@ -64,6 +66,7 @@ class GamerKernel extends Component
 
         $this->double_in = $setting->double_in;
         $this->double_out = $setting->double_out;
+        $this->unsaved = $setting->unsaved;
     }
 
     public function getListeners()
@@ -72,6 +75,7 @@ class GamerKernel extends Component
             "echo-presence:game.{$this->game_id},RoundFinishedEvent" => 'notifyNewRound',
             "echo-presence:game.{$this->game_id},LegFinishedEvent" => 'notifyNewLeg',
             "echo-presence:game.{$this->game_id},EnemyJoiningEvent" => 'notifyEnemyJoining',
+            "echo-presence:game.{$this->game_id},GameClosedEvent" => 'gameClosed',
             "echo-presence:game.{$this->game_id},here" => 'here',
             "echo-presence:game.{$this->game_id},joining" => 'joining',
             "echo-presence:game.{$this->game_id},leaving" => 'leaving',
@@ -114,7 +118,7 @@ class GamerKernel extends Component
         Broadcast(new CancelJoiningEvent($this->game_id))->toOthers();
     }
 
-    public function legFinished ($scored, $togo,$is_winner1)
+    public function legFinished ($scored, $togo, $is_winner1)
     {
         // save final round firstly 
         if ($is_winner1) {
@@ -190,12 +194,17 @@ class GamerKernel extends Component
 
     public function close_game()
     {
-        DB::table('games')
+        ($this->unsaved) 
+        ? DB::table('games')
             ->where('id', $this->game_id)
-            ->update([
-                'open_for' => 0
-            ]);
+            ->delete()
 
+        : DB::table('games')
+            ->where('id', $this->game_id)
+            ->update(['open_for' => 0]);
+
+        Broadcast(new GameClosedEvent($this->game_id))->toOthers();
+        
         return redirect('games');
     }
 
@@ -252,6 +261,11 @@ class GamerKernel extends Component
     public function notifyNewLeg() 
     {
         $this->mount();
+    }
+
+    public function gameClosed()
+    {
+        return redirect('games');
     }
 
     public function notifyEnemyJoining($data) 
