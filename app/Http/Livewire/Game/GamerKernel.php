@@ -29,6 +29,7 @@ class GamerKernel extends Component
     public $winners;
     public $double_in;
     public $double_out;
+    public $unsaved;
 
     public function mount () 
     {
@@ -64,6 +65,7 @@ class GamerKernel extends Component
 
         $this->double_in = $setting->double_in;
         $this->double_out = $setting->double_out;
+        $this->unsaved = $setting->unsaved;
     }
 
     public function getListeners()
@@ -114,7 +116,7 @@ class GamerKernel extends Component
         Broadcast(new CancelJoiningEvent($this->game_id))->toOthers();
     }
 
-    public function legFinished ($scored, $togo,$is_winner1)
+    public function legFinished ($scored, $togo, $is_winner1)
     {
         // save final round firstly 
         if ($is_winner1) {
@@ -190,11 +192,14 @@ class GamerKernel extends Component
 
     public function close_game()
     {
-        DB::table('games')
+        ($this->unsaved) 
+        ? DB::table('games')
             ->where('id', $this->game_id)
-            ->update([
-                'open_for' => 0
-            ]);
+            ->delete()
+            
+        : DB::table('games')
+            ->where('id', $this->game_id)
+            ->update(['open_for' => 0]);
 
         return redirect('games');
     }
