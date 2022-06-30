@@ -25,7 +25,7 @@ Route::get('games/{id}', function ($id) {
         ->with('game_id', $id);
 })->middleware('auth', 'can_join');
 
-Route::get('archive/{id}', function ($id) {
+Route::get('game/archive/{id}', function ($id) {
 
     return view('game.archive')
         ->with('game_id', $id);
