@@ -25,8 +25,42 @@ Route::get('games/{id}', function ($id) {
         ->with('game_id', $id);
 })->middleware('auth', 'can_join');
 
+Route::get('game/archive/{id}', function ($id) {
+
+    return view('game.archive')
+        ->with('game_id', $id);
+})->middleware('auth', 'can_join');
+
 Route::view('/game-genration', 'game.settings')->middleware('auth');
+Route::view('game/stats/{id}', 'game.stats')->middleware('auth');
 Route::view('/games', 'game.games')->middleware('auth');
+Route::get('/games', function () {
+
+    $gmaes = DB::table('games')
+        ->where('open_for', '!=', 0)
+        ->where('player2', null)
+        ->select('id', 'setting', 'date')
+        ->orderBy('date', 'desc')
+        ->get();
+
+    return view('game.games',[
+        'games' => $gmaes
+    ]);
+})->middleware('auth');
+
+Route::get('/archives', function () {
+
+    $gmaes = DB::table('games')
+        ->where('player1', auth()->user()->id)
+        ->orWhere('player2', auth()->user()->id)
+        ->select('id', 'setting', 'date', 'open_for')
+        ->orderBy('date', 'desc')
+        ->get();
+
+    return view('game.archives',[
+        'games' => $gmaes
+    ]);
+})->middleware('auth');
 
 Auth::routes();
 

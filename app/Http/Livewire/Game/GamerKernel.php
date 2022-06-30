@@ -121,6 +121,7 @@ class GamerKernel extends Component
         $this->open_for == $this->auth_id;
 
         // Details Updating
+        $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
         $this->details[$this->current_leg] = $this->scores;
 
         // Increase Curr_leg
@@ -155,6 +156,17 @@ class GamerKernel extends Component
         ]);
 
         Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
+    }
+
+    public function close_game()
+    {
+        DB::table('games')
+            ->where('id', $this->game_id)
+            ->update([
+                'open_for' => 0
+            ]);
+
+        return redirect('games');
     }
 
     public function roundFinished ($scored, $togo, $is_player1)
@@ -193,7 +205,11 @@ class GamerKernel extends Component
                 }
     
                 // Details Updating
-                $this->details[$this->current_leg] = $this->scores;
+                $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
+                array_push($this->details, $this->scores);
+
+                // Increase Curr_leg
+                $this->current_leg++;
     
                 // Sum wins Updating
                 ($this->open_for == $this->player1) // player 1 who played
@@ -252,7 +268,7 @@ class GamerKernel extends Component
 
     public function notifyNewLeg() 
     {
-        return redirect(request()->header('Referer'));
+        $this->mount();
     }
 
     public function notifyEnemyJoining($data) 

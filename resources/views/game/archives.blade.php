@@ -28,7 +28,7 @@
                 <!--end::Form-->
             </div>
             <div class="col-2">
-                <a href="{{url('archives')}}" class="btn w-100 btn-light-info">Game Archive</a>
+                <a href="{{url('games')}}" class="btn w-100 btn-light-info">Game Arena</a>
             </div>
             <div class="col-2">
                 <a href="{{url('game-genration')}}" class="btn btn-light-primary">Generate New Game</a>
@@ -43,7 +43,11 @@
                     {{ json_decode($game->setting)->game_title  }}
                     </h3>
                     <div class="card-toolbar">
-                        <a href="{{url('games', $game->id)}}" class="btn btn-danger">Ask To Join</a>
+                        @if ($game->open_for == 0)
+                            <a href="{{url('game/archive', $game->id)}}" class="btn btn-dark">Game Archive</a>
+                        @else
+                            <a href="{{url('games', $game->id)}}" class="btn btn-danger">Continue Game</a>
+                        @endif
                     </div>
                 </div>
                 <div class="card-body py-5">
@@ -54,6 +58,9 @@
                     <span class="badge badge-primary badge-lg">Simple Game</span>
                     <span class="badge badge-primary badge-lg">Entry Level</span>
                     <span class="badge badge-primary badge-lg">For beginner</span>
+                    @if ($game->open_for == 0)
+                        <span class="badge badge-dark badge-lg">Closed Game</span>
+                    @endif
                 </div>
             </div>
         @endforeach

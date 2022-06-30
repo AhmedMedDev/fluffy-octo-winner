@@ -63,7 +63,7 @@
                 <span class="fs-7">Some description</span>
             </span>
         </a>
-        <a href="#" class="btn btn-flex btn-dark px-6">
+        <a href="{{url('game/stats', $game_id)}}" class="btn btn-flex btn-dark px-6">
             <span class="svg-icon svg-icon-2x">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path opacity="0.3" d="M22 5V19C22 19.6 21.6 20 21 20H19.5L11.9 12.4C11.5 12 10.9 12 10.5 12.4L3 20C2.5 20 2 19.5 2 19V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5ZM7.5 7C6.7 7 6 7.7 6 8.5C6 9.3 6.7 10 7.5 10C8.3 10 9 9.3 9 8.5C9 7.7 8.3 7 7.5 7Z" fill="currentColor"></path>
@@ -83,10 +83,22 @@
                 </svg>
             </span>
             <span class="d-flex flex-column align-items-start ms-2">
-                <span class="fs-3 fw-bolder">Finish</span>
+                <span class="fs-3 fw-bolder">Exit</span>
                 <span class="fs-7">Some description</span>
             </span>
         </a>
+        <button class="btn btn-flex btn-dark px-6" wire:click="close_game()">
+            <span class="svg-icon svg-icon-2x">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path opacity="0.3" d="M22 5V19C22 19.6 21.6 20 21 20H19.5L11.9 12.4C11.5 12 10.9 12 10.5 12.4L3 20C2.5 20 2 19.5 2 19V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5ZM7.5 7C6.7 7 6 7.7 6 8.5C6 9.3 6.7 10 7.5 10C8.3 10 9 9.3 9 8.5C9 7.7 8.3 7 7.5 7Z" fill="currentColor"></path>
+                    <path d="M19.1 10C18.7 9.60001 18.1 9.60001 17.7 10L10.7 17H2V19C2 19.6 2.4 20 3 20H21C21.6 20 22 19.6 22 19V12.9L19.1 10Z" fill="currentColor"></path>
+                </svg>
+            </span>
+            <span class="d-flex flex-column align-items-start ms-2">
+                <span class="fs-3 fw-bolder">Finish</span>
+                <span class="fs-7">Some description</span>
+            </span>
+        </button>
     </div>
     <!--end::Navbar-->
     <input type="hidden" id="double_in" value="{{$double_in}}">
@@ -172,47 +184,45 @@
 
         const scored = (obj, player_num) => {
 
-            if (confirm('Are You Sure ?')) {
+            let row = +$('#scores_count').val();
+            let double_in = +$('#double_in').val();
+            let double_out = +$('#double_out').val();
+            let scored = +$(obj).val();
+            let togo = +$(`.togo_${row - 1}_${player_num}`).val() - scored
 
-                    let row = +$('#scores_count').val();
-                    let double_in = +$('#double_in').val();
-                    let double_out = +$('#double_out').val();
-                    let scored = +$(obj).val();
-                    let togo = +$(`.togo_${row - 1}_${player_num}`).val() - scored
+            if (scored > 179 || (double_out && togo == 1) 
+                                || (double_in && scored % 2 != 0)) {
 
-                    if (scored > 179 || (double_out && togo == 1) 
-                                     || (double_in && scored % 2 != 0)) {
+                alert (" What are you doing 👀👀 ")
+            }
+            else if (togo == 0) {
 
-                        alert (" What are you doing 👀👀 ")
-                    }
-                    else if (togo == 0) {
+                if (double_out) {
 
-                        if (double_out) {
+                    $('#double_modal').modal('show')
 
-                            $('#double_modal').modal('show')
+                    // Don't Complete Game until ans question
+                    @this.call('legFinished', (player_num == 1))
 
-                            // Don't Complete Game until ans question
-                            @this.call('legFinished', (player_num == 1))
+                } else {
 
-                        } else {
+                    @this.call('legFinished', (player_num == 1))
 
-                            @this.call('legFinished', (player_num == 1))
-
-                            alert(" Winner Winner Chicken Dinner ✔✔ ")
-                        }
-
-
-                    }
-                    else {
-                        if (togo < 0) {
-                            togo = togo + scored;
-                            scored = 0;
-                            $(obj).val(scored)
-                        }
-                        @this.call('roundFinished', scored, togo, (player_num == 1))
-                        blockThis($('.reload'))
-                    }
+                    alert(" Winner Winner Chicken Dinner ✔✔ ")
                 }
+
+
+            }
+            else {
+                if (togo < 0) {
+                    togo = togo + scored;
+                    scored = 0;
+                    $(obj).val(scored)
+                }
+                @this.call('roundFinished', scored, togo, (player_num == 1))
+                // $(obj).val(null)
+                blockThis($('.reload'))
+            }
         }
 
         window.Echo.join('game.{{$game_id}}')
