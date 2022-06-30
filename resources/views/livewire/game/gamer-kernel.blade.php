@@ -187,16 +187,12 @@
 @endpush
 @push('js')
     <script>
-        window.Echo.private('game.{{$game_id}}')
-        .listenForWhisper('typing', (e) => {
-            alert(e.name);
-        });
 
         const undo_round = (round_num) => {
             if (confirm('Are You Sure ? 👀👀')) {
 
                 // send request to player 2
-                window.Echo.private('game.{{$game_id}}')
+                window.Echo.join('game.{{$game_id}}')
                     .whisper('typing', {
                         name: "Ahmed want to undo " + round_num + " Round "
                     });
@@ -261,6 +257,8 @@
         }).listen('CancelJoiningEvent', (e) => {
             alert('Your Request Has Been Rejected 👋🏻👋🏻')
             window.location.href = '/games';
-        });     
+        }).listenForWhisper('typing', (e) => {
+            alert(e.name);
+        });    
     </script>
 @endpush
