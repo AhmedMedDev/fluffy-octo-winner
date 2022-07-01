@@ -289,7 +289,12 @@ class GamerKernel extends Component
 
         // delete selected rounds 
         $rounds_num = ($lastNotEmpty) ? $rounds_num : $rounds_num + 1;
-        for ($i = 0; $i < $rounds_num; $i++) array_pop($this->scores);
+        for ($i = 0; $i < $rounds_num; $i++) {
+
+            if (count($this->scores) == 1) break;
+
+            array_pop($this->scores);
+        }
         
         // Push new
         array_push($this->scores, [null, null, null, null,]);
