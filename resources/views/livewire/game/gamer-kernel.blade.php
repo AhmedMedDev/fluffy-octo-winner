@@ -190,7 +190,7 @@
     <script>
 
         const undo_round = (round_num) => {
-            if (confirm('Are You Sure ? 👀👀')) {
+            if (confirm('Are You Sure ? 👀👀') && +$('#scores_count').val() != 2) {
 
                 // send request to other player
                 window.Echo.join('game.{{$game_id}}')
