@@ -273,6 +273,12 @@ class GamerKernel extends Component
         $this->player2 = $data['player2'];
     }
 
+    public function undo($rounds_num)
+    {
+        // unset last 1/2 rounds
+        dd(end($this->scores));
+    }
+
     public function render()
     {
         if (($this->open_for != $this->auth_id ||  is_null($this->player2))){

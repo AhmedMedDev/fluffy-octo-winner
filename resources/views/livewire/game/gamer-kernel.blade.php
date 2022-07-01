@@ -4,6 +4,7 @@
         <h2 class="text-gray-400">{{$player1_name}}</h2>
         <div class="" wire:ignore.self>
             <select class="form-select " aria-label="Select example" onchange="undo_round($(this).val())">
+                <option value="1"> Undo . . Round</option>
                 <option value="1"> Undo One Round</option>
                 <option value="2"> Undo Two Round</option>
             </select>
@@ -194,7 +195,7 @@
                 // send request to other player
                 window.Echo.join('game.{{$game_id}}')
                     .whisper('undoRound', {
-                        message: "The Enemy want to undo " + round_num + " Round "
+                        rounds_num : round_num
                     });
 
                 Swal.fire({
@@ -266,8 +267,10 @@
             alert('Your Request Has Been Rejected 👋🏻👋🏻')
             window.location.href = '/games';
         }).listenForWhisper('undoRound', (e) => {
-            if (confirm(e.message)){
+            if (confirm(` The Enemy want to undo ${e.rounds_num} Round `)){
 
+                // delete last 1/2 rounds 
+                @this.call('undo', e.rounds_num)
             } else {
                 window.Echo.join('game.{{$game_id}}')
                     .whisper('undoCanceled');
