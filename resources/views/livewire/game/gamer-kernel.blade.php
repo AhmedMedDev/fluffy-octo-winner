@@ -2,8 +2,9 @@
     <!--begin::Navbar-->
     <div class="d-flex justify-content-around mb-4">
         <h2 class="text-gray-400">{{$player1_name}}</h2>
-        <div class="" wire:ignore.self>
-            <select class="form-select " aria-label="Select example" onchange="undo_round($(this).val())">
+        <div class="">
+            <select class="form-select undo-select" onchange="undo_round($(this).val())">
+                <option selected value="1"> Undo . . Round</option>
                 <option value="1"> Undo One Round</option>
                 <option value="2"> Undo Two Round</option>
             </select>
@@ -189,12 +190,12 @@
     <script>
 
         const undo_round = (round_num) => {
-            if (confirm('Are You Sure ? 👀👀')) {
+            if (confirm('Are You Sure ? 👀👀') && +$('#scores_count').val() != 2) {
 
                 // send request to other player
                 window.Echo.join('game.{{$game_id}}')
                     .whisper('undoRound', {
-                        message: "The Enemy want to undo " + round_num + " Round "
+                        rounds_num : round_num
                     });
 
                 Swal.fire({
@@ -205,6 +206,8 @@
                     }
                 });
             }
+
+            $('.undo-select option:first').prop('selected',true);
         }
 
         const scored = (obj, player_num) => {
@@ -266,8 +269,10 @@
             alert('Your Request Has Been Rejected 👋🏻👋🏻')
             window.location.href = '/games';
         }).listenForWhisper('undoRound', (e) => {
-            if (confirm(e.message)){
+            if (confirm(` The Enemy want to undo ${e.rounds_num} Round `)){
 
+                // delete last 1/2 rounds 
+                @this.call('undo', e.rounds_num)
             } else {
                 window.Echo.join('game.{{$game_id}}')
                     .whisper('undoCanceled');
