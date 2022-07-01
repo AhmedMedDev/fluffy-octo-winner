@@ -131,6 +131,19 @@
 			window.livewire.on('lockBoard', () => {
 				blockThis($('.reload'))
 			})
+			window.livewire.on('successSwal', (e) => {
+				Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: e.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+			})
+
+			window.livewire.on('closeSwal', () => {
+				Swal.close()
+			})
 		</script>
 		<!--end::Javascript-->
 	</body>

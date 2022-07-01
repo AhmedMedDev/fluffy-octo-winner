@@ -7,6 +7,7 @@ use App\Events\EnemyJoiningEvent;
 use App\Events\GameClosedEvent;
 use App\Events\LegFinishedEvent;
 use App\Events\RoundFinishedEvent;
+use App\Events\UndoExecutedEvent;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
@@ -76,6 +77,7 @@ class GamerKernel extends Component
             "echo-presence:game.{$this->game_id},LegFinishedEvent" => 'notifyNewLeg',
             "echo-presence:game.{$this->game_id},EnemyJoiningEvent" => 'notifyEnemyJoining',
             "echo-presence:game.{$this->game_id},GameClosedEvent" => 'gameClosed',
+            "echo-presence:game.{$this->game_id},UndoExecutedEvent" => 'undoExecuted',
             "echo-presence:game.{$this->game_id},here" => 'here',
             "echo-presence:game.{$this->game_id},joining" => 'joining',
             "echo-presence:game.{$this->game_id},leaving" => 'leaving',
@@ -258,6 +260,12 @@ class GamerKernel extends Component
         $this->scores = $data['scores'];
     }
 
+    public function undoExecuted($data)
+    {
+        $this->scores = $data['scores'];
+        $this->emit('closeSwal');
+    }
+
     public function notifyNewLeg() 
     {
         $this->mount();
@@ -276,7 +284,25 @@ class GamerKernel extends Component
     public function undo($rounds_num)
     {
         // unset last 1/2 rounds
-        dd(end($this->scores));
+        $last_round = end($this->scores);
+        $lastNotEmpty = (!is_null($last_round[1]) || !is_null($last_round[3]));
+
+        // delete selected rounds 
+        $rounds_num = ($lastNotEmpty) ? $rounds_num : $rounds_num + 1;
+        for ($i = 0; $i < $rounds_num; $i++) array_pop($this->scores);
+        
+        // Push new
+        array_push($this->scores, [null, null, null, null,]);
+
+        // DB Updating
+        DB::table('games')
+        ->where('id', $this->game_id)
+        ->update([
+            'curr_leg' => json_encode($this->scores),
+        ]);
+
+        // Broadcast for other
+        Broadcast(new UndoExecutedEvent($this->game_id, $this->scores))->toOthers();
     }
 
     public function render()
