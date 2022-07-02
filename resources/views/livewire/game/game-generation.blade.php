@@ -25,7 +25,7 @@
             <div class="separator my-10"></div>
     
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <h3 class="text-dark fw-bolder mb-5">Start Score</h3>
     
                     <div class="d-flex ">
@@ -34,13 +34,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                     <h3 class="text-dark fw-bolder mb-5">Limits Rounds</h3>
     
                     <div class="form-check form-switch form-check-custom form-check-solid me-10">
                         <input onclick="toggleActivation($(this), '#limit_rounds')" class="form-check-input h-30px w-50px" type="checkbox" value="1" id="flexSwitch30x50"/>
                         <label class="form-check-label" for="flexSwitch30x50">
                             <input wire:model.defer="limit_rounds" id="limit_rounds" type="number" class="form-control form-control-solid"  disabled/>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h3 class="text-dark fw-bolder mb-5">Limits Legs ( First Of )</h3>
+    
+                    <div class="form-check form-switch form-check-custom form-check-solid me-10">
+                        <input onclick="toggleActivation($(this), '#first_of')" class="form-check-input h-30px w-50px" type="checkbox" value="1" id="flexSwitch30x50"/>
+                        <label class="form-check-label" for="flexSwitch30x50">
+                            <input wire:model.defer="first_of" id="first_of" type="number" class="form-control form-control-solid"  disabled/>
                         </label>
                     </div>
                 </div>
