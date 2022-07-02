@@ -32,6 +32,7 @@ class GamerKernel extends Component
     public $double_in;
     public $double_out;
     public $unsaved;
+    public $leg_limit;
 
     public function mount () 
     {
@@ -68,6 +69,7 @@ class GamerKernel extends Component
         $this->double_in = $setting->double_in;
         $this->double_out = $setting->double_out;
         $this->unsaved = $setting->unsaved;
+        $this->leg_limit = $setting->first_of;
     }
 
     public function getListeners()
@@ -152,12 +154,8 @@ class GamerKernel extends Component
      * @param $who did won ? 
      *  is player 1 !
      */
-    public function close_leg ($is_winner1 = true)
+    public function close_leg ($is_winner1)
     {
-        $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
-
-        array_push($this->details, $this->scores);
-
         if ($is_winner1) {
 
             $this->open_for = $this->player1;
@@ -167,6 +165,18 @@ class GamerKernel extends Component
             $this->open_for = $this->player2;
             $this->sum_wins_2++;
         }
+
+        if ($this->sum_wins_1 == $this->sum_wins_2 && $this->sum_wins_1 == $this->leg_limit) {
+
+            $this->leg_limit++;
+        } elseif ($this->sum_wins_1 == $this->leg_limit || $this->sum_wins_2 == $this->leg_limit) {
+
+          return $this->close_game();
+        }
+
+        $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
+
+        array_push($this->details, $this->scores);
 
         array_push($this->winners, [$this->current_leg , $this->open_for]);
 
@@ -209,6 +219,7 @@ class GamerKernel extends Component
         : DB::table('games')
             ->where('id', $this->game_id)
             ->update([
+                'open_for' => 0,
                 'legs' => json_encode([
                     'current_leg'   => $this->current_leg + 1,
                     'sum_wins_1'    => $this->sum_wins_1,
@@ -219,8 +230,7 @@ class GamerKernel extends Component
                 'curr_leg' => json_encode([
                     [null, 501, null, 501],
                     [null, null, null, null]
-                ]),
-                'open_for' => 0,
+                ])
             ]);
 
         Broadcast(new GameClosedEvent($this->game_id))->toOthers();
