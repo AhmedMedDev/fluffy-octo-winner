@@ -212,6 +212,9 @@
 
         const scored = (obj, player_num) => {
 
+            blockThis($('.reload'))
+            $(obj).prop('disabled', true)
+
             let row = +$('#scores_count').val();
             let double_in = +$('#double_in').val();
             let double_out = +$('#double_out').val();
@@ -221,6 +224,8 @@
             if (scored > 179 || (double_out && togo == 1) 
                                 || (double_in && scored % 2 != 0)) {
 
+                unblockThis($('.reload'))
+                $(obj).prop('disabled', false)
                 alert (" What are you doing 👀👀 ")
             }
             else if (togo == 0) {
@@ -239,7 +244,6 @@
                     alert(" Winner Winner Chicken Dinner ✔✔ ")
                 }
 
-
             }
             else {
                 if (togo < 0) {
@@ -248,8 +252,6 @@
                     $(obj).val(scored)
                 }
                 @this.call('roundFinished', scored, togo, (player_num == 1))
-                // $(obj).val(null)
-                blockThis($('.reload'))
             }
         }
 
