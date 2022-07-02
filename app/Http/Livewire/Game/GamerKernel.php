@@ -196,6 +196,11 @@ class GamerKernel extends Component
 
     public function close_game()
     {
+        $this->details = (is_array($this->details)) 
+        ? $this->details : json_decode($this->details);
+
+        array_push($this->details, $this->scores);
+
         ($this->unsaved) 
         ? DB::table('games')
             ->where('id', $this->game_id)
@@ -203,7 +208,20 @@ class GamerKernel extends Component
 
         : DB::table('games')
             ->where('id', $this->game_id)
-            ->update(['open_for' => 0]);
+            ->update([
+                'legs' => json_encode([
+                    'current_leg'   => $this->current_leg + 1,
+                    'sum_wins_1'    => $this->sum_wins_1,
+                    'sum_wins_2'    => $this->sum_wins_2,
+                    'winners'       => $this->winners,
+                    'details'       => json_encode($this->details)
+                ]),
+                'curr_leg' => json_encode([
+                    [null, 501, null, 501],
+                    [null, null, null, null]
+                ]),
+                'open_for' => 0,
+            ]);
 
         Broadcast(new GameClosedEvent($this->game_id))->toOthers();
         

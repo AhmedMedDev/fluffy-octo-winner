@@ -18,7 +18,7 @@ class GameArchive extends Component
 
         $legs = json_decode($game_info->legs);
 
-        $this->details = json_decode($legs->details);
+        $this->details = (is_array($legs->details)) ? $legs->details : json_decode($legs->details);
 
         $this->current_leg = $legs->current_leg;
 
