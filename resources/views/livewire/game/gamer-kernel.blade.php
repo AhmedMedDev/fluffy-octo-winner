@@ -188,7 +188,9 @@
 @endpush
 @push('js')
     <script>
-
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
         const undo_round = (round_num) => {
             if (confirm('Are You Sure ? 👀👀') && +$('#scores_count').val() != 2) {
 
