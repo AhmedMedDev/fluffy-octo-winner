@@ -221,8 +221,7 @@
             let scored = +$(obj).val();
             let togo = +$(`.togo_${row - 1}_${player_num}`).val() - scored
 
-            if (scored > 179 || (double_out && togo == 1) 
-                                || (double_in && scored % 2 != 0)) {
+            if ((double_out && togo == 1) || (double_in && scored % 2 != 0)) {
 
                 unblockThis($('.reload'))
                 $(obj).prop('disabled', false)
@@ -230,20 +229,9 @@
             }
             else if (togo == 0) {
 
-                if (double_out) {
+                prompt('Winner Winner Chicken Dinner ✔✔ , \nEnter Finish Round ')
 
-                    $('#double_modal').modal('show')
-
-                    // Don't Complete Game until ans question
-                    @this.call('legFinished', (player_num == 1))
-
-                } else {
-
-                    @this.call('legFinished', scored, togo, (player_num == 1))
-
-                    alert(" Winner Winner Chicken Dinner ✔✔ ")
-                }
-
+                @this.call('legFinished', scored, togo, (player_num == 1))
             }
             else {
                 if (togo < 0) {
@@ -251,6 +239,9 @@
                     scored = 0;
                     $(obj).val(scored)
                 }
+
+                if (double_in && row == 2) prompt('Enter Round Num ')
+
                 @this.call('roundFinished', scored, togo, (player_num == 1))
             }
         }
