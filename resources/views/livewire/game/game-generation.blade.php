@@ -21,11 +21,9 @@
                 </div>
             </div>
             {{--  --}}
-    
             <div class="separator my-10"></div>
-    
             <div class="row">
-                <div class="col-4">
+                <div class="col-6">
                     <h3 class="text-dark fw-bolder mb-5">Start Score</h3>
     
                     <div class="d-flex ">
@@ -34,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-6">
                     <h3 class="text-dark fw-bolder mb-5">Limits Rounds</h3>
     
                     <div class="form-check form-switch form-check-custom form-check-solid me-10">
@@ -44,7 +42,11 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-4">
+            </div>
+            {{--  --}}
+            <div class="separator my-10"></div>
+            <div class="row">
+                <div class="col-6">
                     <h3 class="text-dark fw-bolder mb-5">Limits Legs ( First Of )</h3>
     
                     <div class="form-check form-switch form-check-custom form-check-solid me-10">
@@ -54,9 +56,19 @@
                         </label>
                     </div>
                 </div>
+                <div class="col-6">
+                    <h3 class="text-dark fw-bolder mb-5">Limits Sets</h3>
+    
+                    <div class="form-check form-switch form-check-custom form-check-solid me-10">
+                        <input onclick="toggleActivation($(this), '#sets_limit')" class="form-check-input h-30px w-50px" type="checkbox" value="1" id="flexSwitch30x50"/>
+                        <label class="form-check-label" for="flexSwitch30x50">
+                            <input wire:model.defer="sets_limit" id="sets_limit" type="number" class="form-control form-control-solid"  disabled/>
+                        </label>
+                    </div>
+                </div>
             </div>
-            <div class="separator my-10"></div>
             {{--  --}}
+            <div class="separator my-10"></div>
             <h3 class="text-dark fw-bolder mb-5">Practice Mode</h3>
     
             <div class="row">

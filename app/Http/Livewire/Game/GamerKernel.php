@@ -176,6 +176,7 @@ class GamerKernel extends Component
 
         $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
 
+        // @ => sets 
         array_push($this->details, $this->scores);
 
         array_push($this->winners, [$this->current_leg , $this->open_for]);
