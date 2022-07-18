@@ -33,6 +33,8 @@ class GamerKernel extends Component
     public $double_out;
     public $unsaved;
     public $leg_limit;
+    public $sets_limit;
+    public $current_set;
 
     public function mount () 
     {
@@ -52,6 +54,7 @@ class GamerKernel extends Component
 
         $this->details = $legs->details;
         $this->current_leg = $legs->current_leg;
+        $this->current_set = $legs->current_set;
 
         $this->scores = json_decode($game_info->curr_leg);
 
@@ -70,6 +73,7 @@ class GamerKernel extends Component
         $this->double_out = $setting->double_out;
         $this->unsaved = $setting->unsaved;
         $this->leg_limit = $setting->first_of;
+        $this->sets_limit = $setting->sets_limit;
     }
 
     public function getListeners()
@@ -177,7 +181,8 @@ class GamerKernel extends Component
         $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
 
         // @ => sets 
-        array_push($this->details, $this->scores);
+        $this->details[$this->current_set] = $this->scores;
+        // array_push($this->details, $this->scores);
 
         array_push($this->winners, [$this->current_leg , $this->open_for]);
 
@@ -210,19 +215,46 @@ class GamerKernel extends Component
         $this->details = (is_array($this->details)) 
         ? $this->details : json_decode($this->details);
 
-        array_push($this->details, $this->scores);
+        // @ => sets 
+        $this->details[$this->current_set] = $this->scores;
+        // array_push($this->details, $this->scores);
 
-        ($this->unsaved) 
-        ? DB::table('games')
-            ->where('id', $this->game_id)
-            ->delete()
+        if ($this->current_set == $this->sets_limit) { // Game Fully Completed
 
-        : DB::table('games')
+            ($this->unsaved) 
+            ? DB::table('games')
+                ->where('id', $this->game_id)
+                ->delete()
+    
+            : DB::table('games')
+                ->where('id', $this->game_id)
+                ->update([
+                    'open_for' => 0,
+                    'legs' => json_encode([
+                        'current_leg'   => $this->current_leg + 1,
+                        'sum_wins_1'    => $this->sum_wins_1,
+                        'sum_wins_2'    => $this->sum_wins_2,
+                        'winners'       => $this->winners,
+                        'details'       => json_encode($this->details)
+                    ]),
+                    'curr_leg' => json_encode([
+                        [null, 501, null, 501],
+                        [null, null, null, null]
+                    ])
+                ]);
+    
+            Broadcast(new GameClosedEvent($this->game_id))->toOthers();
+            
+            return redirect('games');
+
+        } else { // Set Finished
+
+            DB::table('games')
             ->where('id', $this->game_id)
             ->update([
-                'open_for' => 0,
                 'legs' => json_encode([
                     'current_leg'   => $this->current_leg + 1,
+                    'current_set'   => $this->current_set + 1,
                     'sum_wins_1'    => $this->sum_wins_1,
                     'sum_wins_2'    => $this->sum_wins_2,
                     'winners'       => $this->winners,
@@ -233,10 +265,7 @@ class GamerKernel extends Component
                     [null, null, null, null]
                 ])
             ]);
-
-        Broadcast(new GameClosedEvent($this->game_id))->toOthers();
-        
-        return redirect('games');
+        }
     }
 
     public function roundFinished ($scored, $togo, $is_player1)
