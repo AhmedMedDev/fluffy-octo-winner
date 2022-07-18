@@ -7,6 +7,7 @@ use App\Events\EnemyJoiningEvent;
 use App\Events\GameClosedEvent;
 use App\Events\LegFinishedEvent;
 use App\Events\RoundFinishedEvent;
+use App\Events\SetFinishedEvent;
 use App\Events\UndoExecutedEvent;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\DB;
@@ -249,22 +250,26 @@ class GamerKernel extends Component
 
         } else { // Set Finished
 
+            // XXX BUG : should know open for 
             DB::table('games')
             ->where('id', $this->game_id)
             ->update([
                 'legs' => json_encode([
-                    'current_leg'   => $this->current_leg + 1,
+                    'current_leg'   => 1, // reset curr_leg
                     'current_set'   => $this->current_set + 1,
                     'sum_wins_1'    => $this->sum_wins_1,
                     'sum_wins_2'    => $this->sum_wins_2,
                     'winners'       => $this->winners,
                     'details'       => json_encode($this->details)
                 ]),
-                'curr_leg' => json_encode([
+                'curr_leg' => json_encode([ // reset curr_leg
                     [null, 501, null, 501],
                     [null, null, null, null]
                 ])
             ]);
+
+            // Broadcast SetFinished
+            Broadcast(new SetFinishedEvent($this->game_id))->toOthers();
         }
     }
 

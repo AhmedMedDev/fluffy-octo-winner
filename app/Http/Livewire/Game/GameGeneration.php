@@ -38,8 +38,8 @@ class GameGeneration extends Component
             'legs' => json_encode([
                 'current_leg'   => 1,
                 'current_set'   => 1,
-                'sum_wins_1'    => 0,
-                'sum_wins_2'    => 0,
+                'sum_wins_1'    => [0],
+                'sum_wins_2'    => [0],
                 'winners'       => [],
                 'details'       => []
             ]),
