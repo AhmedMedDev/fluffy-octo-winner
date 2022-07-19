@@ -7,6 +7,7 @@ use App\Events\EnemyJoiningEvent;
 use App\Events\GameClosedEvent;
 use App\Events\LegFinishedEvent;
 use App\Events\RoundFinishedEvent;
+use App\Events\SetFinishedEvent;
 use App\Events\UndoExecutedEvent;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\DB;
@@ -33,6 +34,8 @@ class GamerKernel extends Component
     public $double_out;
     public $unsaved;
     public $leg_limit;
+    public $sets_limit;
+    public $current_set;
 
     public function mount () 
     {
@@ -52,6 +55,7 @@ class GamerKernel extends Component
 
         $this->details = $legs->details;
         $this->current_leg = $legs->current_leg;
+        $this->current_set = $legs->current_set;
 
         $this->scores = json_decode($game_info->curr_leg);
 
@@ -70,6 +74,7 @@ class GamerKernel extends Component
         $this->double_out = $setting->double_out;
         $this->unsaved = $setting->unsaved;
         $this->leg_limit = $setting->first_of;
+        $this->sets_limit = $setting->sets_limit;
     }
 
     public function getListeners()
@@ -122,123 +127,6 @@ class GamerKernel extends Component
         Broadcast(new CancelJoiningEvent($this->game_id))->toOthers();
     }
 
-    public function legFinished ($scored, $togo, $is_winner1)
-    {
-        // save final round firstly 
-        if ($is_winner1) {
-
-            $this->scores[count($this->scores) - 1][0] = $scored;
-
-            $this->scores[count($this->scores) - 1][1] = $togo;
-        } else {
-
-            $this->scores[count($this->scores) - 1][2] = $scored;
-
-            $this->scores[count($this->scores) - 1][3] = $togo;
-        }
-        
-        $this->close_leg($is_winner1);
-    }
-
-    /**
-     * Details Updating
-     * 
-     * Open for Winner
-     * Sum wins Updating
-     * 
-     * Winners Updating
-     * 
-     * Increase Curr_leg
-     * Reset Curr leg
-     * 
-     * @param $who did won ? 
-     *  is player 1 !
-     */
-    public function close_leg ($is_winner1)
-    {
-        if ($is_winner1) {
-
-            $this->open_for = $this->player1;
-            $this->sum_wins_1++;
-        } else {
-
-            $this->open_for = $this->player2;
-            $this->sum_wins_2++;
-        }
-
-        if ($this->sum_wins_1 == $this->sum_wins_2 && $this->sum_wins_1 == $this->leg_limit) {
-
-            $this->leg_limit++;
-        } elseif ($this->sum_wins_1 == $this->leg_limit || $this->sum_wins_2 == $this->leg_limit) {
-
-          return $this->close_game();
-        }
-
-        $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
-
-        // @ => sets 
-        array_push($this->details, $this->scores);
-
-        array_push($this->winners, [$this->current_leg , $this->open_for]);
-
-        $this->current_leg++;
-
-        $this->scores = [
-            [null, 501, null, 501],
-            [null, null, null, null]
-        ];
-
-        DB::table('games')
-        ->where('id', $this->game_id)
-        ->update([
-            'legs' => json_encode([
-                'current_leg'   => $this->current_leg,
-                'sum_wins_1'    => $this->sum_wins_1,
-                'sum_wins_2'    => $this->sum_wins_2,
-                'winners'       => $this->winners,
-                'details'       => json_encode($this->details)
-            ]),
-            'curr_leg' => json_encode($this->scores),
-            'open_for' => $this->open_for
-        ]);
-
-        Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
-    }
-
-    public function close_game()
-    {
-        $this->details = (is_array($this->details)) 
-        ? $this->details : json_decode($this->details);
-
-        array_push($this->details, $this->scores);
-
-        ($this->unsaved) 
-        ? DB::table('games')
-            ->where('id', $this->game_id)
-            ->delete()
-
-        : DB::table('games')
-            ->where('id', $this->game_id)
-            ->update([
-                'open_for' => 0,
-                'legs' => json_encode([
-                    'current_leg'   => $this->current_leg + 1,
-                    'sum_wins_1'    => $this->sum_wins_1,
-                    'sum_wins_2'    => $this->sum_wins_2,
-                    'winners'       => $this->winners,
-                    'details'       => json_encode($this->details)
-                ]),
-                'curr_leg' => json_encode([
-                    [null, 501, null, 501],
-                    [null, null, null, null]
-                ])
-            ]);
-
-        Broadcast(new GameClosedEvent($this->game_id))->toOthers();
-        
-        return redirect('games');
-    }
-
     public function roundFinished ($scored, $togo, $is_player1)
     {
         $curr_round = $this->scores[count($this->scores) - 1];
@@ -283,6 +171,153 @@ class GamerKernel extends Component
         }
     }
     
+    public function legFinished ($scored, $togo, $is_winner1)
+    {
+        // save final round firstly 
+        if ($is_winner1) {
+
+            $this->scores[count($this->scores) - 1][0] = $scored;
+
+            $this->scores[count($this->scores) - 1][1] = $togo;
+        } else {
+
+            $this->scores[count($this->scores) - 1][2] = $scored;
+
+            $this->scores[count($this->scores) - 1][3] = $togo;
+        }
+        
+        $this->close_leg($is_winner1);
+    }
+
+    /**
+     * Details Updating
+     * 
+     * Open for Winner
+     * Sum wins Updating
+     * 
+     * Winners Updating
+     * 
+     * Increase Curr_leg
+     * Reset Curr leg
+     * 
+     * @param $who did won ? 
+     *  is player 1 !
+     */
+    public function close_leg ($is_winner1)
+    {
+        if ($is_winner1) {
+
+            $this->open_for = $this->player1;
+            $this->sum_wins_1[array_key_last($this->sum_wins_1)] = end($this->sum_wins_1) + 1;
+        } else {
+
+            $this->open_for = $this->player2;
+            $this->sum_wins_2[array_key_last($this->sum_wins_2)] = end($this->sum_wins_2) + 1;
+        }
+
+        if ($this->sum_wins_1 == $this->sum_wins_2 && $this->sum_wins_1 == $this->leg_limit) {
+
+            $this->leg_limit++;
+        } elseif ($this->sum_wins_1 == $this->leg_limit || $this->sum_wins_2 == $this->leg_limit) {
+
+          return $this->close_game();
+        }
+
+        $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
+
+        // @ => sets 
+        $this->details[$this->current_set] = $this->scores;
+        // array_push($this->details, $this->scores);
+        array_push($this->winners[array_key_last($this->winners)] , [$this->current_leg , $this->open_for]);
+
+        $this->current_leg++;
+
+        $this->scores = [
+            [null, 501, null, 501],
+            [null, null, null, null]
+        ];
+
+        DB::table('games')
+        ->where('id', $this->game_id)
+        ->update([
+            'legs' => json_encode([
+                'current_leg'   => $this->current_leg,
+                'current_set'   => $this->current_set,
+                'sum_wins_1'    => $this->sum_wins_1,
+                'sum_wins_2'    => $this->sum_wins_2,
+                'winners'       => $this->winners,
+                'details'       => json_encode($this->details)
+            ]),
+            'curr_leg' => json_encode($this->scores),
+            'open_for' => $this->open_for
+        ]);
+
+        Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
+    }
+
+    public function close_game()
+    {
+        $this->details = (is_array($this->details)) 
+        ? $this->details : json_decode($this->details);
+
+        // @ => sets 
+        $this->details[$this->current_set] = $this->scores;
+        // array_push($this->details, $this->scores);
+
+        if ($this->current_set == $this->sets_limit) { // Game Fully Completed
+
+            ($this->unsaved) 
+            ? DB::table('games')
+                ->where('id', $this->game_id)
+                ->delete()
+    
+            : DB::table('games')
+                ->where('id', $this->game_id)
+                ->update([
+                    'open_for' => 0,
+                    'legs' => json_encode([
+                        'current_leg'   => $this->current_leg + 1,
+                        'current_set'   => $this->current_set,
+                        'sum_wins_1'    => $this->sum_wins_1,
+                        'sum_wins_2'    => $this->sum_wins_2,
+                        'winners'       => $this->winners,
+                        'details'       => json_encode($this->details)
+                    ]),
+                    'curr_leg' => json_encode([
+                        [null, 501, null, 501],
+                        [null, null, null, null]
+                    ])
+                ]);
+    
+            Broadcast(new GameClosedEvent($this->game_id))->toOthers();
+            
+            return redirect('games');
+
+        } else { // Set Finished
+
+            // XXX BUG : should know open for 
+            DB::table('games')
+            ->where('id', $this->game_id)
+            ->update([
+                'legs' => json_encode([
+                    'current_leg'   => 1, // reset curr_leg
+                    'current_set'   => $this->current_set + 1,
+                    'sum_wins_1'    => $this->sum_wins_1,
+                    'sum_wins_2'    => $this->sum_wins_2,
+                    'winners'       => $this->winners,
+                    'details'       => json_encode($this->details)
+                ]),
+                'curr_leg' => json_encode([ // reset curr_leg
+                    [null, 501, null, 501],
+                    [null, null, null, null]
+                ])
+            ]);
+
+            // Broadcast SetFinished
+            Broadcast(new SetFinishedEvent($this->game_id))->toOthers();
+        }
+    }
+
     public function notifyNewRound($data) 
     {
         $this->open_for = $data['open_for'];

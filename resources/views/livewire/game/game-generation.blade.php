@@ -68,9 +68,8 @@
                 </div>
             </div>
             {{--  --}}
-            <div class="separator my-10"></div>
+            {{-- <div class="separator my-10"></div>
             <h3 class="text-dark fw-bolder mb-5">Practice Mode</h3>
-    
             <div class="row">
                 <div class="col-6">
                     <div class="form-check form-switch form-check-custom form-check-solid me-10">
@@ -88,9 +87,9 @@
                         </label>
                     </div>
                 </div>
-            </div>
-            <div class="separator my-10"></div>
+            </div> --}}
             {{--  --}}
+            <div class="separator my-10"></div>
             <h3 class="text-dark fw-bolder mb-5">Double Mode</h3>
 
             <div class="row">

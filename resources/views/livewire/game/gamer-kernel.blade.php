@@ -1,5 +1,6 @@
 <div class="content flex-row-fluid" id="kt_content">
     <!--begin::Navbar-->
+    <span>Current Set : {{$current_set}}</span>
     <div class="d-flex justify-content-around mb-4">
         <h2 class="text-gray-400">{{$player1_name}}</h2>
         <div class="">
@@ -21,7 +22,7 @@
                         <tr class="fw-bolder fs-6 text-gray-800">
                             <th>Scored</th>
                             <th>To GO</th>
-                            <th> {{$sum_wins_1}} - {{$sum_wins_2}} </th>
+                            <th> {{end($sum_wins_1)}} - {{end($sum_wins_2)}} </th>
                             <th>Scored</th>
                             <th>To GO</th>
                         </tr>

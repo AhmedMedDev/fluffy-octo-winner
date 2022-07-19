@@ -1,0 +1,62 @@
+{
+    "id" : "uuid",
+    "player1" : "player_id",
+    "player2" : "player_id",
+    "open_for" : "player_id",
+    "legs" : {
+        "current_leg" : 1,
+        "current_set" : 1,
+        "sum_win_1" : [2, 5, 1, 0],
+        "sum_win_2" : [3, 0, 2, 4],
+        "winners" : [
+            ["leg_num", "id of winner", "..", "..", "..", ".."],
+            ["leg_num", "id of winner", "..", "..", "..", ".."]
+        ],
+        "details // for 2 rounds 2 sets" : [
+            [
+                [
+                    ["..", "51", "..", "51"],
+                    ["..", "..", "..", ".."],
+                    ["..", "..", "..", ".."]
+                ],
+                [
+                    ["..", "..", "..", ".."],
+                    ["..", "..", "..", ".."],
+                    ["..", "..", "..", ".."]
+                ]
+            ],
+            [
+                [
+                    ["..", "..", "..", ".."],
+                    ["..", "..", "..", ".."],
+                    ["..", "..", "..", ".."]
+                ],
+                [
+                    ["..", "..", "..", ".."],
+                    ["..", "..", "..", ".."],
+                    ["..", "..", "..", ".."]
+                ]
+            ]
+        ]
+    },
+    "curr_leg" : [
+        ["..", "51", "..", "51"],
+        ["..", "..", "..", ".."]
+    ],
+    "setting" : {
+        "player1"           : "Player Name",
+        "player2"           : "Player Name",
+        "start_score"       : "..",
+        "limit_rounds"      : "..",
+        "remaining_score"   : "..",
+        "com_score"         : "..",
+        "handicap_1"        : "..",
+        "handicap_2"        : "..",
+        "double_in"         : "Bool",
+        "double_out"        : "Bool",
+        "unsaved"           : "Bool",
+        "first_of"          : "..",
+        "sets_limit"        : "..",
+        "game_title"        : ".."
+    }
+}
