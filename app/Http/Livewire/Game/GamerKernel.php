@@ -127,6 +127,50 @@ class GamerKernel extends Component
         Broadcast(new CancelJoiningEvent($this->game_id))->toOthers();
     }
 
+    public function roundFinished ($scored, $togo, $is_player1)
+    {
+        $curr_round = $this->scores[count($this->scores) - 1];
+
+        if ($is_player1) {
+            $this->open_for =  $this->player2;
+            $curr_round[0] = $scored;
+            $curr_round[1] = $togo;
+
+        } else {
+            $this->open_for =  $this->player1;
+            $curr_round[2] = $scored;
+            $curr_round[3] = $togo;
+        }
+
+        $this->scores[count($this->scores) - 1] = $curr_round;
+
+        // Cond Explaination : limit is active , This final round, Final Round is Completed
+        if (!is_null($this->limit_rounds) && 
+            ($this->limit_rounds == count($this->scores) - 1) && 
+            !is_null($curr_round[1]) && !is_null($curr_round[3])) {
+
+                $is_winner1 = ($curr_round[1] <= $curr_round[3]);
+          
+                $this->close_leg($is_winner1);
+
+        } else {
+
+            // Insert New Row If both players played
+            if (!is_null($curr_round[1]) && !is_null($curr_round[3])) {
+                array_push($this->scores, [null, null, null, null,]);
+            }
+
+            DB::table('games')
+                ->where('id', $this->game_id)
+                ->update([
+                    'curr_leg' => json_encode($this->scores),
+                    'open_for' => $this->open_for
+                ]);
+    
+            Broadcast(new RoundFinishedEvent($this->game_id, $this->open_for, $this->scores))->toOthers();
+        }
+    }
+    
     public function legFinished ($scored, $togo, $is_winner1)
     {
         // save final round firstly 
@@ -270,50 +314,6 @@ class GamerKernel extends Component
 
             // Broadcast SetFinished
             Broadcast(new SetFinishedEvent($this->game_id))->toOthers();
-        }
-    }
-
-    public function roundFinished ($scored, $togo, $is_player1)
-    {
-        $curr_round = $this->scores[count($this->scores) - 1];
-
-        if ($is_player1) {
-            $this->open_for =  $this->player2;
-            $curr_round[0] = $scored;
-            $curr_round[1] = $togo;
-
-        } else {
-            $this->open_for =  $this->player1;
-            $curr_round[2] = $scored;
-            $curr_round[3] = $togo;
-        }
-
-        $this->scores[count($this->scores) - 1] = $curr_round;
-
-        // Cond Explaination : limit is active , This final round, Final Round is Completed
-        if (!is_null($this->limit_rounds) && 
-            ($this->limit_rounds == count($this->scores) - 1) && 
-            !is_null($curr_round[1]) && !is_null($curr_round[3])) {
-
-                $is_winner1 = ($curr_round[1] <= $curr_round[3]);
-          
-                $this->close_leg($is_winner1);
-
-        } else {
-
-            // Insert New Row If both players played
-            if (!is_null($curr_round[1]) && !is_null($curr_round[3])) {
-                array_push($this->scores, [null, null, null, null,]);
-            }
-
-            DB::table('games')
-                ->where('id', $this->game_id)
-                ->update([
-                    'curr_leg' => json_encode($this->scores),
-                    'open_for' => $this->open_for
-                ]);
-    
-            Broadcast(new RoundFinishedEvent($this->game_id, $this->open_for, $this->scores))->toOthers();
         }
     }
     
