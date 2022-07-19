@@ -85,6 +85,7 @@ class GamerKernel extends Component
             "echo-presence:game.{$this->game_id},EnemyJoiningEvent" => 'notifyEnemyJoining',
             "echo-presence:game.{$this->game_id},GameClosedEvent" => 'gameClosed',
             "echo-presence:game.{$this->game_id},UndoExecutedEvent" => 'undoExecuted',
+            "echo-presence:game.{$this->game_id},SetFinishedEvent" => 'SetFinished',
             "echo-presence:game.{$this->game_id},here" => 'here',
             "echo-presence:game.{$this->game_id},joining" => 'joining',
             "echo-presence:game.{$this->game_id},leaving" => 'leaving',
@@ -208,27 +209,41 @@ class GamerKernel extends Component
         if ($is_winner1) {
 
             $this->open_for = $this->player1;
-            $this->sum_wins_1[array_key_last($this->sum_wins_1)] = end($this->sum_wins_1) + 1;
+            $this->sum_wins_1[$this->current_set - 1] = end($this->sum_wins_1) + 1;
         } else {
 
             $this->open_for = $this->player2;
-            $this->sum_wins_2[array_key_last($this->sum_wins_2)] = end($this->sum_wins_2) + 1;
+            $this->sum_wins_2[$this->current_set - 1] = end($this->sum_wins_2) + 1;
         }
 
-        if ($this->sum_wins_1 == $this->sum_wins_2 && $this->sum_wins_1 == $this->leg_limit) {
+        if (end($this->sum_wins_1) == end($this->sum_wins_2) && end($this->sum_wins_1) == $this->leg_limit) {
 
             $this->leg_limit++;
-        } elseif ($this->sum_wins_1 == $this->leg_limit || $this->sum_wins_2 == $this->leg_limit) {
+        } elseif (end($this->sum_wins_1) == $this->leg_limit || end($this->sum_wins_2) == $this->leg_limit) {
 
-          return $this->close_game();
+            $this->details = (is_array($this->details)) 
+            ? $this->details 
+            : json_decode($this->details);
+    
+            // @ => sets 
+            array_push($this->details[$this->current_set - 1], $this->scores);
+
+            array_push($this->winners[$this->current_set - 1], [$this->current_leg , $this->open_for]);
+
+            $this->scores = [
+                [null, 501, null, 501],
+                [null, null, null, null]
+            ];
+
+            return $this->close_game();
         }
 
         $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
 
         // @ => sets 
-        $this->details[$this->current_set] = $this->scores;
-        // array_push($this->details, $this->scores);
-        array_push($this->winners[array_key_last($this->winners)] , [$this->current_leg , $this->open_for]);
+        array_push($this->details[$this->current_set - 1], $this->scores);
+
+        array_push($this->winners[$this->current_set - 1], [$this->current_leg , $this->open_for]);
 
         $this->current_leg++;
 
@@ -255,16 +270,9 @@ class GamerKernel extends Component
         Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
     }
 
-    public function close_game()
+    public function close_game($forced = false)
     {
-        $this->details = (is_array($this->details)) 
-        ? $this->details : json_decode($this->details);
-
-        // @ => sets 
-        $this->details[$this->current_set] = $this->scores;
-        // array_push($this->details, $this->scores);
-
-        if ($this->current_set == $this->sets_limit) { // Game Fully Completed
+        if ($this->current_set == (int) $this->sets_limit || $forced) { // Game Fully Completed
 
             ($this->unsaved) 
             ? DB::table('games')
@@ -283,10 +291,7 @@ class GamerKernel extends Component
                         'winners'       => $this->winners,
                         'details'       => json_encode($this->details)
                     ]),
-                    'curr_leg' => json_encode([
-                        [null, 501, null, 501],
-                        [null, null, null, null]
-                    ])
+                    'curr_leg' => json_encode($this->scores)
                 ]);
     
             Broadcast(new GameClosedEvent($this->game_id))->toOthers();
@@ -295,22 +300,31 @@ class GamerKernel extends Component
 
         } else { // Set Finished
 
-            // XXX BUG : should know open for 
+            // get winner and open for him
+            $this->open_for = (end($this->sum_wins_1) > end($this->sum_wins_2))
+            ? $this->player1
+            : $this->player2;
+            
+            array_push($this->sum_wins_1, 0);
+            array_push($this->sum_wins_2, 0);
+            $this->current_set++;
+            $this->winners[$this->current_set - 1] = [];
+            $this->details[$this->current_set - 1] = [];
+            $this->current_leg = 1;// reset curr_leg
+
             DB::table('games')
             ->where('id', $this->game_id)
             ->update([
+                'open_for' => $this->open_for,
                 'legs' => json_encode([
-                    'current_leg'   => 1, // reset curr_leg
-                    'current_set'   => $this->current_set + 1,
+                    'current_leg'   => $this->current_leg, 
+                    'current_set'   => $this->current_set,
                     'sum_wins_1'    => $this->sum_wins_1,
                     'sum_wins_2'    => $this->sum_wins_2,
                     'winners'       => $this->winners,
                     'details'       => json_encode($this->details)
                 ]),
-                'curr_leg' => json_encode([ // reset curr_leg
-                    [null, 501, null, 501],
-                    [null, null, null, null]
-                ])
+                'curr_leg' => json_encode($this->scores)
             ]);
 
             // Broadcast SetFinished
@@ -372,6 +386,11 @@ class GamerKernel extends Component
 
         // Broadcast for other
         Broadcast(new UndoExecutedEvent($this->game_id, $this->scores))->toOthers();
+    }
+
+    public function SetFinished()
+    {
+        $this->mount();
     }
 
     public function render()
