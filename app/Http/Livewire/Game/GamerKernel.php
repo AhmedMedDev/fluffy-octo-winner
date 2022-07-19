@@ -215,10 +215,10 @@ class GamerKernel extends Component
             $this->sum_wins_2[array_key_last($this->sum_wins_2)] = end($this->sum_wins_2) + 1;
         }
 
-        if ($this->sum_wins_1 == $this->sum_wins_2 && $this->sum_wins_1 == $this->leg_limit) {
+        if (end($this->sum_wins_1) == end($this->sum_wins_2) && end($this->sum_wins_1) == $this->leg_limit) {
 
             $this->leg_limit++;
-        } elseif ($this->sum_wins_1 == $this->leg_limit || $this->sum_wins_2 == $this->leg_limit) {
+        } elseif (end($this->sum_wins_1) == $this->leg_limit || end($this->sum_wins_2) == $this->leg_limit) {
 
           return $this->close_game();
         }
