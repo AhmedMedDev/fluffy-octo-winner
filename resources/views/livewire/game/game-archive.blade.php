@@ -2,9 +2,14 @@
     <!--begin::Navbar-->
     <div class="d-flex justify-content-around mb-4">
         <h2 class="text-gray-400">{{$player1_name}}</h2>
-        <div class="" wire:ignore.self>
-            <select class="form-select " aria-label="Select example" onchange="change_leg($(this).val())">
-                @for ($i = 1; $i < $current_leg - 1; $i++)
+        <div class="d-flex" wire:ignore.self>
+            <select class="form-select" aria-label="Select example" onchange="change_set($(this).val())">
+                @for ($i = 1; $i <= $max_set; $i++)
+                    <option value="{{$i}}"> Set Number : {{$i}}</option>
+                @endfor
+            </select>
+            <select class="form-select" aria-label="Select example" onchange="change_leg($(this).val())">
+                @for ($i = 1; $i < $max_leg; $i++)
                     <option value="{{$i}}"> Leg Number : {{$i}}</option>
                 @endfor
             </select>
@@ -78,7 +83,13 @@
         const change_leg = (leg_num) => {
 
             blockThis($('.reload'))
-            @this.call('changeLeg', leg_num)
+            @this.set('current_leg', leg_num - 1)
+        }
+
+        const change_set = (set_num) => {
+
+            blockThis($('.reload'))
+            @this.set('current_set', set_num - 1)
         }
     </script>
 @endpush
