@@ -35,11 +35,4 @@ class SetFinishedEvent implements ShouldBroadcast
     {
         return new PresenceChannel('game.' . $this->game_id);
     }
-
-    public function broadcastWith()
-    {
-        // return [
-        //     'open_for' => $this->open_for,
-        // ];
-    }
 }
