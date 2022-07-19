@@ -40,7 +40,7 @@ class GameGeneration extends Component
                 'current_set'   => 1,
                 'sum_wins_1'    => [0],
                 'sum_wins_2'    => [0],
-                'winners'       => [],
+                'winners'       => [[]],
                 'details'       => []
             ]),
             'curr_leg' => json_encode([

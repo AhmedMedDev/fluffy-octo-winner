@@ -208,11 +208,11 @@ class GamerKernel extends Component
         if ($is_winner1) {
 
             $this->open_for = $this->player1;
-            $this->sum_wins_1++;
+            $this->sum_wins_1[array_key_last($this->sum_wins_1)] = end($this->sum_wins_1) + 1;
         } else {
 
             $this->open_for = $this->player2;
-            $this->sum_wins_2++;
+            $this->sum_wins_2[array_key_last($this->sum_wins_2)] = end($this->sum_wins_2) + 1;
         }
 
         if ($this->sum_wins_1 == $this->sum_wins_2 && $this->sum_wins_1 == $this->leg_limit) {
@@ -228,8 +228,7 @@ class GamerKernel extends Component
         // @ => sets 
         $this->details[$this->current_set] = $this->scores;
         // array_push($this->details, $this->scores);
-
-        array_push($this->winners, [$this->current_leg , $this->open_for]);
+        array_push($this->winners[array_key_last($this->winners)] , [$this->current_leg , $this->open_for]);
 
         $this->current_leg++;
 
@@ -243,6 +242,7 @@ class GamerKernel extends Component
         ->update([
             'legs' => json_encode([
                 'current_leg'   => $this->current_leg,
+                'current_set'   => $this->current_set,
                 'sum_wins_1'    => $this->sum_wins_1,
                 'sum_wins_2'    => $this->sum_wins_2,
                 'winners'       => $this->winners,
@@ -277,6 +277,7 @@ class GamerKernel extends Component
                     'open_for' => 0,
                     'legs' => json_encode([
                         'current_leg'   => $this->current_leg + 1,
+                        'current_set'   => $this->current_set,
                         'sum_wins_1'    => $this->sum_wins_1,
                         'sum_wins_2'    => $this->sum_wins_2,
                         'winners'       => $this->winners,
@@ -316,7 +317,7 @@ class GamerKernel extends Component
             Broadcast(new SetFinishedEvent($this->game_id))->toOthers();
         }
     }
-    
+
     public function notifyNewRound($data) 
     {
         $this->open_for = $data['open_for'];
