@@ -226,7 +226,7 @@ class GamerKernel extends Component
         $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
 
         // @ => sets 
-        $this->details[$this->current_set] = $this->scores;
+        $this->details[$this->current_set - 1] = $this->scores;
         // array_push($this->details, $this->scores);
         array_push($this->winners[array_key_last($this->winners)] , [$this->current_leg , $this->open_for]);
 
@@ -255,16 +255,16 @@ class GamerKernel extends Component
         Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
     }
 
-    public function close_game()
+    public function close_game($forced = false)
     {
         $this->details = (is_array($this->details)) 
         ? $this->details : json_decode($this->details);
 
         // @ => sets 
-        $this->details[$this->current_set] = $this->scores;
+        $this->details[$this->current_set - 1] = $this->scores;
         // array_push($this->details, $this->scores);
 
-        if ($this->current_set == $this->sets_limit) { // Game Fully Completed
+        if ($this->current_set == (int) $this->sets_limit || $forced) { // Game Fully Completed
 
             ($this->unsaved) 
             ? DB::table('games')
