@@ -225,7 +225,8 @@ class GamerKernel extends Component
             ? $this->details 
             : json_decode($this->details);
     
-            $this->details[$this->current_set - 1] = $this->scores;
+            // @ => sets 
+            array_push($this->details[$this->current_set - 1], $this->scores);
 
             array_push($this->winners[$this->current_set - 1], [$this->current_leg , $this->open_for]);
 
@@ -240,8 +241,7 @@ class GamerKernel extends Component
         $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
 
         // @ => sets 
-        $this->details[$this->current_set - 1] = $this->scores;
-        // array_push($this->details, $this->scores);
+        array_push($this->details[$this->current_set - 1], $this->scores);
 
         array_push($this->winners[$this->current_set - 1], [$this->current_leg , $this->open_for]);
 
@@ -308,7 +308,8 @@ class GamerKernel extends Component
             array_push($this->sum_wins_1, 0);
             array_push($this->sum_wins_2, 0);
             $this->current_set++;
-            $this->winners[$this->current_set -1] = [];
+            $this->winners[$this->current_set - 1] = [];
+            $this->details[$this->current_set - 1] = [];
 
             DB::table('games')
             ->where('id', $this->game_id)

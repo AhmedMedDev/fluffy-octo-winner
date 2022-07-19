@@ -22,10 +22,11 @@ class GameArchive extends Component
 
         $this->current_leg = $legs->current_leg;
 
-        $this->scores = $this->details[0];
+        $this->scores = $this->details;
 
-        $this->sum_wins_1 = $legs->sum_wins_1;
-        $this->sum_wins_2 = $legs->sum_wins_2;
+        dd($this->scores);
+        $this->sum_wins_1 = $legs->sum_wins_1[0];
+        $this->sum_wins_2 = $legs->sum_wins_2[0];
         $this->winners = $legs->winners;
 
         $setting = json_decode($game_info->setting);
