@@ -22,9 +22,8 @@ class GameArchive extends Component
 
         $this->current_leg = $legs->current_leg;
 
-        $this->scores = $this->details;
+        $this->scores = $this->details[0][0];
 
-        dd($this->scores);
         $this->sum_wins_1 = $legs->sum_wins_1[0];
         $this->sum_wins_2 = $legs->sum_wins_2[0];
         $this->winners = $legs->winners;
@@ -37,7 +36,7 @@ class GameArchive extends Component
 
     public function changeLeg ($leg_num)
     {
-        $this->scores = $this->details[$leg_num - 1];
+        $this->scores = $this->details[0][$leg_num - 1];
     }
 
     public function render()

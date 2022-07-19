@@ -310,13 +310,14 @@ class GamerKernel extends Component
             $this->current_set++;
             $this->winners[$this->current_set - 1] = [];
             $this->details[$this->current_set - 1] = [];
+            $this->current_leg = 1;// reset curr_leg
 
             DB::table('games')
             ->where('id', $this->game_id)
             ->update([
                 'open_for' => $this->open_for,
                 'legs' => json_encode([
-                    'current_leg'   => 1, // reset curr_leg
+                    'current_leg'   => $this->current_leg, 
                     'current_set'   => $this->current_set,
                     'sum_wins_1'    => $this->sum_wins_1,
                     'sum_wins_2'    => $this->sum_wins_2,

@@ -4,7 +4,7 @@
         <h2 class="text-gray-400">{{$player1_name}}</h2>
         <div class="" wire:ignore.self>
             <select class="form-select " aria-label="Select example" onchange="change_leg($(this).val())">
-                @for ($i = 1; $i < $current_leg; $i++)
+                @for ($i = 1; $i < $current_leg - 1; $i++)
                     <option value="{{$i}}"> Leg Number : {{$i}}</option>
                 @endfor
             </select>
