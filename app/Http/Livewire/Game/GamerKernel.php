@@ -146,31 +146,25 @@ class GamerKernel extends Component
 
         $this->scores[count($this->scores) - 1] = $curr_round;
 
-        // Cond Explaination : limit is active , This final round, Final Round is Completed
-        if (!is_null($this->limit_rounds) && 
-            ($this->limit_rounds == count($this->scores) - 1) && 
-            !is_null($curr_round[1]) && !is_null($curr_round[3])) {
-
-                $is_winner1 = ($curr_round[1] <= $curr_round[3]);
-          
-                $this->closeLeg($is_winner1);
-
-        } else {
-
-            // Insert New Row If both players played
-            if (!is_null($curr_round[1]) && !is_null($curr_round[3])) {
-                array_push($this->scores, [null, null, null, null,]);
-            }
-
-            DB::table('games')
-                ->where('id', $this->game_id)
-                ->update([
-                    'curr_leg' => json_encode($this->scores),
-                    'open_for' => $this->open_for
-                ]);
-    
-            Broadcast(new RoundFinishedEvent($this->game_id, $this->open_for, $this->scores))->toOthers();
+        if ($this->RDLI_Checker()) {
+            
+            return $this->closeLeg($this->getRWinner());
         }
+
+        // Insert New Row If both players played
+        if (!is_null($curr_round[1]) && !is_null($curr_round[3])) {
+
+            array_push($this->scores, [null, null, null, null,]);
+        }
+
+        DB::table('games')
+            ->where('id', $this->game_id)
+            ->update([
+                'curr_leg' => json_encode($this->scores),
+                'open_for' => $this->open_for
+            ]);
+
+        Broadcast(new RoundFinishedEvent($this->game_id, $this->open_for, $this->scores))->toOthers();
     }
     
     public function legFinished ($scored, $togo, $is_winner1)
@@ -347,7 +341,34 @@ class GamerKernel extends Component
         // Broadcast for other
         Broadcast(new UndoExecutedEvent($this->game_id, $this->scores))->toOthers();
     }
+    /**
+     * ============================= 
+     * ================= Herlpers
+     * =============================
+     * 
+     */
 
+    private function RDLI_Checker()
+    {
+        // Cond Explaination : limit is active , 
+        //      This final round, 
+        //      Final Round is Completed
+
+        $curr_round = $this->scores[count($this->scores) - 1];
+        $RDLI_isActive = !is_null($this->limit_rounds);
+        $RDLI_isCompleted = ($this->limit_rounds == count($this->scores) - 1);
+        $roundCompleted = !is_null($curr_round[1]) && !is_null($curr_round[3]);
+
+        return $RDLI_isActive && $RDLI_isCompleted && $roundCompleted;
+    }
+
+    private function getRWinner()
+    {
+        // true if player1 who is winner
+        $curr_round = $this->scores[count($this->scores) - 1];
+
+        return ($curr_round[1] <= $curr_round[3]);
+    }
     /**
      * ============================= 
      * ================= Listeners
