@@ -83,9 +83,9 @@ class GamerKernel extends Component
             "echo-presence:game.{$this->game_id},RoundFinishedEvent" => 'notifyNewRound',
             "echo-presence:game.{$this->game_id},LegFinishedEvent" => 'notifyNewLeg',
             "echo-presence:game.{$this->game_id},EnemyJoiningEvent" => 'notifyEnemyJoining',
-            "echo-presence:game.{$this->game_id},GameClosedEvent" => 'gameClosed',
-            "echo-presence:game.{$this->game_id},UndoExecutedEvent" => 'undoExecuted',
-            "echo-presence:game.{$this->game_id},SetFinishedEvent" => 'SetFinished',
+            "echo-presence:game.{$this->game_id},GameClosedEvent" => 'notifyGameClosed',
+            "echo-presence:game.{$this->game_id},UndoExecutedEvent" => 'notifyUndoExecuted',
+            "echo-presence:game.{$this->game_id},SetFinishedEvent" => 'notifySetFinished',
             "echo-presence:game.{$this->game_id},here" => 'here',
             "echo-presence:game.{$this->game_id},joining" => 'joining',
             "echo-presence:game.{$this->game_id},leaving" => 'leaving',
@@ -123,6 +123,7 @@ class GamerKernel extends Component
         Broadcast(new EnemyJoiningEvent($this->game_id, $player_id))->toOthers();
     }
 
+    // BUG :: <<+++++++++
     public function cancelJoiningRequest ()
     {
         Broadcast(new CancelJoiningEvent($this->game_id))->toOthers();
@@ -145,31 +146,25 @@ class GamerKernel extends Component
 
         $this->scores[count($this->scores) - 1] = $curr_round;
 
-        // Cond Explaination : limit is active , This final round, Final Round is Completed
-        if (!is_null($this->limit_rounds) && 
-            ($this->limit_rounds == count($this->scores) - 1) && 
-            !is_null($curr_round[1]) && !is_null($curr_round[3])) {
-
-                $is_winner1 = ($curr_round[1] <= $curr_round[3]);
-          
-                $this->close_leg($is_winner1);
-
-        } else {
-
-            // Insert New Row If both players played
-            if (!is_null($curr_round[1]) && !is_null($curr_round[3])) {
-                array_push($this->scores, [null, null, null, null,]);
-            }
-
-            DB::table('games')
-                ->where('id', $this->game_id)
-                ->update([
-                    'curr_leg' => json_encode($this->scores),
-                    'open_for' => $this->open_for
-                ]);
-    
-            Broadcast(new RoundFinishedEvent($this->game_id, $this->open_for, $this->scores))->toOthers();
+        if ($this->RDLI_Checker()) {
+            
+            return $this->closeLeg($this->getRWinner());
         }
+
+        // Insert New Row If both players played
+        if (!is_null($curr_round[1]) && !is_null($curr_round[3])) {
+
+            array_push($this->scores, [null, null, null, null,]);
+        }
+
+        DB::table('games')
+            ->where('id', $this->game_id)
+            ->update([
+                'curr_leg' => json_encode($this->scores),
+                'open_for' => $this->open_for
+            ]);
+
+        Broadcast(new RoundFinishedEvent($this->game_id, $this->open_for, $this->scores))->toOthers();
     }
     
     public function legFinished ($scored, $togo, $is_winner1)
@@ -187,24 +182,10 @@ class GamerKernel extends Component
             $this->scores[count($this->scores) - 1][3] = $togo;
         }
         
-        $this->close_leg($is_winner1);
+        $this->closeLeg($is_winner1);
     }
 
-    /**
-     * Details Updating
-     * 
-     * Open for Winner
-     * Sum wins Updating
-     * 
-     * Winners Updating
-     * 
-     * Increase Curr_leg
-     * Reset Curr leg
-     * 
-     * @param $who did won ? 
-     *  is player 1 !
-     */
-    public function close_leg ($is_winner1)
+    public function closeLeg ($is_winner1)
     {
         if ($is_winner1) {
 
@@ -235,7 +216,7 @@ class GamerKernel extends Component
                 [null, null, null, null]
             ];
 
-            return $this->close_game();
+            return $this->closeGame();
         }
 
         $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
@@ -270,7 +251,7 @@ class GamerKernel extends Component
         Broadcast(new LegFinishedEvent($this->game_id))->toOthers();
     }
 
-    public function close_game($forced = false)
+    public function closeGame($forced = false)
     {
         if ($this->current_set == (int) $this->sets_limit || $forced) { // Game Fully Completed
 
@@ -332,33 +313,6 @@ class GamerKernel extends Component
         }
     }
 
-    public function notifyNewRound($data) 
-    {
-        $this->open_for = $data['open_for'];
-        $this->scores = $data['scores'];
-    }
-
-    public function undoExecuted($data)
-    {
-        $this->scores = $data['scores'];
-        $this->emit('closeSwal');
-    }
-
-    public function notifyNewLeg() 
-    {
-        $this->mount();
-    }
-
-    public function gameClosed()
-    {
-        return redirect('games');
-    }
-
-    public function notifyEnemyJoining($data) 
-    {
-        $this->player2 = $data['player2'];
-    }
-
     public function undo($rounds_num)
     {
         // unset last 1/2 rounds
@@ -387,8 +341,69 @@ class GamerKernel extends Component
         // Broadcast for other
         Broadcast(new UndoExecutedEvent($this->game_id, $this->scores))->toOthers();
     }
+    /**
+     * ============================= 
+     * ================= Herlpers
+     * =============================
+     * 
+     */
 
-    public function SetFinished()
+    private function RDLI_Checker()
+    {
+        // Cond Explaination : limit is active , 
+        //      This final round, 
+        //      Final Round is Completed
+
+        $curr_round = $this->scores[count($this->scores) - 1];
+        $RDLI_isActive = !is_null($this->limit_rounds);
+        $RDLI_isCompleted = ($this->limit_rounds == count($this->scores) - 1);
+        $roundCompleted = !is_null($curr_round[1]) && !is_null($curr_round[3]);
+
+        return $RDLI_isActive && $RDLI_isCompleted && $roundCompleted;
+    }
+
+    private function getRWinner()
+    {
+        // true if player1 who is winner
+        $curr_round = $this->scores[count($this->scores) - 1];
+
+        return ($curr_round[1] <= $curr_round[3]);
+    }
+    /**
+     * ============================= 
+     * ================= Listeners
+     * =============================
+     * 
+     */
+    
+    public function notifyNewRound($data) 
+    {
+        $this->open_for = $data['open_for'];
+        $this->scores = $data['scores'];
+    }
+
+    public function notifyUndoExecuted($data)
+    {
+        $this->scores = $data['scores'];
+        $this->emit('closeSwal');
+    }
+
+    public function notifyNewLeg() 
+    {
+        $this->mount();
+    }
+
+    public function notifyGameClosed()
+    {
+        return redirect('games');
+    }
+
+    public function notifyEnemyJoining($data) 
+    {
+        $this->player2 = $data['player2'];
+    }
+
+    public function notifySetFinished()
     {
         $this->mount();
     }
