@@ -255,6 +255,15 @@ class GamerKernel extends Component
     {
         if ($this->current_set == (int) $this->sets_limit || $forced) { // Game Fully Completed
 
+            if ($forced) {
+
+                array_push($this->details[0], $this->scores);
+                $this->scores = [
+                    [null, 501, null, 501],
+                    [null, null, null, null]
+                ];
+            }
+
             ($this->unsaved) 
             ? DB::table('games')
                 ->where('id', $this->game_id)
