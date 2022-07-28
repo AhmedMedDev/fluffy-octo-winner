@@ -108,4 +108,41 @@
         </button>
     </div>
     <!--end::Navbar-->
+    <input type="hidden" id="scores_count" value="{{count($scores)}}">
 </div>
+@push('js')
+    <script>
+        const scored = (obj, player_num) => {
+
+            $(obj).prop('disabled', true)
+
+            let row = +$('#scores_count').val();
+            let double_in = +$('#double_in').val();
+            let double_out = +$('#double_out').val();
+            let scored = +$(obj).val();
+            let togo = +$(`.togo_${row - 1}_${player_num}`).val() - scored
+
+            if ((double_out && togo == 1) || (double_in && scored % 2 != 0)) {
+
+                alert (" What are you doing 👀👀 ")
+            }
+            else if (togo == 0) {
+
+                prompt('Winner Winner Chicken Dinner ✔✔ , \nEnter Finish Round ')
+
+                @this.call('legFinished', scored, togo, (player_num == 1))
+            }
+            else {
+                if (togo < 0) {
+                    togo = togo + scored;
+                    scored = 0;
+                    $(obj).val(scored)
+                }
+
+                if (double_in && row == 2) prompt('Enter Round Num ')
+
+                @this.call('roundFinished', scored, togo, (player_num == 1))
+            }
+        }
+    </script>
+@endpush
