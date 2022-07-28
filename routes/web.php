@@ -61,7 +61,7 @@ Route::get('/archives', function () {
     $gmaes = DB::table('games')
         ->where('player1', auth()->user()->id)
         ->orWhere('player2', auth()->user()->id)
-        ->select('id', 'setting', 'date', 'open_for')
+        ->select('id', 'player2', 'setting', 'date', 'open_for')
         ->orderBy('date', 'desc')
         ->get();
 
