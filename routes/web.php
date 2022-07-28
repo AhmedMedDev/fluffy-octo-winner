@@ -19,11 +19,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('games/{id}', function ($id) {
+Route::middleware('auth', 'can_join')->group(function (){
 
-    return view('game.structure')
-        ->with('game_id', $id);
-})->middleware('auth', 'can_join');
+    Route::get('games/{id}', function ($id) {
+
+        return view('game.structure')
+            ->with('game_id', $id);
+    });
+    Route::get('offline/{id}', function ($id) {
+
+        return view('game.offline-kernel')
+            ->with('game_id', $id);
+    });
+});
 
 Route::get('game/archive/{id}', function ($id) {
 
@@ -53,7 +61,7 @@ Route::get('/archives', function () {
     $gmaes = DB::table('games')
         ->where('player1', auth()->user()->id)
         ->orWhere('player2', auth()->user()->id)
-        ->select('id', 'setting', 'date', 'open_for')
+        ->select('id', 'player2', 'setting', 'date', 'open_for')
         ->orderBy('date', 'desc')
         ->get();
 

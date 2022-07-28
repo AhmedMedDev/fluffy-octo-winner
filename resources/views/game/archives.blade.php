@@ -61,6 +61,9 @@
                     @if ($game->open_for == 0)
                         <span class="badge badge-dark badge-lg">Closed Game</span>
                     @endif
+                    @if ($game->player2 == 0)
+                        <span class="badge badge-dark badge-lg">Offline Game</span>
+                    @endif
                 </div>
             </div>
         @endforeach
