@@ -68,7 +68,9 @@ class GameGeneration extends Component
             ])
         ]);
 
-        return redirect("games/$game_id");
+        return ($this->offline) 
+        ? redirect("offline/$game_id")
+        : redirect("games/$game_id");
     }
 
 
