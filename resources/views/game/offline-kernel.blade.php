@@ -13,5 +13,5 @@
     </style>
 @endpush
 @section('content')
-    <livewire:game.offline-kernel' :game_id="$game_id" />
+    <livewire:game.offline-kernel :game_id="$game_id" />
 @endsection
