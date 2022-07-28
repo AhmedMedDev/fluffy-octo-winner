@@ -138,6 +138,32 @@ class OfflineKernel extends Component
         }
     }
 
+    public function undo($rounds_num)
+    {
+        // unset last 1/2 rounds
+        $last_round = end($this->scores);
+        $lastNotEmpty = (!is_null($last_round[1]) || !is_null($last_round[3]));
+
+        // delete selected rounds 
+        $rounds_num = ($lastNotEmpty) ? $rounds_num : $rounds_num + 1;
+        for ($i = 0; $i < $rounds_num; $i++) {
+
+            if (count($this->scores) == 1) break;
+
+            array_pop($this->scores);
+        }
+        
+        // Push new
+        array_push($this->scores, [null, null, null, null,]);
+
+        // DB Updating
+        DB::table('games')
+        ->where('id', $this->game_id)
+        ->update([
+            'curr_leg' => json_encode($this->scores),
+        ]);
+    }
+
     /**
      * ============================= 
      * ================= Herlpers

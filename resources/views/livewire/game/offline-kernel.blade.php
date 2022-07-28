@@ -112,6 +112,15 @@
 </div>
 @push('js')
     <script>
+        const undo_round = (round_num) => {
+            if (confirm('Are You Sure ? 👀👀') && +$('#scores_count').val() != 2) {
+
+                @this.call('undo', round_num)
+            }
+
+            $('.undo-select option:first').prop('selected',true);
+        }
+
         const scored = (obj, player_num) => {
 
             $(obj).prop('disabled', true)
