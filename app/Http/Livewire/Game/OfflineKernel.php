@@ -72,6 +72,67 @@ class OfflineKernel extends Component
             ]);
     }
 
+    public function closeLeg ($is_winner1)
+    {
+        if ($is_winner1) {
+
+            $this->sum_wins_1[$this->current_set - 1] = end($this->sum_wins_1) + 1;
+        } else {
+
+            $this->sum_wins_2[$this->current_set - 1] = end($this->sum_wins_2) + 1;
+        }
+
+        if (end($this->sum_wins_1) == end($this->sum_wins_2) && end($this->sum_wins_1) == $this->leg_limit) {
+
+            $this->leg_limit++;
+        } elseif (end($this->sum_wins_1) == $this->leg_limit || end($this->sum_wins_2) == $this->leg_limit) {
+
+            $this->details = (is_array($this->details)) 
+            ? $this->details 
+            : json_decode($this->details);
+    
+            // @ => sets 
+            array_push($this->details[$this->current_set - 1], $this->scores);
+
+            array_push($this->winners[$this->current_set - 1], [$this->current_leg , $this->open_for]);
+
+            $this->scores = [
+                [null, 501, null, 501],
+                [null, null, null, null]
+            ];
+
+            return $this->closeGame();
+        }
+
+        $this->details = (is_array($this->details)) ? $this->details : json_decode($this->details);
+
+        // @ => sets 
+        array_push($this->details[$this->current_set - 1], $this->scores);
+
+        array_push($this->winners[$this->current_set - 1], [$this->current_leg , $this->open_for]);
+
+        $this->current_leg++;
+
+        $this->scores = [
+            [null, 501, null, 501],
+            [null, null, null, null]
+        ];
+
+        DB::table('games')
+        ->where('id', $this->game_id)
+        ->update([
+            'legs' => json_encode([
+                'current_leg'   => $this->current_leg,
+                'current_set'   => $this->current_set,
+                'sum_wins_1'    => $this->sum_wins_1,
+                'sum_wins_2'    => $this->sum_wins_2,
+                'winners'       => $this->winners,
+                'details'       => json_encode($this->details)
+            ]),
+            'curr_leg' => json_encode($this->scores),
+        ]);
+    }
+
     public function closeGame($forced = false)
     {
         if ($this->current_set == (int) $this->sets_limit || $forced) { // Game Fully Completed
