@@ -4,19 +4,31 @@
             <!--begin::Details-->
     
             <h3 class="text-dark fw-bolder mb-5">Player Name</h3>
-            <div class="d-flex ">
-                <div class="p-1">
+            <div class="row">
+                <div class="col-sm-3">
                     <input wire:model.defer="player1" type="text" class="form-control form-control-solid" placeholder="Player 1"/>
                 </div>
-                <div class="p-1">
+                <div class="col-sm-3">
                     <input wire:model.defer="player2" type="text" class="form-control form-control-solid" placeholder="Player 2"/>
                 </div>
-                <div class="p-1 d-flex justify-content-center align-items-center">
-                    <div class="form-check form-switch form-check-custom form-check-solid me-10">
-                        <input wire:model.defer="unsaved" class="form-check-input h-30px w-50px" type="checkbox" value="" id="flexSwitch30x50"/>
-                        <label class="form-check-label" for="flexSwitch30x50">
-                            Unsaved This Game
-                        </label>
+                <div class="col-sm-3">
+                    <div class="p-1 d-flex justify-content-center align-items-center">
+                        <div class="form-check form-switch form-check-custom form-check-solid me-10">
+                            <input wire:model.defer="unsaved" class="form-check-input h-30px w-50px" type="checkbox" value="" id="flexSwitch30x50"/>
+                            <label class="form-check-label" for="flexSwitch30x50">
+                                Unsaved Game
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="p-1 d-flex justify-content-center align-items-center">
+                        <div class="form-check form-switch form-check-custom form-check-solid me-10">
+                            <input wire:model.defer="offline" class="form-check-input h-30px w-50px" type="checkbox" value="" id="flexSwitch30x50"/>
+                            <label class="form-check-label" for="flexSwitch30x50">
+                                Offline Game
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>

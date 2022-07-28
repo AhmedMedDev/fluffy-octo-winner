@@ -41,12 +41,12 @@
                                 </tr>
                             @else
                                 <tr>
-                                    <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" @if ($auth_player_num == 1)  onchange="scored($(this), 1)" @else disabled @endif/></td>
+                                    <td><input value="{{$row[0]}}" type="number" class="form-control form-control-solid text-center scored" onchange="scored($(this), 1)"/></td>
                                     <td><input value="{{$row[1]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_1" disabled/></td>
 
                                     <td><input type="number" class="form-control form-control-solid text-center togo" value="{{3 * $loop->index}}" disabled /></td>
                                     
-                                    <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored" @if ($auth_player_num == 2)  onchange="scored($(this), 2)" @else disabled @endif /></td>
+                                    <td><input value="{{$row[2]}}" type="number" class="form-control form-control-solid text-center scored" onchange="scored($(this), 2)" /></td>
                                     <td><input value="{{$row[3]}}" type="number" class="form-control form-control-solid text-center togo togo_{{$loop->iteration}}_2" disabled /></td>
                                 </tr>
                             @endif
