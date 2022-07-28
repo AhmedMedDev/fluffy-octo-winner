@@ -30,13 +30,13 @@ class GameGeneration extends Component
         $game_id = Str::uuid();
         $start_score_1 = $this->start_score - $this->handicap_1;
         $start_score_2 = $this->start_score - $this->handicap_2;
-        $this->offline = ($this->offline) ? 0 : null;
+        $player2 = ($this->offline) ? 0 : null;
 
         DB::table('games')
         ->insert([
             'id' => $game_id,
             'player1' => $auth_id,
-            'player2' => $this->offline,
+            'player2' => $player2,
             'open_for' => $auth_id,
             'legs' => json_encode([
                 'current_leg'   => 1,
